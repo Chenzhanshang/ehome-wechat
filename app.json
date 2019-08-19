@@ -1,8 +1,47 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/main/main",
+    "pages/tenement/tenement",
+    "pages/ehome/ehome",
+    "pages/user/user",
+    "pages/committee/committee"
   ],
+  "tabBar": {
+    "color": "#2c2c2c",
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "pagePath": "pages/main/main",
+        "text": "首页",
+        "iconPath": "",
+        "selectedIconPath": ""
+      },
+      {
+        "pagePath": "pages/tenement/tenement",
+        "text": "物业",
+        "iconPath": "",
+        "selectedIconPath": ""
+      },
+      {
+        "pagePath": "pages/committee/committee",
+        "text": "业委会",
+        "iconPath": "",
+        "selectedIconPath": ""
+      },
+      {
+        "pagePath": "pages/ehome/ehome",
+        "text": "e家",
+        "iconPath": "",
+        "selectedIconPath": ""
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "",
+        "selectedIconPath": ""
+      }
+    ]
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
