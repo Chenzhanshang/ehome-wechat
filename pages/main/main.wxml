@@ -1,2 +1,134 @@
-<!--pages/main/main.wxml-->
-<text>pages/main/main.wxml</text>
+<view class="hr"></view>
+<view class="main-view">
+  <view class="top-box">
+    <view class="img-view-top-left">
+      <image class="img-top-left" src="../images/dingwei.png"></image>
+    </view>
+    <view class="text-box-right">
+      <text class="text-top">南宁</text>
+    </view>
+  </view>
+  <view class="hr"></view>
+  
+  <!-- 功能的盒子 -->
+  <view class="main-fun-box">
+    <view class="fun-box">
+      <!-- 上功能列表 -->
+      <view class="fun-box-top">
+        <!-- 功能 -->
+        <view class="fun">
+          <view class="img-box-view">
+            <image class="img-box"></image>
+          </view>
+          <view class="img-box-text-view">
+            <text>fun</text> </view>
+        </view>
+        <view class="fun">
+          <view class="img-box-view">
+            <image class="img-box"></image>
+          </view>
+          <view class="img-box-text-view">
+            <text>fun</text> </view>
+        </view>
+        <view class="fun">
+          <view class="img-box-view">
+            <image class="img-box"></image>
+          </view>
+          <view class="img-box-text-view">
+            <text>fun</text> </view>
+        </view>
+        <view class="fun">
+          <view class="img-box-view">
+            <image class="img-box"></image>
+          </view>
+          <view class="img-box-text-view">
+            <text>fun</text> </view>
+        </view>
+      </view>
+      <!-- 下功能列表 -->
+      <view class="fun-box-bot">
+        <!-- 功能 -->
+        <view class="fun">
+          <view class="img-box-view">
+            <image class="img-box"></image>
+          </view>
+          <view class="img-box-text-view">
+            <text>fun</text> </view>
+        </view>
+        <view class="fun">
+          <view class="img-box-view">
+            <image class="img-box"></image>
+          </view>
+          <view class="img-box-text-view">
+            <text>fun</text> </view>
+        </view>
+        <view class="fun">
+          <view class="img-box-view">
+            <image class="img-box"></image>
+          </view>
+          <view class="img-box-text-view">
+            <text>fun</text> </view>
+        </view>
+        <view class="fun">
+          <view class="img-box-view">
+            <image class="img-box"></image>
+          </view>
+          <view class="img-box-text-view">
+            <text>fun</text> </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+
+  <view class="bar"></view>
+  <!-- 公告 -->
+  <view class="announcement-box">
+    <!-- 公告bar -->
+    <view class="announcement-bar">
+      <text class="announcement-text">公告</text>
+      <view class="announcement-bar-img">></view>
+    </view>
+    <view class="hr"></view>
+    <!-- 公告容器 -->
+    <view class="announcement-content-box">
+      <view class="announcement-content-left"></view>
+      <view class="announcement-content-mid">
+        <text class="announcement-title">小康小区业委会正式成立</text>
+        <text class="announcement-date">2019-10-01</text>
+      </view>
+      <view class="announcement-content-right">
+        <view class="announcement-tag">业委会</view>
+        <view class="announcement-details">...</view>
+      </view>
+    </view>
+  </view>
+  <view class="bar"></view>
+  <!-- 活动 -->
+  <view class="activity-box">
+    <!-- 活动bar -->
+    <view class="activity-bar">
+      <text class="activity-text">公告</text>
+      <view class="activity-bar-img">></view>
+    </view>
+    <view class="hr"></view>
+    <!-- 活动容器 -->
+    <view class="activity-content-box">
+      <view class="activity-content-left"></view>
+      <view class="activity-content-mid">
+        <text class="activity-title">全民运动会即将开始</text>
+        <view>
+          <text class="activity-date">2019-10-01 ~ </text>
+          <text class="activity-date"> 2019-10-01</text>
+        </view>
+
+      </view>
+      <view class="activity-content-right">
+        <view class="activity-tag">进行中</view>
+        <view class="activity-details">...</view>
+      </view>
+    </view>
+  </view>
+  <view class="bar"></view>
+</view>
