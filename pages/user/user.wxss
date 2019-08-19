@@ -1,13 +1,7 @@
 /* pages/user/user.wxss */
-page{
-  width: 100%;
-  height: 100%;
-}
 .container{
   display: flex;
   flex-direction:column;
-  width: 100%;
-  height: 100%;
 }
 
 .userinfo {
@@ -36,18 +30,26 @@ page{
 }
 .replenish-mid{
   width:100%;
-  height: 1px;
-  background-color: #999;
-}
-
-.replenish-max{
-  width:100%;
-  height: auto;
-  background-color: #999;
+  height: 2px;
+  background-color: #eee;
 }
 
 .item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   width: 100%;
   padding: 10px;
   background-color: #fff;
+}
+.image{
+  width: 20px; 
+  height: 20px;
+  margin-right: 15px;
+}
+
+.right{
+  width: 20px; 
+  height: 20px;
+  margin-right: 15px;
 }
