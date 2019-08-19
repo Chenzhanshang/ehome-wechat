@@ -1,1 +1,53 @@
 /* pages/user/user.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.container{
+  display: flex;
+  flex-direction:column;
+  width: 100%;
+  height: 100%;
+}
+
+.userinfo {
+  margin-top:10px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.replenish-min{
+  width:95%;
+  height: 1px;
+  background-color: #eee;
+}
+.replenish-mid{
+  width:100%;
+  height: 1px;
+  background-color: #999;
+}
+
+.replenish-max{
+  width:100%;
+  height: auto;
+  background-color: #999;
+}
+
+.item{
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+}

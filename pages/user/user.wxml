@@ -1,2 +1,43 @@
 <!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<view >
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="replenish-mid" ></view>
+  <view class="replenish-mid" ></view>
+  <view class="replenish-mid" ></view>
+  <view class="replenish-mid" ></view>
+    <view class="item">
+      <text>业主认证</text>
+    </view>
+    <view class="replenish-mid" ></view>
+    <view class="replenish-mid" ></view>
+    <view class="item">
+      <text>我的消息</text>
+    </view>
+    <view class="replenish-mid" ></view>
+    <view class="replenish-mid" ></view>
+    <view class="item">
+      <text>我的上报</text>
+    </view>
+    <view class="replenish-mid" ></view>
+    <view class="replenish-mid" ></view>
+    <view class="item">
+      <text>发起活动</text>
+    </view>
+    <view class="replenish-mid" ></view>
+    <view class="replenish-mid" ></view>
+    <view class="item">
+      <text>我的订单</text>
+    </view>
+    <view class="replenish-mid" ></view>
+    <view class="replenish-mid" ></view>
+    <view class="item">
+      <text> 一键报警</text>
+    </view>
+    <view class="replenish-max" ></view>
+</view>
