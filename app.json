@@ -9,36 +9,37 @@
   "tabBar": {
     "color": "#2c2c2c",
     "selectedColor": "#1296db",
+
     "list": [
       {
         "pagePath": "pages/main/main",
         "text": "首页",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "iconPath": "pages/images/home1.png",
+        "selectedIconPath": "pages/images/home2.png"
       },
       {
         "pagePath": "pages/tenement/tenement",
         "text": "物业",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "iconPath": "pages/images/wuye1.png",
+        "selectedIconPath": "pages/images/wuye2.png"
       },
       {
         "pagePath": "pages/committee/committee",
         "text": "业委会",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "iconPath": "pages/images/yeweihui1.png",
+        "selectedIconPath": "pages/images/yeweihui2.png"
       },
       {
         "pagePath": "pages/ehome/ehome",
-        "text": "e家",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "text": "e 家",
+        "iconPath": "pages/images/ehome1.png",
+        "selectedIconPath": "pages/images/ehome2.png"
       },
       {
         "pagePath": "pages/user/user",
         "text": "我的",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "iconPath": "pages/images/user1.png",
+        "selectedIconPath": "pages/images/user2.png"
       }
     ]
   },
