@@ -1,1 +1,28 @@
 /* pages/ehome/ehome.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.main{
+  display: flex;
+  flex-direction:row;
+  justify-content:space-around;
+  align-items:stretch; 
+  flex-wrap: wrap;
+}
+
+.item{
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+   margin-top: 25rpx;
+   margin-bottom: 25rpx;
+}
+.item-img{
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+  height: 100rpx;
+  width:100rpx;
+  border-radius: 50%;
+  background-color:green;
+}

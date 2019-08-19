@@ -1,2 +1,13 @@
 <!--pages/ehome/ehome.wxml-->
-<text>pages/ehome/ehome.wxml</text>
+  <view style="background-color:red;">全部功能</view>
+    <view class="main">
+      <block wx:for="{{8}}">
+        <view class="item" style="margin-left:1px;margin-right:1px">
+          <view class="item-img" ></view>
+          <text style="background-color:red;margin-top:10rpx;">功能1</text>
+        </view>
+      </block>
+    </view>
+  <view>
+  2
+  </view>
