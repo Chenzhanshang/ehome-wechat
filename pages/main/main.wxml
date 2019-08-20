@@ -1,4 +1,3 @@
-<view class="hr"></view>
 <view class="main-view">
   <view class="top-box">
     <view class="img-view-top-left">
@@ -18,31 +17,31 @@
         <!-- 功能 -->
         <view class="fun">
           <view class="img-box-view">
-            <image class="img-box"></image>
+            <image class="img-box" src="../images/weixiu.png"></image>
           </view>
           <view class="img-box-text-view">
-            <text>fun</text> </view>
+            <text class="fun-text">报修</text> </view>
         </view>
         <view class="fun">
           <view class="img-box-view">
-            <image class="img-box"></image>
+            <image class="img-box" src="../images/toupiao.png"></image>
           </view>
           <view class="img-box-text-view">
-            <text>fun</text> </view>
+            <text class="fun-text">议题投票</text> </view>
         </view>
         <view class="fun">
           <view class="img-box-view">
-            <image class="img-box"></image>
+            <image class="img-box" src="../images/car.png"></image>
           </view>
           <view class="img-box-text-view">
-            <text>fun</text> </view>
+            <text class="fun-text">我的车</text> </view>
         </view>
         <view class="fun">
           <view class="img-box-view">
-            <image class="img-box"></image>
+            <image class="img-box" src="../images/tousu.png"></image>
           </view>
           <view class="img-box-text-view">
-            <text>fun</text> </view>
+            <text class="fun-text">建议投诉</text> </view>
         </view>
       </view>
       <!-- 下功能列表 -->
@@ -50,31 +49,31 @@
         <!-- 功能 -->
         <view class="fun">
           <view class="img-box-view">
-            <image class="img-box"></image>
+            <image class="img-box" src="../images/wuyefei.png"></image>
           </view>
           <view class="img-box-text-view">
-            <text>fun</text> </view>
+            <text class="fun-text">物业费</text> </view>
         </view>
         <view class="fun">
           <view class="img-box-view">
-            <image class="img-box"></image>
+            <image class="img-box" src="../images/shequ.png"></image>
           </view>
           <view class="img-box-text-view">
-            <text>fun</text> </view>
+            <text class="fun-text">社区详情</text> </view>
         </view>
         <view class="fun">
           <view class="img-box-view">
-            <image class="img-box"></image>
+            <image class="img-box" src="../images/qunliao.png"></image>
           </view>
           <view class="img-box-text-view">
-            <text>fun</text> </view>
+            <text class="fun-text">业主社群</text> </view>
         </view>
         <view class="fun">
           <view class="img-box-view">
-            <image class="img-box"></image>
+            <image class="img-box" src="../images/more.png"></image>
           </view>
           <view class="img-box-text-view">
-            <text>fun</text> </view>
+            <text class="fun-text">更多</text> </view>
         </view>
       </view>
     </view>
@@ -87,8 +86,13 @@
   <view class="announcement-box">
     <!-- 公告bar -->
     <view class="announcement-bar">
+    <view class="announcement-bar-img-right">
+        <image class="activity-img" src="../images/xiaoxi.png"></image>
+      </view>
       <text class="announcement-text">公告</text>
-      <view class="announcement-bar-img">></view>
+      <view class="announcement-bar-img">
+        <image class="activity-img" src="../images/more-right.png"></image>
+      </view>
     </view>
     <view class="hr"></view>
     <!-- 公告容器 -->
@@ -109,8 +113,13 @@
   <view class="activity-box">
     <!-- 活动bar -->
     <view class="activity-bar">
-      <text class="activity-text">公告</text>
-      <view class="activity-bar-img">></view>
+    <view class="announcement-bar-img-right">
+        <image class="activity-img" src="../images/huodong.png"></image>
+      </view>
+      <text class="activity-text">活动</text>
+      <view class="activity-bar-img">
+        <image class="activity-img" src="../images/more-right.png"></image>
+      </view>
     </view>
     <view class="hr"></view>
     <!-- 活动容器 -->
@@ -130,5 +139,10 @@
       </view>
     </view>
   </view>
-  <view class="bar"></view>
+  
+  <block wx:for="{{41}}">
+    <view class="bar"></view>
+  </block>
+  
 </view>
+
