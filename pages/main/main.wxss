@@ -18,6 +18,7 @@ page{
   height: 60rpx;
   background: #fff;
   align-content: center;
+  
 }
 .text-top{
   font-size:18px; 
