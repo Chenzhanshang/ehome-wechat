@@ -42,3 +42,8 @@ page{
   color: #999;
   margin-top:5rpx;
 }
+
+.t{
+  /* font-weight: 200; */
+  font-family:"方正舒体"; 
+}
