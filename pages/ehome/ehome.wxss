@@ -8,7 +8,7 @@ page{
   flex-direction: column;
   padding-bottom: 25rpx;
 }
-
+    
 .fun{
    display: flex;
    flex-direction: column;
