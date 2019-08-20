@@ -1,1 +1,62 @@
 /* pages/user/user.wxss */
+.container{
+  display: flex;
+  flex-direction:column;
+}
+
+.userinfo {
+  padding-top:10px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.replenish-min{
+  width:95%;
+  height: 1px;
+  background-color: #eee;
+}
+.replenish-mid{
+  width:100%;
+  height: 2px;
+  background-color: #eee;
+}
+
+.item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+}
+.image-ext{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.image{
+  width: 20px; 
+  height: 20px;
+  margin-right: 15px;
+}
+
+.right{
+  width: 20px; 
+  height: 20px;
+  margin-right: 15px;
+}

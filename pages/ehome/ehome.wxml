@@ -1,2 +1,29 @@
 <!--pages/ehome/ehome.wxml-->
-<text>pages/ehome/ehome.wxml</text>
+<view class="replenish-mid" > </view>
+<view class="replenish-mid" > </view>
+  <view style="padding:8px;">
+    <text >全部功能</text>
+  </view>
+  <view class="replenish-mid" > </view>
+    <view class="main">
+      <view class="item">
+        <view class="fun" wx:for="{{fun1}}" wx:for-item="item" wx:key="{{item.id}}"  >
+          <view class="item-img-ext">
+            <image class="item-img" src="{{item.image}}"></image>
+          </view>
+          <text class="text">{{item.funName}}</text>
+        </view>
+      </view>
+      <view class="item">
+        <view class="fun" wx:for="{{fun2}}" wx:for-item="item" wx:key="{{item.id}}"  >
+          <view class="item-img-ext">
+            <image class="item-img" src="{{item.image}}"></image>
+          </view>
+          <text class="text">{{item.funName}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="replenish-mid" > </view>
+    <block wx:for="{{220}}" wx:key="index">
+      <view class="replenish-mid" > </view>
+    </block>

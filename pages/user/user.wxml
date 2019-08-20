@@ -1,2 +1,30 @@
 <!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<view >
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+  <block wx:for="{{4}}" wx:key="index">
+    <view class="replenish-mid" > </view>
+  </block>
+
+  <view wx:for="{{funList}}" wx:for-item="fun" wx:key="{{fun.id}}">
+    <view class="item">
+      <view class="image-ext">
+        <image  class="image" src="{{fun.image}}"></image>
+        <text>{{fun.funName}}</text>
+      </view>
+      <image  class="right" src="images/right.png"></image>
+    </view>
+    <view class="replenish-mid" ></view>
+  </view>
+
+  <block wx:for="{{107}}" wx:key="index">
+    <view class="replenish-mid" > </view>
+  </block>
+    
+</view>
