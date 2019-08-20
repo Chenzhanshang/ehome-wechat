@@ -1,3 +1,7 @@
+page{
+  width: 100%;
+  height: 100%;
+}
 .main-view{
   display: flex;
   flex-direction: column;
@@ -15,11 +19,15 @@
   background: #fff;
   align-content: center;
 }
+.text-top{
+  font-size:18px; 
+  margin-left: 5px;
+}
 .img-view-top-left{
   display: flex;
   height: 100%;
   margin-left: 10px;
-  
+  padding-top: 2px;
 }
 .img-top-left{
   width: 45rpx;
@@ -30,12 +38,12 @@
   background: #eee;
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 156px;
   justify-content: center;
 }
 .fun-box{
   width:95%;
-  height: 100%;
+  height: 142px;
   border: 2px solid #eee;
   border-radius: 10px;
   margin: 5px;
@@ -56,10 +64,10 @@
   margin-bottom: 5px;
 }
 .img-box{
-  width: 100rpx;
-  height: 100rpx;
-  border: 1px solid #5ba0f8;
-  border-radius: 50%;
+  width: 80rpx;
+  height: 80rpx;
+  border: 1px solid #fff;
+  border-radius: 5px;
 }
 .fun-box-top{
   display: flex;
@@ -81,19 +89,29 @@
   display: flex;
   flex: 1;
 }
+.announcement-title{
+  margin-bottom: 15px;
+}
 
 .announcement-bar-img{
+  width: 70rpx;
+  height: 50rpx;
+}
+.announcement-bar-img-right{
   width: 50rpx;
   height: 50rpx;
 }
 .announcement-content-box{
   display: flex;
   flex-direction: row;
+  height: 80px;
+  align-items: center;
 }
 .announcement-content-left{
-  width: 100rpx;
-  height: 100rpx;
-  border: 1px solid #5ba0f8;
+  width: 120rpx;
+  height: 120rpx;
+  border: 1px solid #eee;
+  border-radius:5px; 
   margin-right: 5px;
 }
 .announcement-content-right{
@@ -127,17 +145,25 @@
 }
 
 .activity-bar-img{
-  width: 50rpx;
+  width: 70rpx;
   height: 50rpx;
 }
+.activity-img{
+  width: 40rpx;
+  height: 40rpx;
+}
+
 .activity-content-box{
   display: flex;
   flex-direction: row;
+  height: 80px;
+  align-items: center;
 }
 .activity-content-left{
-  width: 100rpx;
-  height: 100rpx;
-  border: 1px solid #5ba0f8;
+  width: 120rpx;
+  height: 120rpx;
+  border: 1px solid #eee;
+  border-radius:5px; 
   margin-right: 5px;
 }
 .activity-content-right{
@@ -176,7 +202,10 @@
   font-size: 13px;
   border-radius: 5px;
   background: #4579b2;
-
+   margin-bottom: 10px;
+}
+.activity-title{
+  margin-bottom: 10px;
 }
 .activity-tag{
   border: 1px solid #4579b2;
@@ -184,4 +213,9 @@
   font-size: 13px;
   border-radius: 5px;
   background: #4579b2;
+  margin-bottom: 10px;
+}
+.fun-text{
+  color: #999;
+  font-size: 12px;
 }
