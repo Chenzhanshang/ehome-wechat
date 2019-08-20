@@ -7,60 +7,24 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-    <view class="replenish-mid" ></view>
-  <view class="replenish-mid" ></view>
-  <view class="replenish-mid" ></view>
-  <view class="replenish-mid" ></view>
+
+  <block wx:for="{{4}}" wx:key="index">
+    <view class="replenish-mid" > </view>
+  </block>
+
+  <view wx:for="{{funList}}" wx:for-item="fun" wx:key="{{fun.id}}">
     <view class="item">
-      <view>
-        <image  class="image" src="images/authentication.png"></image>
-        <text>业主认证</text>
+      <view class="image-ext">
+        <image  class="image" src="{{fun.image}}"></image>
+        <text>{{fun.funName}}</text>
       </view>
       <image  class="right" src="images/right.png"></image>
     </view>
     <view class="replenish-mid" ></view>
-    <view class="item">
-      <view>
-        <image  class="image" src="images/msg.png"></image>
-        <text>我的消息</text>
-      </view>
-      <image  class="right" src="images/right.png"></image>
-    </view>
-    <view class="replenish-mid" ></view>
-    <view class="item">
-      <view>
-        <image  class="image" src="images/report.png"></image>
-        <text>我的上报</text>
-      </view>
-      <image  class="right" src="images/right.png"></image>
-    </view>
-    <view class="replenish-mid" ></view>
-    <view class="item">
-      <view>
-        <image  class="image" src="images/sponsor.png"></image>
-        <text>发起活动</text>
-      </view>
-      <image  class="right" src="images/right.png"></image>
-    </view>
-    <view class="replenish-mid" ></view>
-    <view class="item">
-      <view>
-        <image  class="image" src="images/order.png"></image>
-        <text>我的订单</text>
-      </view>
-      <image  class="right" src="images/right.png"></image>
-    </view>
-    <view class="replenish-mid" ></view>
-    <view class="item">
-      <view>
-        <image  class="image" src="images/calPolice.png"></image>
-        <text> 一键报警</text>
-      </view>
-      <image  class="right" src="images/right.png"></image>
-    </view>
-    <block wx:for="{{110}}">
-      <view class="replenish-mid" > </view>
-    </block>
-    
+  </view>
+
+  <block wx:for="{{107}}" wx:key="index">
+    <view class="replenish-mid" > </view>
+  </block>
     
 </view>

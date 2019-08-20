@@ -8,7 +8,15 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    funList:[
+      { id: 1, funName: "业主认证", image:"images/authentication.png"},
+      { id: 2, funName: "我的消息", image: "images/msg.png" },
+      { id: 3, funName: "我的上报", image: "images/report.png" },
+      { id: 4, funName: "发起活动", image: "images/sponsor.png" },
+      { id: 5, funName: "我的订单", image: "images/order.png" },
+      { id: 6, funName: "一键报警", image: "images/calPolice.png" },
+    ]
   },
 
   /**
