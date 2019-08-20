@@ -2,7 +2,7 @@
 <view class="replenish-mid" > </view>
 <view class="replenish-mid" > </view>
   <view style="padding:8px;">
-    <text >全部功能</text>
+    <text class="t" >全部功能</text>
   </view>
   <view class="replenish-mid" > </view>
     <view class="main">
