@@ -2,10 +2,26 @@
 Page({
 
   /**
-   * 页面的初始数据
+   * 页面的初始数据'智能门禁',
+      '访客邀请',
+      '物业管家',
+      '房屋交付',
+      '违章举报',
+      '物业缴费',
+      '物业公告' ,
+      '建议反馈'
    */
   data: {
-
+    funArr: [
+      { url: '../images/xqxx.png', title: '小区信息', img: '../images/more-right.png'}, 
+      { url: '../images/fkyq.png', title: '访客邀请', img: '../images/more-right.png' }, 
+      { url: '../images/wygj.png', title: '物业管家', img: '../images/more-right.png' }, 
+      { url: '../images/fwjf.png', title: '房屋交付', img: '../images/more-right.png' }, 
+      { url: '../images/wzjb.png', title: '违章举报', img: '../images/more-right.png' }, 
+      { url: '../images/wygg.png', title: '物业公告', img: '../images/more-right.png' }, 
+      { url: '../images/znmj.png', title: '智能门禁', img: '../images/more-right.png' }, 
+      { url: '../images/jyfk.png', title: '建议反馈', img: '../images/more-right.png' }, 
+      ],
   },
 
   /**

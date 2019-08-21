@@ -1,2 +1,39 @@
-<!--pages/tenement/tenement.wxml-->
-<text>pages/tenement/tenement.wxml</text>
+<view class="main">
+  <view class="main-box">
+    <!-- 顶部框 -->
+    <view class="top-box">
+      <view class="bg-img">
+        <view class="tap">
+          <image src="../bgImg/sqrz.png" style="width:14px;height:14px;"></image>
+          <text class="sqrz-text">申请入驻</text>
+        </view>
+      </view>
+      <view class="bg-img-bot">
+        <image src="../bgImg/wy.jpeg" style="width:100%;height:175px;"></image>
+      </view>
+    </view>
+    <view class="bar"></view>
+    <!-- 功能栏 -->
+    <view class="fun-main-box con-column">
+      <view class="fun-box" wx:for="{{funArr}}" wx:key="index">
+        <view class="fun">
+          <view class="fun-img">
+            <image class="fun-img" src="{{item.url}}"></image>
+          </view>
+          <view class="fun-title">
+            <text class="fun-title">{{item.title}}</text> </view>
+          <view class="fun-img">
+            <image class="fun-img" src="{{item.img}}"></image>
+          </view>
+        </view>
+      </view>
+      <view class="bar"></view>
+
+    </view>
+    <view class="bar"></view>
+    <view class="bar"></view>
+    <view class="bar"></view>
+    <view class="bar"></view>
+    <view class="bar"></view>
+  </view>
+</view>

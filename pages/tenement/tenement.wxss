@@ -1,1 +1,72 @@
-/* pages/tenement/tenement.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.main{
+  width: 100%;
+  height: 100%;
+}
+.main-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.top-box{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #6fadda;
+  height: 200px;
+}
+.fun{
+  display: flex;
+  flex-direction: row;
+}
+.bg-img{
+  flex: 1;
+}
+.fun-box{
+  display: flex;
+  flex-direction: row;
+  width: 98%;
+  height: 50px;
+  background: #fff;
+  align-items: center;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  
+}
+.tap{
+  float: right;
+  color: #fff;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-right: 10px;
+  text-align: center;
+  
+}
+.sqrz-text{
+  padding-bottom: 1px;
+}
+.fun{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 0 10px;
+}
+.fun-title{
+  flex: 1;
+  margin-left: 5px;
+}
+.fun-img{
+  width: 20px;
+  height: 20px;
+  
+}
+.fun-main-box{
+  align-items: center;
+  width: 100%;
+  background: #eee;
+}
