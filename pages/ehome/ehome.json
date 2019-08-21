@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
+  "component": true,
+  "usingComponents": {
+    "func":"/pages/ehome/component/func"
+  },
   "navigationBarTitleText": "e家"
 }

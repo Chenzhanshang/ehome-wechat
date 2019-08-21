@@ -1,30 +1,87 @@
 <!--pages/ehome/ehome.wxml-->
 <scroll-view>
+  <!-- 搜索\入驻 -->
+  <view>
+    <view class='page_row'>  
+      <view class="search">  
+        <view class="df search_arr">  
+          <icon class="searchcion" size='20' type='search'></icon>  
+          <input  placeholder="请输入关键字" value="{{searchValue}}"/>  
+        </view>  
+      </view> 
+      <view class="souSuoRuZhuFenGe"></view>
+      <view class="ruzhu">
+        <text>入驻</text>
+      </view>
+    </view>
+
+  </view>
 <view class="replenish-mid" > </view>
 <view class="replenish-mid" > </view>
-  <view style="padding:8px;">
-    <text class="t" >全部功能</text>
+<!-- 轮播图 广告位 -->
+  <view class="swiper-view-box">
+    <swiper class="swiper-view" indicator-dots="true" autoplay="true" interval="2000" >
+    <view wx:for="{{imgUrls}}">
+      <swiper-item class="swiper-img">
+        <image class="swiper-img-item" src="{{item}}" mode="widthFix" easing-function="default"  />
+      </swiper-item>
+    </view>
+  </swiper>
+  </view>
+
+<!-- 分割线 -->
+<view class="replenish-mid" > </view>
+<view class="replenish-mid" > </view>
+
+  <!-- 分类标签 -->
+  <view class="classify" style="padding:8px;">
+    <text data-flag="0" bindtap="funClick" class="t classify-left-right {{selected[0]}}" >市集</text>
+    <view  class="classify-fenge"></view>
+    <text data-flag="1" bindtap="funClick" class="t classify-left-right {{selected[1]}}" >服务</text>
+    <view class="classify-fenge"></view>
+    <text data-flag="2" bindtap="funClick" class="t classify-left-right {{selected[2]}}" >拼团</text>
+    <view class="classify-fenge"></view>
+    <text data-flag="3" bindtap="funClick" class="t classify-left-right {{selected[3]}}" >特产</text>
   </view>
   <view class="replenish-mid" > </view>
     <view class="main">
-      <view class="item">
-        <view class="fun" wx:for="{{fun1}}" wx:for-item="item" wx:key="{{item.id}}"  >
+      <!-- <func showFunData="{{dt}}" ></func> -->
+      <view class="item" wx:if="{{flag == 0}}">
+        <view class="fun" wx:for="{{fun[0]}}" wx:for-item="item" wx:key="{{item.id}}"  >
           <view class="item-img-ext">
             <image class="item-img" src="{{item.image}}"></image>
           </view>
           <text class="text">{{item.funName}}</text>
         </view>
       </view>
-      <view class="item">
-        <view class="fun" wx:for="{{fun2}}" wx:for-item="item" wx:key="{{item.id}}"  >
+      <view class="item" wx:elif="{{flag == 1}}">
+        <view class="fun" wx:for="{{fun[1]}}" wx:for-item="item" wx:key="{{item.id}}"  >
           <view class="item-img-ext">
             <image class="item-img" src="{{item.image}}"></image>
           </view>
           <text class="text">{{item.funName}}</text>
         </view>
       </view>
+      <view class="item" wx:elif="{{flag == 2}}">
+        <view class="fun" wx:for="{{fun[2]}}" wx:for-item="item" wx:key="{{item.id}}"  >
+          <view class="item-img-ext">
+            <image class="item-img" src="{{item.image}}"></image>
+          </view>
+          <text class="text">{{item.funName}}</text>
+        </view>
+      </view>
+      <view class="item" wx:elif="{{flag == 3}}">
+        <view class="fun" wx:for="{{fun[3]}}" wx:for-item="item" wx:key="{{item.id}}"  >
+          <view class="item-img-ext">
+            <image class="item-img" src="{{item.image}}"></image>
+          </view>
+          <text class="text">{{item.funName}}</text>
+        </view>
+      </view>
+
     </view>
-    <view class="replenish-mid" > </view>
+
+
     <block wx:for="{{220}}" wx:key="index">
       <view class="replenish-mid" > </view>
     </block>
