@@ -3,7 +3,7 @@
     <!-- 顶部框 -->
     <view class="top-box">
       <view class="bg-img">
-        <view class="tap">
+        <view class="tap" bindtap="shenqingruzhu">
           <image src="../bgImg/sqrz.png" style="width:14px;height:14px;"></image>
           <text class="sqrz-text">申请入驻</text>
         </view>
@@ -16,7 +16,7 @@
     <!-- 功能栏 -->
     <view class="fun-main-box con-column">
       <view class="fun-box" wx:for="{{funArr}}" wx:key="index">
-        <view class="fun">
+        <view class="fun" bindtap="fun" data-id="{{item.id}}">
           <view class="fun-img">
             <image class="fun-img" src="{{item.url}}"></image>
           </view>
