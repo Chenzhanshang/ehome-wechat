@@ -1,4 +1,5 @@
 <!--pages/ehome/ehome.wxml-->
+<scroll-view>
 <view class="replenish-mid" > </view>
 <view class="replenish-mid" > </view>
   <view style="padding:8px;">
@@ -27,3 +28,4 @@
     <block wx:for="{{220}}" wx:key="index">
       <view class="replenish-mid" > </view>
     </block>
+</scroll-view>

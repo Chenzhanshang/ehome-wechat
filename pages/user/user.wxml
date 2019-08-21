@@ -1,5 +1,5 @@
 <!--pages/user/user.wxml-->
-<view >
+<scroll-view>
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
@@ -26,5 +26,4 @@
   <block wx:for="{{107}}" wx:key="index">
     <view class="replenish-mid" > </view>
   </block>
-    
-</view>
+</scroll-view>

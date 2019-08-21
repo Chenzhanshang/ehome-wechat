@@ -1,2 +1,25 @@
 <!--pages/committee/committee.wxml-->
-<text>pages/committee/committee.wxml</text>
+<block wx:for="{{fun}}" wx:for-item="item" wx:key="{{item.id}}">
+<view class="replenish-mid"></view>
+<view class="replenish-mid"></view>
+<view class="announcement-box">
+    <!-- 公告bar -->
+    <view class="announcement-bar">
+    <view class="announcement-bar-img-right">
+        <image class="activity-img" src="{{item.image}}"></image>
+      </view>
+      <text class="announcement-text">{{item.funName}}</text>
+      <view class="announcement-bar-img">
+        <image class="activity-img" src="../images/more-right.png"></image>
+      </view>
+    </view>
+    <view class="hr"></view>
+    <view class="announcement-content-box">
+      <view class="announcement-content-left"></view>
+      <view class="announcement-content-mid">
+        <text class="announcement-title">{{item.funTitle}}</text>
+        <text class="announcement-date">{{item.details}}</text>
+      </view>
+    </view>
+  </view>
+</block>
