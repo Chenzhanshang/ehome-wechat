@@ -23,6 +23,8 @@ page{
 .text-top{
   font-size:18px; 
   margin-left: 5px;
+  
+  color: #333;
 }
 .img-view-top-left{
   display: flex;
@@ -35,6 +37,31 @@ page{
   height: 45rpx;
   
 }
+.swiper-view-box{
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #eee;
+}
+.swiper-view{
+  width: 95%;
+
+}
+.swiper-img{
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  border: 0px solid #eee;
+  border-radius: 10px;
+}
+.swiper-img-item{
+  width: 100%;
+  border: 0px solid #eee;
+  border-radius: 10px;
+}
+
 .main-fun-box{
   background: #eee;
   display: flex;

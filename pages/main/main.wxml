@@ -1,14 +1,29 @@
 <view class="main-view">
+  <scroll-view class="main-view" scroll-y	="true">
   <view class="top-box">
     <view class="img-view-top-left">
       <image class="img-top-left" src="../images/dingwei.png"></image>
     </view>
     <view class="text-box-right">
-      <text class="text-top">南宁</text>
+      <text class="text-top">南宁 | </text>
+      <text class="text-top">小康小区</text>
     </view>
   </view>
-  <view class="hr"></view>
+  <view class="bar"></view>
+
+  <view class="swiper-view-box">
+    <swiper class="swiper-view" indicator-dots="true" autoplay="true" interval="2000" >
+    <view wx:for="{{imgUrls}}">
+      <swiper-item class="swiper-img">
+        <image class="swiper-img-item" src="{{item}}" mode="widthFix" easing-function="default"  />
+      </swiper-item>
+    </view>
+  </swiper>
   
+  </view>
+
+  
+
   <!-- 功能的盒子 -->
   <view class="main-fun-box">
     <view class="fun-box">
@@ -86,7 +101,7 @@
   <view class="announcement-box">
     <!-- 公告bar -->
     <view class="announcement-bar">
-    <view class="announcement-bar-img-right">
+      <view class="announcement-bar-img-right">
         <image class="activity-img" src="../images/xiaoxi.png"></image>
       </view>
       <text class="announcement-text">公告</text>
@@ -113,7 +128,7 @@
   <view class="activity-box">
     <!-- 活动bar -->
     <view class="activity-bar">
-    <view class="announcement-bar-img-right">
+      <view class="announcement-bar-img-right">
         <image class="activity-img" src="../images/huodong.png"></image>
       </view>
       <text class="activity-text">活动</text>
@@ -139,10 +154,10 @@
       </view>
     </view>
   </view>
-  
+  <view class="bar"></view>
+
   <block wx:for="{{41}}">
     <view class="bar"></view>
   </block>
-  
+</scroll-view>
 </view>
-
