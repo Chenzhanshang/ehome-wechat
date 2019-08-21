@@ -5,7 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    imgUrls:[
+      '../swiperImg/1.jpg',
+      '../swiperImg/2.jpg',
+      '../swiperImg/3.jpg',
+    ]
   },
 
   /**
