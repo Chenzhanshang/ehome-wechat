@@ -21,7 +21,7 @@
 <!-- 轮播图 广告位 -->
   <view class="swiper-view-box">
     <swiper class="swiper-view" indicator-dots="true" autoplay="true" interval="2000" >
-    <view wx:for="{{imgUrls}}">
+    <view wx:for="{{imgUrls}}" wx:key="index">
       <swiper-item class="swiper-img">
         <image class="swiper-img-item" src="{{item}}" mode="widthFix" easing-function="default"  />
       </swiper-item>
@@ -44,45 +44,8 @@
     <text data-flag="3" bindtap="funClick" class="t classify-left-right {{selected[3]}}" >特产</text>
   </view>
   <view class="replenish-mid" > </view>
+  <!-- 组件 -->
     <view class="main">
-      <!-- <func showFunData="{{dt}}" ></func> -->
-      <view class="item" wx:if="{{flag == 0}}">
-        <view class="fun" wx:for="{{fun[0]}}" wx:for-item="item" wx:key="{{item.id}}"  >
-          <view class="item-img-ext">
-            <image class="item-img" src="{{item.image}}"></image>
-          </view>
-          <text class="text">{{item.funName}}</text>
-        </view>
-      </view>
-      <view class="item" wx:elif="{{flag == 1}}">
-        <view class="fun" wx:for="{{fun[1]}}" wx:for-item="item" wx:key="{{item.id}}"  >
-          <view class="item-img-ext">
-            <image class="item-img" src="{{item.image}}"></image>
-          </view>
-          <text class="text">{{item.funName}}</text>
-        </view>
-      </view>
-      <view class="item" wx:elif="{{flag == 2}}">
-        <view class="fun" wx:for="{{fun[2]}}" wx:for-item="item" wx:key="{{item.id}}"  >
-          <view class="item-img-ext">
-            <image class="item-img" src="{{item.image}}"></image>
-          </view>
-          <text class="text">{{item.funName}}</text>
-        </view>
-      </view>
-      <view class="item" wx:elif="{{flag == 3}}">
-        <view class="fun" wx:for="{{fun[3]}}" wx:for-item="item" wx:key="{{item.id}}"  >
-          <view class="item-img-ext">
-            <image class="item-img" src="{{item.image}}"></image>
-          </view>
-          <text class="text">{{item.funName}}</text>
-        </view>
-      </view>
-
+      <func show="{{pass}}" ></func>
     </view>
-
-
-    <block wx:for="{{220}}" wx:key="index">
-      <view class="replenish-mid" > </view>
-    </block>
 </scroll-view>
