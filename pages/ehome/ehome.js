@@ -30,7 +30,7 @@ Page({
       { id: 5, funName: "送水", image: "/pages/ehome/images/water.png" }
       ]
     ],
-    selected:["red","","",""],
+    selected: ["selected","","",""],
     flag:0
   },
 
@@ -99,7 +99,7 @@ Page({
     var setdt = "selected["+i+"]";
         if(i == this.data.flag){
           this.setData({
-            [setdt]: "red"
+            [setdt]: "selected"
           });
         }
         else{

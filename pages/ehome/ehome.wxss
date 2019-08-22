@@ -14,7 +14,6 @@
 }
 .swiper-view{
   width: 95%;
-
 }
 
 page{
@@ -76,6 +75,7 @@ page{
 
 .t{
   /* font-weight: 200; */
+  color: #999;
   font-family:"方正舒体"; 
 }
 
@@ -142,6 +142,6 @@ page{
   width: 2px;
 }
 
-.red{
-  color: red;
+.selected{
+  color: black;
 }
