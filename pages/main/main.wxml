@@ -59,7 +59,7 @@
 
   <view class="bar"></view>
   <!-- 公告 -->
-  <view class="announcement-box">
+  <view class="announcement-box" bindtap="noticeClick">
     <!-- 公告bar -->
     <view class="announcement-bar">
       <view class="announcement-bar-img-right">
@@ -72,7 +72,7 @@
     </view>
     <view class="hr"></view>
     <!-- 公告容器 -->
-    <view class="announcement-content-box" bindtap="noticeClick">
+    <view class="announcement-content-box" >
       <view class="announcement-content-left"></view>
       <view class="announcement-content-mid">
         <text class="announcement-title">小康小区业委会正式成立</text>

@@ -49,10 +49,10 @@
 
     </view>
     <view class="btn" wx:if="{{type == null || date == null || time ==null}}">
-      <button class="btn"  type="default" disabled="true">提交</button>
+      <button   type="default" disabled="true">提交</button>
     </view>
     <view class="btn" wx:else>
-      <button class="btn" bindtap="submitRepair" type="primary">提交</button>
+      <button  bindtap="submitRepair" type="primary">提交</button>
     </view>
 
   </view>
