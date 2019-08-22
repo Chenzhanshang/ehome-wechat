@@ -1,88 +1,72 @@
-/* pages/committee/committee.wxss */
-.announcement-box{
-  margin: 5px 10px;
+page{
+  width: 100%;
+  height: 100%;
 }
-
-.announcement-bar{
+.main{
+  width: 100%;
+  height: 100%;
+}
+.main-box{
   display: flex;
-  flex-direction: row;
-}
-
-.announcement-bar-img-right{
-  width: 50rpx;
-  height: 50rpx;
-}
-
-.activity-img{
-  width: 40rpx;
-  height: 40rpx;
-}
-
-.announcement-text{
-  display: flex;
-  flex: 1;
-}
-
-.announcement-bar-img{
-  width: 70rpx;
-  height: 50rpx;
-}
-
-.announcement-content-box{
-  display: flex;
-  flex-direction: row;
-  height: 80px;
+  flex-direction: column;
   align-items: center;
+  width: 100%;
+  height: 100%;
 }
-
-.announcement-content-left{
-  width: 120rpx;
-  height: 120rpx;
-  border: 1px solid #eee;
-  border-radius:5px; 
-  margin-right: 5px;
-}
-
-.announcement-content-mid{
-  width: 460rpx;
+.top-box{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  width: 100%;
+  background: #eee;
+  height: 180px;
 }
-
-.announcement-title{
-  margin-bottom: 10px;
-}
-
-
-
-.announcement-date{
-   color: #999;
-  font-size: 12px;
-}
-
-.announcement-content-right{
+.fun{
   display: flex;
+  flex-direction: row;
+}
+.bg-img{
   flex: 1;
-  flex-direction: column;
-  align-items:center;
-
-  align-content: center;
-  justify-content: center;
-
 }
-
-.announcement-tag{
-  border: 1px solid #4579b2;
-  color: #fff;
-  font-size: 13px;
+.fun-box{
+  display: flex;
+  flex-direction: row;
+  width: 98%;
+  height: 50px;
+  background: #fff;
+  align-items: center;
+  border: 1px solid #eee;
   border-radius: 5px;
-  background: #4579b2;
-   margin-bottom: 10px;
+  
 }
-
-.replenish-mid{
-  width:100%;
-  height: 2px;
-  background-color: #eee;
+.tap{
+  float: right;
+  color: #fff;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-right: 10px;
+  text-align: center;
+  
+}
+.sqrz-text{
+  padding-bottom: 1px;
+}
+.fun{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 0 10px;
+}
+.fun-title{
+  flex: 1;
+  margin-left: 5px;
+}
+.fun-img{
+  width: 20px;
+  height: 20px;
+  
+}
+.fun-main-box{
+  align-items: center;
+  width: 100%;
+  background: #eee;
 }

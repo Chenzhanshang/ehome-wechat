@@ -1,25 +1,31 @@
-<!--pages/committee/committee.wxml-->
-<block wx:for="{{fun}}" wx:for-item="item" wx:key="{{item.id}}">
-<view class="replenish-mid"></view>
-<view class="replenish-mid"></view>
-<view class="announcement-box">
-    <!-- 公告bar -->
-    <view class="announcement-bar">
-    <view class="announcement-bar-img-right">
-        <image class="activity-img" src="{{item.image}}"></image>
-      </view>
-      <text class="announcement-text">{{item.funName}}</text>
-      <view class="announcement-bar-img">
-        <image class="activity-img" src="../images/more-right.png"></image>
+<view class="main">
+  <view class="main-box">
+    <!-- 顶部框 -->
+    <view class="top-box">
+      <view class="bg-img-bot">
+        <image src="../bgImg/ywh.jpg" style="width:100%;height:175px;"></image>
       </view>
     </view>
-    <view class="hr"></view>
-    <view class="announcement-content-box">
-      <view class="announcement-content-left"></view>
-      <view class="announcement-content-mid">
-        <text class="announcement-title">{{item.funTitle}}</text>
-        <text class="announcement-date">{{item.details}}</text>
+    <view class="bar"></view>
+    <!-- 功能栏 -->
+    <view class="fun-main-box con-column">
+      <view class="fun-box" wx:for="{{fun}}" wx:key="index">
+        <view class="fun" bindtap="fun" data-id="{{item.id}}">
+          <view class="fun-img">
+            <image class="fun-img" src="{{item.url}}"></image>
+          </view>
+          <view class="fun-title">
+            <text class="fun-title">{{item.title}}</text> </view>
+          <view class="fun-img">
+            <image class="fun-img" src="{{item.img}}"></image>
+          </view>
+        </view>
       </view>
+      <view class="bar"></view>
+
     </view>
+    <block wx:for="{{20}}" wx:key="index">
+      <view class="bar"></view>
+    </block>
   </view>
-</block>
+</view>

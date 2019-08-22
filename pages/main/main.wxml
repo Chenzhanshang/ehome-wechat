@@ -2,7 +2,7 @@
   <scroll-view class="main-view" scroll-y	="true">
   <view class="top-box">
     <view class="img-view-top-left">
-      <image class="img-top-left" src="../images/dingwei.png"></image>
+      <image class="img-top-left" src="../images/dingwei.png" bindtap="chooseAddr"></image>
     </view>
     <view class="text-box-right">
       <text class="text-top">南宁 | </text>
@@ -14,7 +14,7 @@
   <view class="swiper-view-box">
   
     <swiper class="swiper-view" indicator-dots="true" autoplay="true" interval="2000" >
-    <view wx:for="{{imgUrls}}">
+    <view wx:for="{{imgUrls}}" wx:key="index">
       <swiper-item class="swiper-img">
         <image class="swiper-img-item" src="{{item}}" mode="widthFix" easing-function="default"  />
       </swiper-item>
@@ -43,7 +43,7 @@
       <!-- 下功能列表 -->
       <view class="fun-box-bot" >
         <!-- 功能 -->
-        <view class="fun" wx:for="{{botFunArr}}">
+        <view class="fun" wx:for="{{botFunArr}}" wx:key="index">
           <view class="img-box-view" bindtap="tapfun" data-id="{{item.id}}">
             <image class="img-box" src="{{item.url}}"></image>
           </view>
@@ -59,7 +59,7 @@
 
   <view class="bar"></view>
   <!-- 公告 -->
-  <view class="announcement-box">
+  <view class="announcement-box" bindtap="noticeClick">
     <!-- 公告bar -->
     <view class="announcement-bar">
       <view class="announcement-bar-img-right">
@@ -72,7 +72,7 @@
     </view>
     <view class="hr"></view>
     <!-- 公告容器 -->
-    <view class="announcement-content-box" bindtap="noticeClick">
+    <view class="announcement-content-box" >
       <view class="announcement-content-left"></view>
       <view class="announcement-content-mid">
         <text class="announcement-title">小康小区业委会正式成立</text>
@@ -117,7 +117,7 @@
   </view>
   <view class="bar"></view>
 
-  <block wx:for="{{41}}">
+  <block wx:for="{{41}}" wx:key="index">
     <view class="bar"></view>
   </block>
 </scroll-view>

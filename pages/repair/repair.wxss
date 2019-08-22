@@ -1,0 +1,47 @@
+page{
+  width: 100%;
+  height: 100%;
+}
+.main{
+  width: 100%;
+  height: 100%;
+}
+.main-box{
+  margin-top: 10px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+.repair{
+  width: 95%;
+  height: 50px;
+  justify-items: center;
+  align-items: center;
+}
+.question{
+  width: 95%;
+}
+.que{
+  display: flex;
+  height: 50px;
+  align-items: center;
+  
+}
+.text-box{
+  width: 100%;
+  height: 150px;
+  background: #eee;
+  border: 0px solid #eee;
+  border-radius: 10px;
+  
+}
+.text{
+  margin: 10px;
+}
+.btn{
+  width: 95%;
+  margin-top: 50px;
+}
+.center{
+  align-items: center;
+}

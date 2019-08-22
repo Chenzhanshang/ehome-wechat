@@ -1,0 +1,59 @@
+<view class="main con-column">
+  <view class="main-box con-column">
+    <!-- 维修类别 -->
+    <view class="repair con-row">
+      <text style="flex:1;">维修类型：</text>
+      <picker bindchange="tap2type" value="{{typeIndex}}" range="{{typeArray}}">
+        <view class="con-row center">
+          <view wx:if="{{type == null}}" style="font-size:14px;text-align: right; color:#999;" disabled="true">请选择报修的类型</view>
+          <view wx:else style="font-size:14px;text-align: right; color:#999;" disabled="true">{{type}}</view>
+          <image src="../images/xl.png" style="height:14px;width:14px;"></image>
+        </view>
+      </picker>
+
+    </view>
+    <view class="hr"></view>
+    <!-- 上门时间 -->
+    <view class="repair con-row">
+      <text style="flex:1;">上门日期：</text>
+      <picker bindchange="tap2date" mode="date" start="{{nowDate}}">
+        <view class="con-row center">
+          <view wx:if="{{date == null}}" style="font-size:14px;text-align: right;color:#999; " disabled="true">请选择上门日期</view>
+          <view wx:else style="font-size:14px;text-align: right;color:#999; " disabled="true">{{date}}</view>
+          <image src="../images/xl.png" style="height:14px;width:14px;"></image>
+        </view>
+      </picker>
+
+    </view>
+    <view class="hr"></view>
+    <!-- 上门时间 -->
+    <view class="repair con-row">
+      <text style="flex:1;">上门时间：</text>
+      <picker bindchange="tap2time" value="timeIndex" range="{{timeArray}}">
+        <view class="con-row center">
+          <view wx:if="{{time == null}}" style="font-size:14px;text-align: right;color:#999; " disabled="true">请选择上门时间</view>
+          <view wx:else style="font-size:14px;text-align: right;color:#999; " disabled="true">{{time}}</view>
+          <image src="../images/xl.png" style="height:14px;width:14px;"></image>
+        </view>
+      </picker>
+
+    </view>
+    <view class="hr"></view>
+
+    <!-- 问题描述框 -->
+    <view class="question con-column">
+      <view class="que">问题描述：</view>
+      <view class="text-box">
+        <textarea bindinput="textInput" class="text" placeholder="请输入问题详情，以便于我们更好的处理"></textarea>
+      </view>
+
+    </view>
+    <view class="btn" wx:if="{{type == null || date == null || time ==null}}">
+      <button   type="default" disabled="true">提交</button>
+    </view>
+    <view class="btn" wx:else>
+      <button  bindtap="submitRepair" type="primary">提交</button>
+    </view>
+
+  </view>
+</view>
