@@ -6,14 +6,22 @@ Page({
    */
   data: {
     fun:[
-      { id: 1, funName: "筹备业委会", funTitle: "建立我们自己的业委会", details: "对业委会进行筹备", image:"images/create.png"},
-      { id: 2, funName: "社区制度", funTitle: "查看规章制度", details: "查询相关法律制度,业委会制度以及公约", image: "images/regime.png" },
-      { id: 3, funName: "业委会办公", funTitle: "业委会日常工作", details: "完成业委会的日常工作", image: "images/office.png" },
-      { id: 4, funName: "投诉建议", funTitle: "发起投诉或建议", details: "对物业或业委会提建议或发起投诉", image: "images/advice.png" },
-      { id: 5, funName: "社区党建", funTitle: "党团建设", details: "对社区党务进行管理", image: "images/party.png" },
-      { id: 6, funName: "报事报修", funTitle: "监督线上保修上门服务", details: "查看上门维修的情况", image: "images/repair.png" },
-      { id: 6, funName: "业主欠费公示", funTitle: "业主欠费名单的公示", details: "查看业主们需要及时缴纳的费用", image: "images/formula.png" }
+      { id: 0, title: "组建业委会", url: "images/create.png",img: '../images/more-right.png'},
+      { id: 1, title: "社区制度", url: "images/regime.png", img: '../images/more-right.png'},
+      { id: 2, title: "投票选举",url: "images/office.png", img: '../images/more-right.png'},
+      { id: 3, title: "法规查询", url: "images/advice.png", img: '../images/more-right.png'},
+      { id: 4, title: "社区党建", url: "images/party.png", img: '../images/more-right.png'},
+      { id: 5, title: "业委会组织图",  url: "images/repair.png", img: '../images/more-right.png'},
+      { id: 6, title: "政府之窗", url: "images/formula.png", img: '../images/more-right.png'}
     ]
+  },
+  fun(e) {
+    var fun = this.data.fun[e.currentTarget.dataset.id]
+    console.log(fun.title)
+    wx.showToast({
+      title: fun.title + '正在开发中',
+      icon: "none",
+    })
   },
 
   /**

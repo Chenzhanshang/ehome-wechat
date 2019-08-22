@@ -36,6 +36,17 @@ Page({
       title: fun.title + ' 正在开发中',
       icon: "none",
     })
+    if(fun.id==0){
+      wx.navigateTo({
+        url: '../repair/repair',
+      })
+    }
+  },
+  chooseAddr(){
+    wx.showToast({
+      title: '该功能正在开发中',
+      icon: "none",
+    })
   },
   /**
    * 生命周期函数--监听页面加载
