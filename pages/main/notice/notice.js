@@ -1,15 +1,11 @@
-// pages/main/main.js
+// pages/notice/notice.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls:[
-      '../swiperImg/1.jpg',
-      '../swiperImg/2.jpg',
-      '../swiperImg/3.jpg',
-    ]
+
   },
 
   /**
@@ -67,16 +63,10 @@ Page({
   onShareAppMessage: function () {
 
   },
-  //首页公告被点击触发事件
-  noticeClick(){
+  //通知被点击
+  click(){
     wx.navigateTo({
-      url: 'notice/notice'
-    })
-  },
-  //首页活动被点击
-  activityClick(){
-    wx.navigateTo({
-      url: 'activity/activity'
+      url: 'details/details'
     })
   }
 })

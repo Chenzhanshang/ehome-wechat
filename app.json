@@ -4,12 +4,14 @@
     "pages/tenement/tenement",
     "pages/ehome/ehome",
     "pages/user/user",
-    "pages/committee/committee"
+    "pages/committee/committee",
+    "pages/main/notice/notice",
+    "pages/main/notice/details/details",
+    "pages/main/activity/activity"
   ],
   "tabBar": {
     "color": "#2c2c2c",
     "selectedColor": "#1296db",
-
     "list": [
       {
         "pagePath": "pages/main/main",

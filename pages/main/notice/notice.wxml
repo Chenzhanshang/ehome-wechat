@@ -1,0 +1,56 @@
+<!--pages/notice/notice.wxml-->
+<view class="replenish-mid"></view>
+<view class="replenish-mid"></view>
+<view class="announcement-box" bindtap="click">
+    <view class="announcement-content-box">
+      <view class="announcement-content-left">
+        <image class="notice-img" src="images/tenementNotice.png"></image>
+      </view>
+      <view class="announcement-content-mid">
+        <text class="announcement-title">关于小区停水通知</text>
+        <text class="announcement-date">2019-10-03</text>
+      </view>
+      <view class="announcement-content-right">
+        <view class="announcement-tag">物业</view>
+        <view class="announcement-details">...</view>
+      </view>
+    </view>
+  </view>
+
+<view class="replenish-mid"></view>
+<view class="replenish-mid"></view>
+<view class="announcement-box">
+    <view class="announcement-content-box">
+      <view class="announcement-content-left">
+        <image class="notice-img" src="images/governmentNotice.png"></image>
+      </view>
+      <view class="announcement-content-mid">
+        <text class="announcement-title">关于小区党建的通知</text>
+        <text class="announcement-date">2019-10-02</text>
+      </view>
+      <view class="announcement-content-right">
+        <view class="announcement-tag">政府</view>
+        <view class="announcement-details">...</view>
+      </view>
+    </view>
+  </view>
+<view class="replenish-mid"></view>
+<view class="replenish-mid"></view>
+<view class="announcement-box">
+    <view class="announcement-content-box">
+      <view class="announcement-content-left">
+        <image class="notice-img" src="images/committeeNotice.png"></image>
+      </view>
+      <view class="announcement-content-mid">
+        <text class="announcement-title">小康小区业委会正式成立</text>
+        <text class="announcement-date">2019-10-01</text>
+      </view>
+      <view class="announcement-content-right">
+        <view class="announcement-tag">业委会</view>
+        <view class="announcement-details">...</view>
+      </view>
+    </view>
+  </view>
+
+<view class="replenish-mid"></view>
+<view class="replenish-mid"></view>
