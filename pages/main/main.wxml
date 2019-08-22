@@ -28,68 +28,28 @@
   <view class="main-fun-box">
     <view class="fun-box">
       <!-- 上功能列表 -->
-      <view class="fun-box-top">
+      <view class="fun-box-top" >
         <!-- 功能 -->
-        <view class="fun">
-          <view class="img-box-view">
-            <image class="img-box" src="../images/weixiu.png"></image>
+        <view class="fun" wx:for="{{topFunArr}}" wx:key="index">
+          <view class="img-box-view" bindtap="tapfun" data-id="{{item.id}}">
+            <image class="img-box" src="{{item.url}}"></image>
           </view>
           <view class="img-box-text-view">
-            <text class="fun-text">报修</text> </view>
+            <text class="fun-text">{{item.title}}</text> </view>
         </view>
-        <view class="fun">
-          <view class="img-box-view">
-            <image class="img-box" src="../images/toupiao.png"></image>
-          </view>
-          <view class="img-box-text-view">
-            <text class="fun-text">议题投票</text> </view>
-        </view>
-        <view class="fun">
-          <view class="img-box-view">
-            <image class="img-box" src="../images/car.png"></image>
-          </view>
-          <view class="img-box-text-view">
-            <text class="fun-text">我的车</text> </view>
-        </view>
-        <view class="fun">
-          <view class="img-box-view">
-            <image class="img-box" src="../images/tousu.png"></image>
-          </view>
-          <view class="img-box-text-view">
-            <text class="fun-text">建议投诉</text> </view>
-        </view>
+        
       </view>
       <!-- 下功能列表 -->
-      <view class="fun-box-bot">
+      <view class="fun-box-bot" >
         <!-- 功能 -->
-        <view class="fun">
-          <view class="img-box-view">
-            <image class="img-box" src="../images/wuyefei.png"></image>
+        <view class="fun" wx:for="{{botFunArr}}">
+          <view class="img-box-view" bindtap="tapfun" data-id="{{item.id}}">
+            <image class="img-box" src="{{item.url}}"></image>
           </view>
           <view class="img-box-text-view">
-            <text class="fun-text">物业费</text> </view>
+            <text class="fun-text">{{item.title}}</text> </view>
         </view>
-        <view class="fun">
-          <view class="img-box-view">
-            <image class="img-box" src="../images/shequ.png"></image>
-          </view>
-          <view class="img-box-text-view">
-            <text class="fun-text">社区详情</text> </view>
-        </view>
-        <view class="fun">
-          <view class="img-box-view">
-            <image class="img-box" src="../images/qunliao.png"></image>
-          </view>
-          <view class="img-box-text-view">
-            <text class="fun-text">业主社群</text> </view>
-        </view>
-        <view class="fun">
-          <view class="img-box-view">
-            <image class="img-box" src="../images/more.png"></image>
-          </view>
-          <view class="img-box-text-view">
-            <text class="fun-text">更多</text> </view>
-        </view>
+        
       </view>
     </view>
 

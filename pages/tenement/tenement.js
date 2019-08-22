@@ -13,18 +13,18 @@ Page({
    */
   data: {
     funArr: [
-      {id:1, url: '../images/xqxx.png', title: '小区信息', img: '../images/more-right.png'}, 
-      {id:2, url: '../images/fkyq.png', title: '访客邀请', img: '../images/more-right.png' }, 
-      { id: 3,url: '../images/wygj.png', title: '物业管家', img: '../images/more-right.png' }, 
-      { id: 4,url: '../images/fwjf.png', title: '房屋交付', img: '../images/more-right.png' }, 
-      { id: 5,url: '../images/wzjb.png', title: '违章举报', img: '../images/more-right.png' }, 
-      { id: 6,url: '../images/wygg.png', title: '物业公告', img: '../images/more-right.png' }, 
-      { id: 7,url: '../images/znmj.png', title: '智能门禁', img: '../images/more-right.png' }, 
-      { id: 8,url: '../images/jyfk.png', title: '建议反馈', img: '../images/more-right.png' }, 
+      {id:0, url: '../images/xqxx.png', title: '小区信息', img: '../images/more-right.png'}, 
+      {id:1, url: '../images/fkyq.png', title: '访客邀请', img: '../images/more-right.png' }, 
+      { id: 2,url: '../images/wygj.png', title: '物业管家', img: '../images/more-right.png' }, 
+      { id: 3,url: '../images/fwjf.png', title: '房屋交付', img: '../images/more-right.png' }, 
+      { id: 4,url: '../images/wzjb.png', title: '违章举报', img: '../images/more-right.png' }, 
+      { id: 5,url: '../images/wygg.png', title: '物业公告', img: '../images/more-right.png' }, 
+      { id: 6,url: '../images/znmj.png', title: '智能门禁', img: '../images/more-right.png' }, 
+      { id: 7,url: '../images/jyfk.png', title: '建议反馈', img: '../images/more-right.png' }, 
       ],
   },
   fun(e){
-    var fun = this.data.funArr[e.currentTarget.dataset.id-1]
+    var fun = this.data.funArr[e.currentTarget.dataset.id]
     console.log(fun.title)
     wx.showToast({
       title: fun.title+'正在开发中',

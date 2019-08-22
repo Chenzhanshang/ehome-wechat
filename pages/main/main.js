@@ -9,9 +9,34 @@ Page({
       '../swiperImg/1.jpg',
       '../swiperImg/2.jpg',
       '../swiperImg/3.jpg',
-    ]
+    ],
+    topFunArr: [
+      { id: 0, url: "../images/weixiu.png", title: '报修' },
+      { id: 1, url: "../images/toupiao.png", title: '议题投票' },
+      { id: 2, url: "../images/car.png", title: '我的车'},
+      { id: 3, url: "../images/tousu.png", title: '建议投诉' },
+      
+    ],
+    botFunArr:[
+      { id: 4, url: "../images/wuyefei.png", title: '物业缴费' },
+      { id: 5, url: "../images/shequ.png", title: '社区详情' },
+      { id: 6, url: "../images/qunliao.png", title: '业主社群' },
+      { id: 7, url: "../images/more.png", title: '更多' },
+    ],
   },
-
+  tapfun(e){
+    var fun;
+    if (e.currentTarget.dataset.id<=3){
+       fun = this.data.topFunArr[e.currentTarget.dataset.id]
+    } else if (e.currentTarget.dataset.id > 3){
+      fun = this.data.botFunArr[e.currentTarget.dataset.id-4]
+    }
+    console.log(fun.title)
+    wx.showToast({
+      title: fun.title + ' 正在开发中',
+      icon: "none",
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
