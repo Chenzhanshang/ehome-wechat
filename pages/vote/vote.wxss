@@ -7,8 +7,94 @@ page{
   height: 100%;
 }
 .main-box{
+  display: flex;
   width: 100%;
   height: 100%;
   align-items: center;
   align-content: center;
+  background: #eee;
+}
+.top-bar{
+  padding-top: 3px;
+  width: 100%;
+  text-align: right;
+  background: #1296db;
+  color: #fff;
+  height: 25px;
+  font-size: 14px;
+  
+}
+.mini-bar-right{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  background: #1296db;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.activity{
+  background: #63a7cc;
+}
+
+.mini-bar{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  background: #1296db;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.mini-bar-c{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  background: #63a7cc;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.mid-bar{
+  width: 60%;
+  margin: 15px;
+}
+.vote-box{
+  width: 85%;
+  border: 1px solid #fff;
+  align-items: center;
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 5px;
+}
+.vote-content{
+  width: 95%;
+  justify-content: center;
+}
+.left{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  margin-top: 7px;
+  
+}
+.right{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  margin-top: 7px;
+  
+}
+.btn-box{
+  border: 1px solid #1296db;
+  background: #1296db;
+  margin-bottom: 5px;
+  color: #fff;
+  margin: 15px;
+  width: 100px;
+  border-radius: 10px;
+}
+.vote-title{
+  margin: 5px;
+}
+.vote-hr{
+  width: 100%;
+  border: 0.5px solid #1296db;
 }

@@ -5,6 +5,7 @@
     <SearchBar id="SearchBar" addflag="{{addflag}}" addimg="{{addimg}}" bind:addhandle="addhandle" searchstr="{{searchstr}}" bind:searchList="searchList" bind:endsearchList="endsearchList" bind:cancelsearch="cancelsearch" bind:activity_clear="activity_clear">
     </SearchBar>
     <view class="souSuoRuZhuFenGe"></view>
+ 
     <view class="Search-box-right ruzhu">
       <text >服务入驻</text>
     </view>

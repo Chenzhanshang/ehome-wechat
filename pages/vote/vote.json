@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    
+  },
   "navigationBarTitleText": "议题投票"
 }
