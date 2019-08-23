@@ -1,5 +1,18 @@
-@import "component/func.wxss";
 /* pages/ehome/ehome.wxss */
+.Search-box{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#SearchBar{
+  width: 80%;
+}
+.Search-box-right{
+  width: 20%;
+}
+
 .swiper-img-item{
   width: 100%;
   border: 0px solid #eee;
@@ -44,39 +57,10 @@ page{
   height: 30px;
   width: 2px;
 }
-
-.t{
-  /* font-weight: 200; */
-  color: #999;
-  font-family:"方正舒体"; 
-}
 .search{  
   width: 70%;  
 }  
-.search_arr {  
-border: 1px solid #d0d0d0;  
-border-radius: 20px;  
-margin-left: 20rpx;  
-}  
-.search_arr input{  
-margin-left: 60rpx;  
-height: 60rpx;  
-border-radius: 5px;  
-}  
-.bc_text {  
-line-height: 68rpx;  
-height: 68rpx;  
-margin-top: 34rpx;  
-}  
 
-.page_row{  
-display: flex;  
-flex-direction: row;
-justify-content: space-around;
-align-items: center;
-margin-top: 5px;
-margin-bottom: 5px;
-}  
 .ruzhu{
   
   display: flex;
@@ -84,17 +68,9 @@ margin-bottom: 5px;
   align-items: center;
   justify-content:center;
   margin-right:10px;
+  font-size: 13px;
+  color: #999;
 }
-
-.searchcion {  
-  margin: 10rpx 10rpx 10rpx 10rpx;  
-  position: absolute;  
-  left:40rpx;  
-  z-index: 2;  
-  width: 20px;  
-  height: 20px;  
-  text-align: center;  
-}  
 
 .classify{
   display: flex;
@@ -108,12 +84,65 @@ margin-bottom: 5px;
   margin-right: 3px;
 }
 
-.classify-fenge{
-  background-color: #999;
-  height: 15px;
-  width: 2px;
+.selected{
+  font-family:"方正舒体"; 
+  color: black;
 }
 
-.selected{
-  color: black;
+.box{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.item{
+  padding:10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.item-img-ext{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left:10px; 
+  margin-right:10px; 
+}
+
+.item-img {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.text{
+  font-size: 12px;
+  color: #999;
+  margin-top:5rpx;
+}
+
+.item-left{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.item-right{
+  width: 10%;
+}
+
+.fun-text{
+  margin: 5px;
+  font-size:20px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.scroll-view_H{
+  white-space: nowrap;
+}
+.b{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
 }
