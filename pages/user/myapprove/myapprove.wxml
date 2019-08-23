@@ -1,0 +1,12 @@
+<view class="main con-column">
+  <view class="main-box con-column">
+    <!-- 已认证小区 -->
+    <view class="home con-row">
+      <view class="">小康小区</view>
+      <view class="img-box">
+        <image class="img" src="img/wxz.png"></image>
+      </view>
+    </view>
+
+  </view>
+</view>

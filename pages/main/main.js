@@ -40,6 +40,10 @@ Page({
       wx.navigateTo({
         url: '../repair/repair',
       })
+    }else if(fun.id==1){
+      wx.navigateTo({
+        url: '../vote/vote',
+      })
     }
   },
   chooseAddr(){
