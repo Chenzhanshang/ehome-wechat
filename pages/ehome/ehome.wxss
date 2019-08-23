@@ -51,11 +51,11 @@ page{
   font-family:"方正舒体"; 
 }
 .search{  
-  width: 80%;  
+  width: 70%;  
 }  
 .search_arr {  
 border: 1px solid #d0d0d0;  
-border-radius: 10rpx;  
+border-radius: 20px;  
 margin-left: 20rpx;  
 }  
 .search_arr input{  
@@ -78,6 +78,7 @@ margin-top: 5px;
 margin-bottom: 5px;
 }  
 .ruzhu{
+  
   display: flex;
   flex-direction: row;
   align-items: center;
