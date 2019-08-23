@@ -5,7 +5,14 @@
   border: 0px solid #eee;
   border-radius: 10px;
 }
-
+.swiper-img{
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  border: 0px solid #eee;
+  border-radius: 10px;
+}
 .swiper-view-box{
   display: flex;
   justify-items: center;

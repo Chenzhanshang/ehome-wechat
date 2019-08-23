@@ -1,0 +1,11 @@
+<view class="main con-column">
+  <view class="main-box con-column">
+    <view class="top-bar con-row">
+      <text>申请列表</text>
+    </view>
+    <view class="mid-bar con-row">
+      <view class="mini-bar">待投票</view>
+      <view class="mini-bar">已投票</view>
+    </view>
+  </view>
+</view>

@@ -8,7 +8,8 @@
     "pages/main/notice/notice",
     "pages/main/notice/details/details",
     "pages/main/activity/activity",
-    "pages/repair/repair"
+    "pages/repair/repair",
+    "pages/vote/vote"
   ],
   "tabBar": {
     "color": "#2c2c2c",
