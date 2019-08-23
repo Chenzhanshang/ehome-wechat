@@ -11,7 +11,8 @@
     "pages/repair/repair",
     "pages/vote/vote",
     "pages/vote/votedetails/votedetalis",
-    "pages/vote/votefinal/votefinal"
+    "pages/vote/votefinal/votefinal",
+    "pages/user/myapprove/myapprove"
   ],
   "tabBar": {
     "color": "#2c2c2c",

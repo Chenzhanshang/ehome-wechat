@@ -12,8 +12,8 @@
     <view class="replenish-mid" > </view>
   </block>
 
-  <view wx:for="{{funList}}" wx:for-item="fun" wx:key="{{fun.id}}">
-    <view class="item">
+  <view  wx:for="{{funList}}" wx:for-item="fun" wx:key="{{fun.id}}" >
+    <view class="item" bindtap="fun" data-id="{{fun.id}}">
       <view class="image-ext">
         <image  class="image" src="{{fun.image}}"></image>
         <text>{{fun.funName}}</text>
