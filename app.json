@@ -9,7 +9,9 @@
     "pages/main/notice/details/details",
     "pages/main/activity/activity",
     "pages/repair/repair",
-    "pages/vote/vote"
+    "pages/vote/vote",
+    "pages/vote/votedetails/votedetalis",
+    "pages/vote/votefinal/votefinal"
   ],
   "tabBar": {
     "color": "#2c2c2c",
