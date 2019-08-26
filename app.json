@@ -14,6 +14,9 @@
     "pages/vote/votefinal/votefinal",
     "pages/user/myapprove/myapprove",
     "pages/user/approvehome/approvehome",
+    "pages/user/approvehome/building/building",
+    "pages/user/approvehome/building/homenum/homenum",
+    "pages/user/approvehome/building/homenum/approve/approve"
     "pages/user/mymessage/mymessage",
     "pages/user/mymessage/messagedetails/messagedetails"
   ],
