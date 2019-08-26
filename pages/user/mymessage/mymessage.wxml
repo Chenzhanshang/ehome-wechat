@@ -1,0 +1,23 @@
+<!--pages/user/mymessage/mymessage.wxml-->
+<view   bindtouchstart="touchstart" bindtouchend="touchend" wx:for="{{msg}}"
+data-index="{{index}}"  wx:for-item="item" wx:key="index">
+  <slide-view width="750" height="110" slide-width="300">
+  <view bindtap="viewClick" data-index="{{index}}" slot="left" class="{{item.status}} l">
+    <view class='text'>
+      <view class='title'>
+        <text>{{item.title}}</text>
+        <text class="time">{{item.date}}</text>
+      </view>
+      <view  class="tips">
+        <text class="details-text">详细信息</text>
+        <view wx:if="{{!item.isread}}" class="bubbles"></view>
+      </view>
+    </view>
+  </view>
+  <view slot="right" class="r">
+    <view class='read' data-index="{{index}}" bindtap="reading" >标为已读</view>
+    <view class='delete' data-index="{{index}}" bindtap="delete">删除</view>
+  </view>
+</slide-view>
+  <view class="bar"></view>
+</view>

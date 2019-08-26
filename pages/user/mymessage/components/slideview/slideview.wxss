@@ -1,0 +1,10 @@
+/* pages/user/mymessage/components/slideview/slideview.wxss */
+.movable-view{
+  display: flex;
+  direction: row;
+  overflow: hidden;
+}
+
+.container {
+  overflow: hidden;
+}
