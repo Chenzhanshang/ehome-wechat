@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "slide-view": "/pages/user/mymessage/components/slideview/slideview"
+  },
+  "navigationBarTitleText": "我的消息"
+}
