@@ -12,7 +12,8 @@
     "pages/vote/vote",
     "pages/vote/votedetails/votedetalis",
     "pages/vote/votefinal/votefinal",
-    "pages/user/myapprove/myapprove"
+    "pages/user/myapprove/myapprove",
+    "pages/user/approvehome/approvehome"
   ],
   "tabBar": {
     "color": "#2c2c2c",
