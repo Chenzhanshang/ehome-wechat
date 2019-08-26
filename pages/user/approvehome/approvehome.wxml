@@ -1,0 +1,11 @@
+<view class="main con-column">
+  <view class="main-box con-column">
+    <view class="xiaoqu con-column">
+      <view>选择小区:</view>
+      <picker   range="{{xiaoquName}}" ><view>请选择</view></picker>
+     
+
+    </view>
+
+  </view>
+</view>

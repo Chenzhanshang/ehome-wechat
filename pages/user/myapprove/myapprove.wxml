@@ -1,11 +1,18 @@
 <view class="main con-column">
   <view class="main-box con-column">
     <!-- 已认证小区 -->
-    <view class="home con-row">
-      <view class="">小康小区</view>
-      <view class="img-box">
-        <image class="img" src="img/wxz.png"></image>
+    <view class="home con-row" wx:for="{{homeArray}}" wx:key="index">
+      <view class="title">{{item.name}}</view>
+      <view class="img-box" wx:if="{{item.isSelected==0}}">
+        <image bindtap="unselected" data-id="{{item.id}}" class="img" src="img/wxz.png"></image>
       </view>
+      <view class="img-box" wx:else>
+        <image bindtap="selected" data-id="{{item.id}}" class="img" src="img/xz.png"></image>
+      </view>
+    </view>
+    <!--  -->
+    <view class="home con-row btn">
+      <button class="btn-b" bindtap="renzheng" type="primary">认证房屋</button>
     </view>
 
   </view>
