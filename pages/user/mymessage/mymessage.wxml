@@ -1,7 +1,15 @@
 <!--pages/user/mymessage/mymessage.wxml-->
 <block  wx:for="{{msg}}" wx:for-item="item" wx:key="index">
   <mp-slideview bindtap="toDetails" data-id="{{item.id}}" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
-      <mp-cell  hover="true" value="{{item.title}}" footer="{{item.isread?'已阅':'详情'}}"></mp-cell>
+      <view class="weui-cell weui-cell_access">
+        <view class="weui-cell__bd">
+              <view style="display: inline-block; vertical-align: middle">
+              {{item.title}}
+              </view>
+              <view wx:if="{{!item.isread}}" class="weui-badge" style="margin-left: 5px;">New</view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
   </mp-slideview>
   <view class="bar"></view>
 </block>
