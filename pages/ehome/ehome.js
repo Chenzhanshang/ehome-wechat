@@ -5,6 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    inputShowed: false,
+    inputVal: "",
+    maskFlag:false,
     imgUrls: [
       '../swiperImg/1.jpg',
       '../swiperImg/2.jpg',
@@ -117,5 +120,34 @@ Page({
     wx.showToast({
       title: '正在开发中',
     })
+  },
+  showInput: function () {
+    console.log("showInput");
+    this.setData({
+      inputShowed: true,
+      maskFlag: true
+    });
+  },
+  hideInput: function () {
+    console.log("hideInput");
+    this.setData({
+      inputVal: "",
+      inputShowed: false,
+      maskFlag: false
+    });
+  },
+  clearInput: function () {
+    console.log("clearInput");
+    this.setData({
+      inputVal: "",
+      maskFlag: false
+    });
+  },
+  inputTyping: function (e) {
+    console.log("inputTyping");
+    this.setData({
+      inputVal: e.detail.value,
+      maskFlag: true
+    });
   }
 })
