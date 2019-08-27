@@ -17,7 +17,7 @@ page{
   flex-direction: column;
   width: 100%;
   background: #6fadda;
-  height: 300px;
+  height: 200px;
 }
 .fun{
   display: flex;
