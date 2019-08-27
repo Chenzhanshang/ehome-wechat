@@ -1,0 +1,19 @@
+<!--pages/user/mymessage/messagedetails/messagedetails.wxml-->
+<scroll-view >
+  <view class="title">
+    <text class="title-text">{{msg.title}}</text>
+  </view>
+  
+  <view class="date">
+    <text class="text announcement-date">个人</text>
+    <text class="text announcement-date">{{msg.date}}</text>
+  </view>
+
+  <view class="replenish-mid"></view>
+
+  <view class="body">
+    <text class="text">
+    {{msg.content}}
+    </text>
+  </view>
+  </scroll-view>

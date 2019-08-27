@@ -10,8 +10,8 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     funList:[
-      { id: 0, funName: "业主认证", image:"images/authentication.png"},
-      { id: 1, funName: "我的消息", image: "images/msg.png" },
+      { id: 0, funName: "业主认证", image: "images/authentication.png", url:"myapprove/myapprove"},
+      { id: 1, funName: "我的消息", image: "images/msg.png", url: "mymessage/mymessage" },
       { id: 2, funName: "我的上报", image: "images/report.png" },
       { id: 3, funName: "发起活动", image: "images/sponsor.png" },
       { id: 4, funName: "我的订单", image: "images/order.png" },
@@ -19,12 +19,14 @@ Page({
     ]
   },
   fun(e){
-    console.log(e.currentTarget.dataset.id)
-    if(e.currentTarget.dataset.id==0){
-      wx.navigateTo({
-        url: 'myapprove/myapprove',
-      })
-    }
+    console.log(e.currentTarget.dataset.index)
+    var index = e.currentTarget.dataset.index;
+    
+    var to = this.data.funList[index].url;
+    // console.log(url);
+    wx.navigateTo({
+      url: to
+    })
   },
 
   /**

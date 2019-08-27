@@ -1,0 +1,8 @@
+<!--pages/user/mymessage/mymessage.wxml-->
+<block  wx:for="{{msg}}" wx:for-item="item" wx:key="index">
+  <mp-slideview  data-id="{{index}}" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
+      <mp-cell hover="true" value="{{item.title}}" footer="详细信息"></mp-cell>
+  </mp-slideview>
+  <view class="bar"></view>
+</block>
+
