@@ -1,5 +1,6 @@
 {
   "pages": [
+    
     "pages/main/main",
     "pages/tenement/tenement",
     "pages/ehome/ehome",
@@ -17,6 +18,7 @@
     "pages/user/approvehome/building/building",
     "pages/user/approvehome/building/homenum/homenum",
     "pages/user/approvehome/building/homenum/approve/approve"
+    
   ],
   "tabBar": {
     "color": "#2c2c2c",

@@ -1,45 +1,58 @@
 <view class="main con-column">
   <view class="main-box con-column">
-    <view class="main-box con-column">
-      <view class="top-box con-column">
-        <view>小康小区</view>
-        <view class="con-row">
-          <view>小康小区3幢 </view>
-          <view> 301</view>
+    <scroll-view class="main-box con-column" scroll-y="true">
+      <view class="main-box con-column">
+      <view class="top con-column">
+        <view class="top-box con-column">
+          <view class="title">小康小区</view>
+          <view class="con-row">
+            <view>小康小区3幢 •</view>
+            <view style="margin-left:5px;"> 301</view>
+          </view>
+
         </view>
       </view>
+
+
       <view class="item-box con-row">
-        <view>姓名：</view>
-        <view>
-          <input placeholder="请输入业主姓名"></input>
+        <view class="tagname">姓名：</view>
+        <view class="input-box">
+          <input class="input-item" placeholder-class="pclass" placeholder="请输入业主姓名"></input>
         </view>
       </view>
+      <view class="hr"></view>
       <view class="item-box con-row">
-        <view>电话：</view>
-        <view>
-          <input placeholder="请输入业主电话"></input>
+        <view class="tagname">电话：</view>
+        <view class="input-box">
+          <input type="number" class="input-item" placeholder-class="pclass" placeholder="请输入业主电话"></input>
         </view>
       </view>
+      <view class="hr"></view>
       <view class="item-box con-row">
-        <view>身份证号码：</view>
-        <view>
-          <input placeholder="请输入身份证号码"></input>
+        <view class="tagname">身份证号码：</view>
+        <view class="input-box">
+          <input type="idcard" class="input-item" placeholder-class="pclass" placeholder="请输入身份证号码"></input>
         </view>
       </view>
+
       <!--WXML示例代码-->
       <mp-cells>
         <mp-cell>
-          <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}"  max-count="5" title="身份证正反两面照片" tips="图片上传提示"></mp-uploader>
+          <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" max-count="5" title="证件照" tips="身份证正反两面照片"></mp-uploader>
         </mp-cell>
       </mp-cells>
-          <!--WXML示例代码-->
+      <!--WXML示例代码-->
       <mp-cells>
         <mp-cell>
-          <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}"  max-count="5" title="房产证照片" tips="图片上传提示"></mp-uploader>
+          <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" max-count="5" title="房产证照片" tips="图片上传提示"></mp-uploader>
         </mp-cell>
       </mp-cells>
 
 
     </view>
+    
+    </scroll-view>
+    <button class="btn" type="primary">提交</button>
+    
   </view>
 </view>
