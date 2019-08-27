@@ -12,7 +12,6 @@ Page({
     funList:[
       { id: 0, funName: "业主认证", image: "images/authentication.png", url:"myapprove/myapprove"},
       { id: 1, funName: "我的消息", image: "images/msg.png", url: "mymessage/mymessage" },
-      { id: 2, funName: "我的上报", image: "images/report.png" },
       { id: 3, funName: "发起活动", image: "images/sponsor.png" },
       { id: 4, funName: "我的订单", image: "images/order.png" },
       { id: 5, funName: "一键报警", image: "images/calPolice.png" },
