@@ -48,6 +48,11 @@
             <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" max-count="5" title="房产证照片" tips="图片上传提示"></mp-uploader>
           </mp-cell>
         </mp-cells>
+        <view class="bar-w"></view>
+        <view class="bar-w"></view>
+        <view class="bar-w"></view>
+        <view class="bar-w"></view>
+        <view class="bar-w"></view>
 
       </scroll-view>
     </view>
