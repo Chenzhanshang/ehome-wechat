@@ -10,6 +10,12 @@ Page({
       { id: 1, title: "关于小区停水通知", date: "2019-08-26 10:55:30", isread: true, status: "unselected"},
       { id: 2, title: "创建业委会投票结果", date: "2019-08-27 00:00:00", isread: false, status: "unselected"}
     ],
+    slideButtons: [{
+      text: '已阅'
+    }, {
+      type: 'warn',
+      text: '删除'
+    }],
   },
 
   /**
@@ -76,9 +82,7 @@ Page({
       [str]:true
     });
   },
-  delete(data){
-    console.log(data.currentTarget.dataset.index);
-    var index = data.currentTarget.dataset.index;
+  delete(index){
     var arr = this.data.msg;
     arr.splice(index, 1);
     // var newmsg =  ;
@@ -86,30 +90,13 @@ Page({
       msg: arr
     });
   },
-  touchstart(e){
-    var index = e.currentTarget.dataset.index;
-    var str = "msg[" + index+"].status";
-    this.setData({
-      [str]:"selected"
-    });
-  },
-  touchend(e) {
-    var index = e.currentTarget.dataset.index;
-    var str = "msg[" + index + "].status";
-    this.setData({
-      [str]: "unselected"
-    });
-  },
-  viewClick(e){
-    var index = e.currentTarget.dataset.index;
-    console.log("点击view");
-    var data = this.data.msg[index];
-    wx.navigateTo({
-      url: 'messagedetails/messagedetails',
-      success:res => {
-        res.eventChannel.emit('data', data);
-      }
-    })
+  slideButtonTap(e) {
+    if (e.detail.index == 0){
 
+    }
+    else if (e.detail.index == 1){
+      this.delete(e.currentTarget.dataset.id);
+    }
   }
+
 })

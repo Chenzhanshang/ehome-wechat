@@ -1,6 +1,9 @@
 {
   "usingComponents": {
-    "slide-view": "/pages/user/mymessage/components/slideview/slideview"
+    "mp-slideview": "/miniprogram_npm/weui-miniprogram/slideview/slideview",
+    "mp-cells": "/miniprogram_npm/weui-miniprogram/cells/cells",
+    "mp-cell": "/miniprogram_npm/weui-miniprogram/cell/cell",
+    "mp-badge": "/miniprogram_npm/weui-miniprogram/badge/badge"
   },
   "navigationBarTitleText": "我的消息"
 }
