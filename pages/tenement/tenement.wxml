@@ -1,5 +1,6 @@
 <view class="main">
   <view class="main-box">
+  <scroll-view class="main-box" scroll-y="true" >
     <!-- 顶部框 -->
     <view class="top-box">
       <view class="bg-img">
@@ -9,21 +10,23 @@
         </view>
       </view>
       <view class="bg-img-bot">
-        <image src="../bgImg/wy.jpeg" style="width:100%;height:100px"></image>
+        <image src="../bgImg/wy.jpeg" style="width:100%;height:350rpx;"></image>
       </view>
     </view>
     <view class="bar"></view>
-    <!-- 功能栏 -->
-  <navigator  wx:for="{{funArr}}" wx:key="index"  class="weui-cell weui-cell_example weui-cell_access" hover-class="weui-cell_active">
-    <view class="weui-cell__hd">
-       <image src="{{item.url}}" style="width: 20px;height: 20px;margin-right: 16px;vertical-align:middle;" />
+    
+      <!-- 功能栏 -->
+      <navigator style="background:#fff;" wx:for="{{funArr}}" wx:key="index" class="weui-cell weui-cell_example weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+          <image src="{{item.url}}" style="width: 20px;height: 20px;margin-right: 16px;vertical-align:middle;" />
         </view>
         <view class="weui-cell__bd weui-cell_primary">
-            <view>{{item.title}}</view>
+          <view>{{item.title}}</view>
         </view>
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
+      </navigator>
+    </scroll-view>
+    
 
   </view>
 </view>
-
