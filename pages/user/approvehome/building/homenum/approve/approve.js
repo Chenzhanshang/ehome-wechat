@@ -115,9 +115,21 @@ Page({
   },
   uplaodFile(files) {
     console.log('upload files', files)
+    
     // 文件上传的函数，返回一个promise   
     return new Promise((resolve, reject) => {
-      resolve({urls:""})//猜测为上传服务器地址
+      //将文件上传到服务器
+      wx.uploadFile({
+        url: 'http://localhost/ehome/uploadfile',
+        filePath: files.tempFilePaths,
+        name: 'file',
+        success(res) {
+          resolve({ urls: "" })
+        }, complete() {
+          resolve({ urls: "" })
+        }
+      })
+      
       setTimeout(() => {
         reject('some error')
       }, 1000)
