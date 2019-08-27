@@ -9,7 +9,6 @@ page{
 .main-box{
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
   height: 100%;
 }
@@ -18,7 +17,7 @@ page{
   flex-direction: column;
   width: 100%;
   background: #6fadda;
-  height: 200px;
+  height: 300px;
 }
 .fun{
   display: flex;

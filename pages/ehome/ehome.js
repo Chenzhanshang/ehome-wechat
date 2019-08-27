@@ -50,6 +50,9 @@ Page({
     this.setData({
       pass:this.data.fun[0]
     });
+    this.setData({
+      search: this.search.bind(this)
+    })
   },
 
   /**
@@ -100,30 +103,19 @@ Page({
   onShareAppMessage: function () {
 
   },
-  //搜索框输入时触发
-  searchList(ev) {
-    let e = ev.detail;
-    this.setData({
-      searchstr: e.detail.value
+  search: function (value) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve([{ text: '搜索结果', value: 1 }, { text: '搜索结果2', value: 2 }])
+      }, 200)
     })
-    console.log(this.data.searchstr);
   },
-  //搜索回调
-  endsearchList(e) {
-    console.log('查询数据')
+  selectResult: function (e) {
+    console.log('select result', e.detail)
   },
-  // 取消搜索
-  cancelsearch() {
-    this.setData({
-      searchstr: ''
+  enter(){
+    wx.showToast({
+      title: '正在开发中',
     })
-    console.log('取消搜索')
-  },
-  //清空搜索框
-  activity_clear(e) {
-    this.setData({
-      searchstr: ''
-    })
-    console.log('清空搜索框')
   }
 })
