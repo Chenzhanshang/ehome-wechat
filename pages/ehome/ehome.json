@@ -1,7 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "SearchBar":"/pages/ehome/components/search/search"
+    "mp-searchbar": "/miniprogram_npm/weui-miniprogram/searchbar/searchbar"
   },
   "navigationBarTitleText": "e家"
 }

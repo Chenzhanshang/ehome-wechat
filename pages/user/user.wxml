@@ -12,18 +12,19 @@
     <view class="replenish-mid" > </view>
   </block>
 
-  <view  wx:for="{{funList}}" wx:for-item="fun" wx:key="{{fun.id}}" >
-    <view class="item" bindtap="fun" data-index="{{index}}">
-      <view class="image-ext">
-        <image  class="image" src="{{fun.image}}"></image>
-        <text>{{fun.funName}}</text>
-      </view>
-      <image  class="right" src="images/right.png"></image>
-    </view>
-    <view class="replenish-mid" ></view>
-  </view>
+  <navigator wx:for="{{funList}}" wx:for-item="fun" wx:key="{{fun.id}}" url="{{fun.url}}" class="weui-cell weui-cell_example weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+       <image src="{{fun.image}}" style="width: 20px;height: 20px;margin-right: 16px;vertical-align:middle;" />
+        </view>
+        <view class="weui-cell__bd weui-cell_primary">
+            <view>{{fun.funName}}</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+
 
   <block wx:for="{{107}}" wx:key="index">
     <view class="replenish-mid" > </view>
   </block>
 </scroll-view>
+

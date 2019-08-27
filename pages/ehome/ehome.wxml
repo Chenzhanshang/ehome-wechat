@@ -1,17 +1,8 @@
 <!--pages/ehome/ehome.wxml-->
 <view style="width:100%;height:100%">
-  <!-- 搜索\入驻 -->
-  <view class="Search-box"  >
-    <SearchBar id="SearchBar" addflag="{{addflag}}" addimg="{{addimg}}" bind:addhandle="addhandle" searchstr="{{searchstr}}" bind:searchList="searchList" bind:endsearchList="endsearchList" bind:cancelsearch="cancelsearch" bind:activity_clear="activity_clear">
-    </SearchBar>
-    <view class="souSuoRuZhuFenGe"></view>
- 
-    <view class="Search-box-right ruzhu">
-      <text >服务入驻</text>
-    </view>
-</view>
-
-  <view class="replenish-mid"> </view>
+  <!-- 搜索 -->
+  <mp-searchbar  bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+  
   <view class="replenish-mid"> </view>
   <!-- 轮播图 广告位 -->
   <view class="swiper-view-box">
@@ -30,8 +21,13 @@
 
   <!-- 分类标签 -->
   <view class="classify" style="padding:8px;">
-    <text  class="classify-left-right selected">服务</text>
-    <text  class="classify-left-right" style="color:#999;">市集</text>
+    <view>
+      <text  class="classify-left-right selected">服务</text>
+      <text  class="classify-left-right" style="color:#999;">市集</text>
+    </view>
+    <view>
+      <text bindtap="enter" style="color:#999;">服务入驻</text>
+    </view>
   </view>
   <view class="replenish-mid"> </view>
 
@@ -58,9 +54,5 @@
     </view>
     <view class="replenish-mid"></view>
   </block>
-
   </view>
-  <block wx:for="{{75}}">
-  <view class="replenish-mid"></view>
-  </block>
-  </view>
+ </view>
