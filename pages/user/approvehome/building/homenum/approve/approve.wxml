@@ -1,6 +1,6 @@
 <view class="main con-column">
   <view class="main-box con-column">
-    <scroll-view class="main-box con-column" scroll-y="true">
+    <scroll-view class="scroll-box con-column" scroll-y="true">
       <view class="main-box con-column">
       <view class="top con-column">
         <view class="top-box con-column">
@@ -55,4 +55,5 @@
     <button class="btn" type="primary">提交</button>
     
   </view>
+  
 </view>
