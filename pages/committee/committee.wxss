@@ -18,7 +18,7 @@ page{
   flex-direction: column;
   width: 100%;
   background: #eee;
-  height: 180px;
+  height: 200px;
 }
 .fun{
   display: flex;
@@ -31,7 +31,7 @@ page{
   display: flex;
   flex-direction: row;
   width: 98%;
-  height: 50px;
+  height: 60px;
   background: #fff;
   align-items: center;
   border: 1px solid #eee;
@@ -69,4 +69,9 @@ page{
   align-items: center;
   width: 100%;
   background: #eee;
+}
+.bg-img-bot{
+  width: 100%;
+  border-radius: 5px;
+  
 }

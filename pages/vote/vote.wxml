@@ -22,9 +22,13 @@
           <view class="btn-box right" bindtap="votefinal">查看结果</view>
         </view>
       </view>
+      <view wx:for="{{10}}" wx:key="index">
+        <view class="bar"></view>
+      </view>
     </view>
-
+    
+    
 
   </scroll-view>
-
+    
 </view>

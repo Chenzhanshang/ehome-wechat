@@ -1,9 +1,10 @@
 <view class="main">
   <view class="main-box">
+  
     <!-- 顶部框 -->
     <view class="top-box">
       <view class="bg-img-bot">
-        <image src="../bgImg/ywh.jpg" style="width:100%;height:175px;"></image>
+        <image src="../images/ywh.png" style="width:97%;height:350rpx;border-radius: 10px;margin-left: 5px;margin-right: 5px;margin-top: 10px;margin-bottom: 5px;"></image>
       </view>
     </view>
     <view class="bar"></view>
