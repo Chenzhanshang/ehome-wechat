@@ -106,19 +106,13 @@ Page({
   onShareAppMessage: function () {
 
   },
-  search: function (value) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve([{ text: '搜索结果', value: 1 }, { text: '搜索结果2', value: 2 }])
-      }, 200)
-    })
-  },
   selectResult: function (e) {
     console.log('select result', e.detail)
   },
   enter(){
     wx.showToast({
       title: '正在开发中',
+      icon: 'none'
     })
   },
   showInput: function () {
@@ -149,5 +143,18 @@ Page({
       inputVal: e.detail.value,
       maskFlag: true
     });
+  },
+  toFair(){
+      wx.showModal({
+          title: '提示',
+          content: '要跳转到xxx',
+          success:(res) =>{
+              if(res.confirm){
+                  console.log("跳转到其他小程序");
+              }else{
+                  console.log("取消跳转");
+              }
+          }
+      })
   }
 })
