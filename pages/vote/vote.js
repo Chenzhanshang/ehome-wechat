@@ -10,8 +10,8 @@ Page({
       { id: 0, title: "关于成立小康小区业委会", topic: "成立业主委员会", addr: "小康小区", startTime: "2019-10-01", endTime: "2019-10-02", voteStatus: "投票中", flag: 0 },
       { id: 1, title: "关于成立小康小区业委会", topic: "成立业主委员会", addr: "小康小区", startTime: "2019-10-01", endTime: "2019-10-02", voteStatus: "投票中", flag: 0 },
       { id: 2, title: "关于成立小康小区业委会", topic: "成立业主委员会", addr: "小康小区", startTime: "2019-10-01", endTime: "2019-10-02", voteStatus: "投票中", flag: 0 },
-      { id: 3, title: "关于成立小康小区业委会", topic: "成立业主委员会", addr: "小康小区", startTime: "2019-10-01", endTime: "2019-10-02", voteStatus: "投票中", flag: 1 },
-      { id: 4, title: "关于成立小康小区业委会", topic: "成立业主委员会", addr: "小康小区", startTime: "2019-10-01", endTime: "2019-10-02", voteStatus: "投票中", flag: 1 }
+      { id: 3, title: "关于成立小康小区业委会", topic: "成立业主委员会", addr: "小康小区", startTime: "2019-10-01", endTime: "2019-10-02", voteStatus: "已结束", flag: 1 },
+      { id: 4, title: "关于成立小康小区业委会", topic: "成立业主委员会", addr: "小康小区", startTime: "2019-10-01", endTime: "2019-10-02", voteStatus: "已结束", flag: 1 }
     ],
     flag:0,
 
