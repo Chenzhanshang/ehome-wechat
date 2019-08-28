@@ -62,5 +62,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  click(){
+    wx.navigateTo({
+        url: 'details/details',
+    })
   }
 })

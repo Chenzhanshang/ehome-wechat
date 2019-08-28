@@ -17,6 +17,17 @@
                 </view>
             </view>
         </view>
+        <!-- 主题 -->
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">主题</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入活动主题" />
+                </view>
+            </view>
+        </view>
         <!-- 报名截止日期 -->
         <view class="weui-cells weui-cells_after-title">
             <view class="weui-cell ">
