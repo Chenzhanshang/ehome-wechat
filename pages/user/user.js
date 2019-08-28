@@ -11,8 +11,9 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     funList:[
       { id: 0, funName: "业主认证", image: "images/authentication.png", url:"myapprove/myapprove"},
-      { id: 1, funName: "我的消息", image: "images/msg.png", url: "mymessage/mymessage" },
-        { id: 3, funName: "发起活动", image: "images/sponsor.png", url: "activity/activity" }
+        { id: 1, funName: "我的消息", image: "images/msg.png", url: "mymessage/mymessage" },
+        { id: 2, funName: "发起活动", image: "images/sponsor.png", url: "activity/activity" },
+        { id: 3, funName: "我的发起", image: "images/order.png", url: "initiate/initiate" }
     ]
   },
   fun(e){

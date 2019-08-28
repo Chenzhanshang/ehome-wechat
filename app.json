@@ -20,7 +20,11 @@
         "pages/user/mymessage/mymessage",
         "pages/user/mymessage/messagedetails/messagedetails",
         "pages/user/activity/activity",
-         "pages/advise/advise"
+        "pages/advise/advise",
+        "pages/main/activity/details/details",
+        "pages/user/initiate/initiate",
+        "pages/user/initiate/details/details",
+        "pages/user/initiate/details/attendee/attendee"
     ],
     "tabBar": {
         "color": "#2c2c2c",

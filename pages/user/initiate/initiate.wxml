@@ -1,0 +1,12 @@
+<!--pages/user/initiate/initiate.wxml-->
+<view class="replenish-mid"></view>
+<view bindtap="click" class="weui-panel__bd">
+    <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__title weui-media-box__title_in-text">青秀山踏青</view>
+        <view class="weui-media-box__desc">为促进小区业主间的邻里关系,特组织本次活动</view>
+        <view class="weui-media-box__info">
+            <view class="weui-media-box__info__meta">报名中</view>
+            <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">2019-10-03~2019-10-03</view>
+        </view>
+    </view>
+</view>
