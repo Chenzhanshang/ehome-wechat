@@ -15,7 +15,7 @@
         </view>
         <view class="vote-content con-row">
           <view class="left" style="font-size:12px;color:#999;">{{item.startTime}} ~ {{item.endTime}}</view>
-          <view class="right">{{item.voteStatus}}</view>
+          <view class="right {{item.flag==0?'green':'red'}}">{{item.voteStatus}}</view>
         </view>
         <view class="con-row">
           <view class="btn-box left" bindtap="voteDetails">查看详情</view>

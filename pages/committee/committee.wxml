@@ -4,14 +4,14 @@
     <!-- 顶部框 -->
     <view class="top-box">
       <view class="bg-img-bot">
-        <image src="../images/ywh.png" style="width:97%;height:350rpx;border-radius: 10px;margin-left: 5px;margin-right: 5px;margin-top: 10px;margin-bottom: 5px;"></image>
+        <image src="../images/ywh.png" style="width:97%;height:360rpx;border-radius: 10px;margin-left: 5px;margin-right: 5px;margin-top: 10px;margin-bottom: 5px;"></image>
       </view>
     </view>
     <view class="bar"></view>
     <!-- 功能栏 -->
     <view class="fun-main-box con-column">
-      <view class="fun-box" wx:for="{{fun}}" wx:key="index">
-        <view class="fun" bindtap="fun" data-id="{{item.id}}">
+      <view class="fun-box" wx:for="{{fun}}" wx:key="index" bindtap="fun" data-id="{{item.id}}" >
+        <view class="fun" >
           <view class="fun-img">
             <image class="fun-img" src="{{item.url}}"></image>
           </view>
