@@ -5,7 +5,37 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    approvalHeight:0,
+    abstentionHeight:0,
+    opposeHeight:0,
+  },
+  approvalTap(e){
+    var h = this.data.approvalHeight;
+    h++;
+    console.log(h)
+    this.setData({
+      approvalHeight:h,
+    })
+    console.log(this.data.approvalHeight)
+  },
+  
+  abstentionTap(e){
+    var h = this.data.abstentionHeight;
+    h++;
+    console.log(h)
+    this.setData({
+      abstentionHeight:h,
+    })
+    console.log(this.data.abstentionHeight)
+  },
+  opposeTap(e) {
+    var h = this.data.opposeHeight;
+    h++;
+    console.log(h)
+    this.setData({
+      opposeHeight: h,
+    })
+    console.log(this.data.opposeHeight)
   },
 
   /**
