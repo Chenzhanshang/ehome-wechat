@@ -20,8 +20,8 @@ Page({
       { id: 4,url: '../images/wzjb.png', title: '违章举报', img: '../images/more-right.png' }, 
       { id: 5,url: '../images/wygg.png', title: '物业公告', img: '../images/more-right.png' }, 
       { id: 6,url: '../images/znmj.png', title: '智能门禁', img: '../images/more-right.png' }, 
-      { id: 7, url: '../images/repair.png', title: '报事报修', img: '../images/more-right.png' },
-      { id: 8,url: '../images/jyfk.png', title: '建议反馈', img: '../images/more-right.png' }, 
+      { id: 7, url: '../images/repair.png', title: '报事报修', img: '../images/more-right.png', navUrl: '../repair/repair'},
+      { id: 8,url: '../images/jyfk.png', title: '建议反馈', img: '../images/more-right.png',navUrl:'../advise/advise' }, 
       ],
   },
   fun(e){

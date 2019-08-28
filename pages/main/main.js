@@ -44,6 +44,12 @@ Page({
       wx.navigateTo({
         url: '../vote/vote',
       })
+    }else if(fun.id==2){
+
+    }else if(fun.id==3){
+      wx.navigateTo({
+        url: '../advise/advise',
+      })
     }
   },
   chooseAddr(){

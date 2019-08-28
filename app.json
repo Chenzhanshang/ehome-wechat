@@ -19,7 +19,8 @@
         "pages/user/approvehome/building/homenum/approve/approve",
         "pages/user/mymessage/mymessage",
         "pages/user/mymessage/messagedetails/messagedetails",
-        "pages/user/activity/activity"
+        "pages/user/activity/activity",
+         "pages/advise/advise"
     ],
     "tabBar": {
         "color": "#2c2c2c",

@@ -1,4 +1,5 @@
 // pages/committee/committee.js
+const app = getApp();
 Page({
 
   /**
@@ -22,7 +23,9 @@ Page({
       title: fun.title + '正在开发中',
       icon: "none",
     })
+    
   },
+  
 
   /**
    * 生命周期函数--监听页面加载

@@ -24,6 +24,12 @@ page{
   font-size: 14px;
   
 }
+.green{
+  color: green;
+}
+.red{
+  color: red;
+}
 .mini-bar-right{
   display: flex;
   flex: 1;

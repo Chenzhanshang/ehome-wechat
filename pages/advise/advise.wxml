@@ -1,0 +1,39 @@
+<view class="main con-column">
+  <view class="main-box con-column">
+    <view class="radio-item con-column">
+      <view class="text">投诉类型：</view>
+      <radio-group class="radio-group con-row" bindchange="typeRadioChange">
+        <label wx:for="{{type}}" wx:key="index">
+          <radio class="radio-style" value="{{item.id}}">{{item.name}}</radio>
+        </label>
+      </radio-group>
+    </view>
+    <view class="radio-item con-column">
+      <view class="text">投诉部门：</view>
+      <radio-group class="radio-group con-row" bindchange="departmentRadioChange">
+        <label wx:for="{{department}}" wx:key="index">
+          <radio class="radio-style" value="{{item.id}}">{{item.name}}</radio>
+        </label>
+      </radio-group>
+    </view>
+    <!-- 问题描述框 -->
+    <view class="content-box">
+      <view class="question con-column">
+        <view class="que">投诉内容：</view>
+        <view class="text-box">
+          <textarea bindinput="textInput" class="text-ta" placeholder="请描述您的投诉内容，字数不超过140"></textarea>
+        </view>
+
+      </view>
+    </view>
+
+    <view wx:if="{{typeId==null || departmentId==null || textContent ==null}}" class="btn-box">
+      <button disabled="true" class="btn">提交</button>
+    </view>
+    <view wx:else class="btn-box">
+      <button bindtap="submit" type="primary" class="btn">提交</button>
+    </view>
+
+  </view>
+
+</view>
