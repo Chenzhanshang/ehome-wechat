@@ -64,8 +64,14 @@
         <image src="/pages/images/mz.jpg" class="img-gov"></image>
       </view>
       <view class="fun-box-item con-row">
-        <navigator url="/pages/user/myapprove/myapprove" class="left-fun-btn">业主认证</navigator>
-        <view class="right-fun-btn">业主社群</view>
+        <navigator url="/pages/user/myapprove/myapprove" class="left-fun-btn con-row">
+          <text>业主认证</text>
+          <image class="img-g" src="../images/jr.png"></image>
+        </navigator>
+        <navigator url="" class="right-fun-btn con-row">
+          <text>业主社群</text>
+          <image class="img-g" src="../images/jr.png"></image>
+        </navigator>
       </view>
   </view>
   <view class="bar"></view>
