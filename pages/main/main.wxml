@@ -58,6 +58,17 @@
 
 
   <view class="bar"></view>
+  <!-- 政治宣传及功能按钮 -->
+  <view class="fun-bar con-column">
+      <view class="img-gov">
+        <image class="img-gov"></image>
+      </view>
+      <view class="fun-box-item con-row">
+        <view class="left-fun-btn">业主认证</view>
+        <view class="right-fun-btn">业主社群</view>
+      </view>
+  </view>
+  <view class="bar"></view>
   <!-- 公告 -->
   <view class="announcement-box" bindtap="noticeClick">
     <!-- 公告bar -->
