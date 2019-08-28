@@ -1,1 +1,40 @@
-详情页面
+<view class="main con-column">
+  <view class="main-box con-column">
+    <view class="top-box con-column">
+      <view class="title">关于成立小康小区业主委员会</view>
+      <view class="top-item con-row">
+        <view class="top-left">发起人：小明</view>
+        <view class="top-right">时间：2019-10-01</view>
+      </view>
+      <view class="vote-big con-row">
+        <view class="vote-box con-row">
+        <view class="vote con-column">
+            <view class="vote-item con-column">
+              <view>{{approvalHeight}}</view>
+              <view class="column" style="height:{{approvalHeight}}px;"></view>
+            </view>
+            <image bindtap="approvalTap" class="img" src="../img/zt.png"></image>
+            <view  class="vote-mid">赞成</view>
+        </view>
+        <view class="vote con-column">
+            <view class="vote-item con-column">
+              <view>{{abstentionHeight}}</view>
+              <view class="column" style="height:{{abstentionHeight}}px;"></view>
+            </view>
+            <image class="img" bindtap="abstentionTap" src="../img/qq.png"></image>
+            <view class="vote-mid">弃权</view>
+        </view>
+        <view class="vote con-column">
+            <view class="vote-item con-column">
+              <view>{{opposeHeight}}</view>
+              <view class="column" style="height:{{opposeHeight}}px;"></view>
+            </view>
+            <image bindtap="opposeTap" class="img" src="../img/fd.png"></image>
+            <view class="vote-mid">反对</view>
+        </view>
+      </view>
+      </view>
+      
+    </view>
+  </view>
+</view>
