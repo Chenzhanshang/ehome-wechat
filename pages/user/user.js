@@ -12,9 +12,8 @@ Page({
     funList:[
       { id: 0, funName: "业主认证", image: "images/authentication.png", url:"myapprove/myapprove"},
       { id: 1, funName: "我的消息", image: "images/msg.png", url: "mymessage/mymessage" },
-      { id: 3, funName: "发起活动", image: "images/sponsor.png" },
-      { id: 4, funName: "我的订单", image: "images/order.png" },
-      { id: 5, funName: "一键报警", image: "images/calPolice.png" },
+        { id: 3, funName: "发起活动", image: "images/sponsor.png", url: "activity/activity" },
+      { id: 4, funName: "我的订单", image: "images/order.png" }
     ]
   },
   fun(e){
@@ -117,5 +116,12 @@ Page({
         hasUserInfo: true
       })
     }
+  },
+  //一键报警逻辑
+  callThePolice(){
+    wx.showToast({
+        title: '功能正在开发',
+        icon: 'none'
+    })
   }
 })
