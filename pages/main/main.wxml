@@ -68,7 +68,7 @@
           <text>业主认证</text>
           <image class="img-g" src="../images/jr.png"></image>
         </navigator>
-        <navigator url="" class="right-fun-btn con-row">
+        <navigator url="/pages/main/group/group" class="right-fun-btn con-row">
           <text>业主社群</text>
           <image class="img-g" src="../images/jr.png"></image>
         </navigator>

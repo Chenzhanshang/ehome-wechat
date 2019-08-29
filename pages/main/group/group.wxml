@@ -1,0 +1,33 @@
+<!--pages/user/group/group.wxml-->
+<view class="page">
+    <view class="page__bd">
+    <!-- 创建群 -->
+        <navigator url="create/create" class="weui-form-preview">
+            <view class="weui-form-preview__ft">
+                    <view class="weui-form-preview__btn" hover-class="weui-form-preview__btn_active">
+                    创建社群
+                    </view>
+            </view>
+        </navigator>
+        <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
+            <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+                    <view style="display: inline-block; vertical-align: middle">
+                    青秀山采风1群
+                    </view>
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view>
+        </mp-slideview>
+<mp-slideview buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
+            <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+                    <view style="display: inline-block; vertical-align: middle">
+                    青秀山采风2群
+                    </view>
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view>
+        </mp-slideview>
+    </view>
+</view>

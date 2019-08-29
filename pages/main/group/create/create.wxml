@@ -1,0 +1,68 @@
+<!--pages/main/group/create/create.wxml-->
+<view class="page" >
+
+    <view class="page__bd">
+        <view class="weui-cells__title">创建群</view>
+
+        <!-- 群名 -->
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">群名</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入群名" />
+                </view>
+            </view>
+        </view>
+       <!-- 群类型 -->
+        <view class="weui-cells weui-cells_after-title">
+            <radio-group bindchange="radioChange">
+                <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="value">
+                    <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}"/>
+
+                    <view class="weui-cell__bd">{{item.name}}</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">
+                        <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+                    </view>
+                </label>
+            </radio-group>
+        </view>
+        <!-- 群存活时间 -->
+        <view wx:if="{{radioItems[1].checked}}" class="weui-cells weui-cells_after-title">
+            <view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">时长</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input type="number" class="weui-input" placeholder="请输入群存在的时长" />
+                </view>
+            </view>
+        </view>
+        <!-- 活动结束日期 -->
+        <!-- <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">结束日期:</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" value="{{endDate}}"  bindchange="bindEndDate">
+                        <view class="weui-input">{{endDate}}</view>
+                    </picker>
+                </view>
+            </view>
+        </view> -->
+
+        
+
+        
+
+        
+
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="submit">确定</button>
+        </view>
+
+    </view>
+</view>
+
