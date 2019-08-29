@@ -1,11 +1,13 @@
-// pages/vote/votefinal/votefinal.js
+// pages/vote/votedetails/votedetalis.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    approvalHeight: 131,
+    abstentionHeight: 22,
+    opposeHeight: 10,
   },
 
   /**

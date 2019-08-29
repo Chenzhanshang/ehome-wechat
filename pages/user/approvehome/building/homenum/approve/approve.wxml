@@ -39,13 +39,13 @@
         <!--WXML示例代码-->
         <mp-cells>
           <mp-cell>
-            <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" max-count="5" title="证件照" tips="身份证正反两面照片"></mp-uploader>
+            <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" max-count="2" title="证件照" tips="身份证正反两面照片"></mp-uploader>
           </mp-cell>
         </mp-cells>
         <!--WXML示例代码-->
         <mp-cells>
           <mp-cell>
-            <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" max-count="5" title="房产证照片" tips="图片上传提示"></mp-uploader>
+            <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" max-count="2" title="不动产权证照片" tips="需要包含关键信息，如姓名、证件号、印章等"></mp-uploader>
           </mp-cell>
         </mp-cells>
         <view class="bar-w"></view>
