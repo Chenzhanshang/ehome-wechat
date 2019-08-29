@@ -50,6 +50,10 @@ Page({
       wx.navigateTo({
         url: '../advise/advise',
       })
+    }else if(fun.id==4){
+      wx.navigateTo({
+        url: '../pay/pay',
+      })
     }
   },
   chooseAddr(){
