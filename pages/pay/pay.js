@@ -1,41 +1,18 @@
-// pages/vote/votedetails/votedetalis.js
+// pages/pay/pay.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    approvalHeight:0,
-    abstentionHeight:0,
-    opposeHeight:0,
-  },
-  approvalTap(e){
-    var h = this.data.approvalHeight;
-    h++;
-    
-    this.setData({
-      approvalHeight:h,
-    })
-    
-  },
-  
-  abstentionTap(e){
-    var h = this.data.abstentionHeight;
-    h++;
-    
-    this.setData({
-      abstentionHeight:h,
-    })
-    
-  },
-  opposeTap(e) {
-    var h = this.data.opposeHeight;
-    h++;
-    
-    this.setData({
-      opposeHeight: h,
-    })
-    
+    funList: [
+      { id: 0, funName: "物业费", image: "images/wyf.png", url: "myapprove/myapprove" },
+      { id: 1, funName: "停车费", image: "images/tcf.png", url: "mymessage/mymessage" },
+      { id: 2, funName: "水费", image: "images/sf.png", url: "activity/activity" },
+      { id: 3, funName: "电费", image: "images/df.png", url: "initiate/initiate" },
+      { id: 4, funName: "燃气费", image: "images/rqf.png", url: "initiate/initiate" }
+    ]
+
   },
 
   /**

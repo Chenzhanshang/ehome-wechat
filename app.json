@@ -26,7 +26,8 @@
         "pages/user/initiate/details/details",
         "pages/user/initiate/details/attendee/attendee",
         "pages/main/group/group",
-        "pages/main/group/create/create"
+        "pages/main/group/create/create",
+        "pages/pay/pay"
     ],
     "tabBar": {
         "color": "#2c2c2c",
