@@ -1,11 +1,13 @@
 <view class="main con-column">
-  <view class="main-box con-column">
+  <scroll-view class="main-box con-column" scroll-y="true">
+    <view class="main-box con-column">
     <view class="top-box con-column">
       <view class="title">关于成立小康小区业主委员会</view>
       <view class="top-item con-row">
         <view class="top-left">发起人：小明</view>
         <view class="top-right">时间：2019-10-01</view>
       </view>
+      <!-- 投票框 -->
       <view class="vote-big con-row">
         <view class="vote-box con-row">
           <view class="vote con-column">
@@ -35,7 +37,8 @@
         </view>
       </view>
 
-    </view>
+    </view> 
+     <!-- 详细内容 -->
     <view class="page">
       <view class="page__bd">
         <view class="weui-article">
@@ -59,4 +62,8 @@
       </view>
     </view>
   </view>
+ 
+  </scroll-view>
+  
+  
 </view>

@@ -54,6 +54,10 @@ Page({
       wx.navigateTo({
         url: '../pay/pay',
       })
+    }else if(fun.id==6){
+      wx.navigateTo({
+        url: './group/group',
+      })
     }
   },
   chooseAddr(){

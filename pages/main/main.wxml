@@ -134,7 +134,7 @@
   </view>
   <view class="bar"></view>
 
-  <block wx:for="{{41}}" wx:key="index">
+  <block wx:for="{{15}}" wx:key="index">
     <view class="bar"></view>
   </block>
 </scroll-view>
