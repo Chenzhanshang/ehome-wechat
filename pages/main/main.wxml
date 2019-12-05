@@ -5,8 +5,8 @@
       <image class="img-top-left" src="../images/dingwei.png" bindtap="chooseAddr"></image>
     </view>
     <view class="text-box-right">
-      <text class="text-top">南宁 | </text>
-      <text class="text-top">小康小区</text>
+      <text class="text-top"> {{city}} </text>
+      <text class="text-top">{{community}}</text>
     </view>
   </view>
   <view class="bar"></view>

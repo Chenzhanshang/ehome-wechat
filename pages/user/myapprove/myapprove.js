@@ -26,6 +26,16 @@ Page({
     })
 
   },
+  // renzheng() {
+  //   wx.navigateTo({
+  //     url: '../chooselocation/chooselocation',
+  //     success: function (res) { },
+  //     fail: function (res) { },
+  //     complete: function (res) { },
+  //   })
+
+  // },
+
   unselected(e) { //房屋未选中时
   console.log(e)
     var that = this;
