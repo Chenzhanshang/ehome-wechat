@@ -9,17 +9,36 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    funList:[
-      { id: 0, funName: "业主认证", image: "images/authentication.png", url:"myapprove/myapprove"},
-        { id: 1, funName: "我的消息", image: "images/msg.png", url: "mymessage/mymessage" },
-        { id: 2, funName: "发起活动", image: "images/sponsor.png", url: "activity/activity" },
-        { id: 3, funName: "我的发起", image: "images/order.png", url: "initiate/initiate" }
+    funList: [{
+        id: 0,
+        funName: "业主认证",
+        image: "images/authentication.png",
+        url: "myapprove/myapprove"
+      },
+      {
+        id: 1,
+        funName: "我的消息",
+        image: "images/msg.png",
+        url: "mymessage/mymessage"
+      },
+      {
+        id: 2,
+        funName: "发起活动",
+        image: "images/sponsor.png",
+        url: "activity/activity"
+      },
+      {
+        id: 3,
+        funName: "我的发起",
+        image: "images/order.png",
+        url: "initiate/initiate"
+      }
     ]
   },
-  fun(e){
+  fun(e) {
     console.log(e.currentTarget.dataset.index)
     var index = e.currentTarget.dataset.index;
-    
+
     var to = this.data.funList[index].url;
     // console.log(url);
     wx.navigateTo({
@@ -30,17 +49,17 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     var that = this;
     //检查用户登陆态是否过期
     wx.checkSession({
-      success: function () {
+      success: function() {
         //未过期
         wx.getSetting({
-          success: function (res) {
+          success: function(res) {
             if (res.authSetting['scope.userInfo']) {
               wx.getUserInfo({
-                success: function (res) {
+                success: function(res) {
                   // that.queryUsreInfo();
                   var userInfo = wx.getStorageSync("userInfo");
                   if (userInfo) {
@@ -55,7 +74,7 @@ Page({
           }
         })
       },
-      fail: function () {
+      fail: function() {
         //过期
         //移除缓存中的信息
         wx.removeStorageSync("userInfo");
@@ -70,12 +89,12 @@ Page({
   },
 
 
-getUserInfo: function (ee) {
+  getUserInfo: function(ee) {
     console.log(ee);
     if (ee.detail.userInfo) {
       var that = this;
       wx.login({
-        success: function (res) {
+        success: function(res) {
           console.log();
 
           //发送请求
@@ -88,7 +107,7 @@ getUserInfo: function (ee) {
               encrypteData: ee.detail.encryptedData, //用户敏感信息
               iv: ee.detail.iv //解密算法的向量
             },
-            success: function (e) {
+            success: function(e) {
               var data = e.data;
               if (data.status == "1") {
                 //数据放入缓存
@@ -111,57 +130,57 @@ getUserInfo: function (ee) {
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
-  
+
   //一键报警逻辑
-  callThePolice(){
+  callThePolice() {
     wx.showToast({
-        title: '功能正在开发',
-        icon: 'none'
+      title: '功能正在开发',
+      icon: 'none'
     })
   }
 })
