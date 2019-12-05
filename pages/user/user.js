@@ -31,32 +31,81 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
+    var that = this;
+    //检查用户登陆态是否过期
+    wx.checkSession({
+      success: function () {
+        //未过期
+        wx.getSetting({
+          success: function (res) {
+            if (res.authSetting['scope.userInfo']) {
+              wx.getUserInfo({
+                success: function (res) {
+                  // that.queryUsreInfo();
+                  var userInfo = wx.getStorageSync("userInfo");
+                  if (userInfo) {
+                    that.setData({
+                      userInfo: userInfo,
+                      hasUserInfo: true
+                    });
+                  }
+                }
+              });
+            }
+          }
         })
+      },
+      fail: function () {
+        //过期
+        //移除缓存中的信息
+        wx.removeStorageSync("userInfo");
+        wx.removeStorageSync("loginFlag");
+        //将页面的值重置
+        that.setData({
+          userInfo: {},
+          hasUserInfo: false
+        });
       }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
+    })
+  },
+
+
+getUserInfo: function (ee) {
+    console.log(ee);
+    if (ee.detail.userInfo) {
+      var that = this;
+      wx.login({
+        success: function (res) {
+          console.log();
+
+          //发送请求
+          wx.request({
+            url: 'http://localhost:8081/ehome/user/userLogin',
+            data: {
+              code: res.code, //临时登录凭证
+              rawData: ee.detail.rawData, //用户非敏感信息
+              signature: ee.detail.signature, //签名
+              encrypteData: ee.detail.encryptedData, //用户敏感信息
+              iv: ee.detail.iv //解密算法的向量
+            },
+            success: function (e) {
+              var data = e.data;
+              if (data.status == "1") {
+                //数据放入缓存
+                wx.setStorageSync('userInfo', ee.detail.userInfo);
+                wx.setStorageSync('loginFlag', data.userId);
+                that.setData({
+                  userInfo: ee.detail.userInfo,
+                  hasUserInfo: true
+                });
+              }
+            }
           })
         }
       })
+
     }
+
   },
 
   /**
@@ -107,16 +156,7 @@ Page({
   onShareAppMessage: function () {
 
   },
-  getUserInfo: function (e) {
-    console.log(e)
-    if (e.detail.errMsg == "getUserInfo:ok") {
-      app.globalData.userInfo = e.detail.userInfo
-      this.setData({
-        userInfo: e.detail.userInfo,
-        hasUserInfo: true
-      })
-    }
-  },
+  
   //一键报警逻辑
   callThePolice(){
     wx.showToast({
