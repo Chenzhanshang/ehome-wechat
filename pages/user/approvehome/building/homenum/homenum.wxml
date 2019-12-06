@@ -11,8 +11,8 @@
       <view class="hr"></view>
       <!-- 小区列表 -->
       <view class="list-box" wx:for="{{buildNumArray}}" wx:key="index">
-        <view class="item-list" bindtap="selectBuilding" data-xiaoquId="{{item.id}}">
-          <text>{{item.name}}</text>
+        <view class="item-list" bindtap="selectBuilding" data-xiaoquId="{{item.roomId}}">
+          <text>{{item.roomName}}</text>
         </view>
         <view class="hr"></view>
       </view>

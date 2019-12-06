@@ -8,24 +8,8 @@ Page({
     xiaoquid:null,//小区号
     buildingid:null,//栋号
     buildNumId:null,//房号
-    buildNumArray:[
-      {id:0,name:"101"},
-      { id: 1, name: "102" },
-      { id: 2, name: "201" },
-      { id: 3, name: "202" },
-      { id: 4, name: "301" },
-      { id: 5, name: "302" },
-      { id: 6, name: "401" },
-      { id: 7, name: "402" },
-      { id: 0, name: "101" },
-      { id: 1, name: "102" },
-      { id: 2, name: "201" },
-      { id: 3, name: "202" },
-      { id: 4, name: "301" },
-      { id: 5, name: "302" },
-      { id: 6, name: "401" },
-      { id: 7, name: "402" },
-    ]
+    buildNumArray:[],
+    searchstr:'',
 
   },
   //房号的选择，
@@ -62,6 +46,19 @@ Page({
     })
     
     //发送请求到后台，通过buildingid获取到该栋所有的房号
+    wx.request({
+      url: 'http://localhost:8081/ehome/community/roomList',
+      data:{
+        "houseId":that.data.buildingid,
+      },
+      success(res){
+        console.log(res.data)
+        that.setData({
+          buildNumArray:res.data,
+        })
+        wx.setStorageSync("roomList", res.data)
+      }
+    })
   },
 
   /**
@@ -111,5 +108,42 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  //搜索框输入时触发
+  searchList(ev) {
+    let e = ev.detail;
+    this.setData({
+      searchstr: e.detail.value
+    })
+    console.log(this.data.searchstr);
+  },
+  //搜索回调
+  endsearchList(e) {
+    var that = this;
+    console.log('查询数据')
+    var roomList = wx.getStorageSync("roomList")
+    var newlist = [];
+    roomList.forEach(function (item, index) {
+      if (item.roomName.lastIndexOf(that.data.searchstr) != -1) {
+        newlist.push(item)
+      }
+    });
+    that.setData({
+      buildNumArray: newlist
+    })
+  },
+  // 取消搜索
+  cancelsearch() {
+    this.setData({
+      searchstr: ''
+    })
+    console.log('取消搜索')
+  },
+  //清空搜索框
+  activity_clear(e) {
+    this.setData({
+      searchstr: ''
+    })
+    console.log('清空搜索框')
   }
 })

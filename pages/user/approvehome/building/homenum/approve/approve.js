@@ -5,9 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
+    community:null,
+    house:null,
+    room:null,
     xiaoquid: null,//小区号
     buildingid: null,//栋号
     buildNumId: null,//房号
+    name:null,
+    phone:null,
+    idcard:null,
     files: [{
       url: '',
     }, {
@@ -17,6 +23,36 @@ Page({
     }]
   },
 
+  /**
+   * 名字输入框
+   */
+  inputName(res){
+    console.log(res.detail.value)
+    var name = res.detail.value;
+    this.setData({
+      name:name,
+    })
+  },
+  /**
+   * 电话输入框
+   */
+  inputPhoneNumber(res){
+    console.log(res.detail.value)
+    var phone = res.detail.value;
+    this.setData({
+      phone:phone,
+    })
+  },
+  /**
+   * 身份证输入框
+   */
+  inputIDNumber(res){
+    console.log(res.detail.value)
+    var idcard = res.detail.value;
+    this.setData({
+      idcard:idcard,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -33,11 +69,19 @@ Page({
         buildNumId:data.buildNumId
       })
     })
+    var communityList = wx.getStorageSync("communityList")
+    var houseList = wx.getStorageSync("houseList")
+    var roomList = wx.getStorageSync("roomList")
+    this.setData({
+      community:communityList[this.data.xiaoquid-1],
+      house:houseList[this.data.buildingid-1],
+      room:roomList[this.data.buildNumId-1]
+    })
     this.setData({
       selectFile: this.selectFile.bind(this),
       uplaodFile: this.uplaodFile.bind(this)
     })
-
+    console.log(this.data.community)
   },
 
   /**

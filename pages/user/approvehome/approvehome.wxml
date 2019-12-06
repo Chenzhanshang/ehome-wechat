@@ -1,7 +1,7 @@
 <view class="main con-column">
   <view class="main-box con-column">
     <view class="main-box con-column">
-    <!-- 搜索\入驻 -->
+    <!-- 搜索 -->
         <view class="Search-box">
           <SearchBar style="width: 100%;" id="SearchBar" addflag="{{addflag}}" addimg="{{addimg}}" bind:addhandle="addhandle" searchstr="{{searchstr}}" bind:searchList="searchList" bind:endsearchList="endsearchList" bind:cancelsearch="cancelsearch" bind:activity_clear="activity_clear">
           </SearchBar>
@@ -11,8 +11,8 @@
         <view class="hr"></view>
         <!-- 小区列表 -->
         <view class="list-box" wx:for="{{xiaoquName}}" wx:key="index">
-          <view class="item-list" bindtap="selectBuilding" data-xiaoquId="{{item.id}}">
-            <text>{{item.name}}</text>
+          <view class="item-list" bindtap="selectBuilding" data-xiaoquId="{{item.communityId}}">
+            <text>{{item.communityName}}</text>
           </view>
           <view class="hr"></view>
         </view>

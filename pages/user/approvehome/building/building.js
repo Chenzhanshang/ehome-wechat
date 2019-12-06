@@ -6,13 +6,8 @@ Page({
    */
   data: {
     xiaoquid: null, //小区的id
-    buildingArray: [
-      { id: 0, name: "小康小区1幢" },
-      { id: 1, name: "小康小区2幢" },
-      { id: 2, name: "小康小区3幢" },
-      { id: 3, name: "小康小区4幢" },
-    ],
-
+    buildingArray: [],
+    searchstr:'',
 
   },
   //点击小区栋号（建筑物的选择），跳转到房号的选择
@@ -44,6 +39,20 @@ Page({
       })
     })
     //发送请求到后台，通过小区id获得该小区的所有建筑物
+    wx.request({
+      url: 'http://localhost:8081/ehome/community/houseList',
+      data:{
+        "communityId":that.data.xiaoquid
+      },
+      success(res){
+        console.log(res.data)
+        that.setData({
+          buildingArray:res.data,
+        })
+        wx.setStorageSync("houseList", res.data)
+
+      }
+    })
     //发送请求到后台，通过buildingid获取到该栋所有的房号
 
   },
@@ -95,5 +104,43 @@ Page({
    */
   onShareAppMessage: function() {
 
+  }
+  ,
+  //搜索框输入时触发
+  searchList(ev) {
+    let e = ev.detail;
+    this.setData({
+      searchstr: e.detail.value
+    })
+    console.log(this.data.searchstr);
+  },
+  //搜索回调
+  endsearchList(e) {
+    var that = this;
+    console.log('查询数据')
+    var houseList = wx.getStorageSync("houseList")
+    var newlist = [];
+    houseList.forEach(function (item, index) {
+      if (item.houseName.lastIndexOf(that.data.searchstr) != -1) {
+        newlist.push(item)
+      }
+    });
+    that.setData({
+      buildingArray: newlist
+    })
+  },
+  // 取消搜索
+  cancelsearch() {
+    this.setData({
+      searchstr: ''
+    })
+    console.log('取消搜索')
+  },
+  //清空搜索框
+  activity_clear(e) {
+    this.setData({
+      searchstr: ''
+    })
+    console.log('清空搜索框')
   }
 })

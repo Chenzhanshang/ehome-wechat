@@ -18,20 +18,13 @@ Page({
    */
   data: {
     homeArrays: [],
-    xiaoquName: [{
-        id: 0,
-        name: "小康小区"
-      },
-      {
-        id: 1,
-        name: "复兴小区"
-      }
-    ],
-
+    xiaoquName: null,
+    searchstr:'',
 
   },
   //点击小区名字，跳转到小区栋（建筑物的选择）
   selectBuilding(e) {
+    console.log(e.currentTarget.dataset)
     var xiaoquid = e.currentTarget.dataset.xiaoquid
     console.log(xiaoquid)
     wx.navigateTo({
@@ -56,8 +49,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    //发送请求到后台，获得所有小区
+    //发送请求到后台，获得该用户所处城市小区列表
 
+    var thar = this;
+    wx.request({
+      url: 'http://localhost:8081/ehome/community/communityList',
+      method:"get",
+      data:{
+        city:wx.getStorageSync("city")
+      },
+      success(res){
+        // console.log(res.data)
+        thar.setData({
+          xiaoquName:res.data,
+        })
+        wx.setStorageSync("communityList", res.data)
+      }
+    })
 
   },
 
@@ -116,10 +124,23 @@ Page({
       searchstr: e.detail.value
     })
     console.log(this.data.searchstr);
+    
+
   },
   //搜索回调
   endsearchList(e) {
+    var that = this;
     console.log('查询数据')
+    var communityList = wx.getStorageSync("communityList")
+    var newlist = [];
+    communityList.forEach(function (item, index) {
+      if (item.communityName.lastIndexOf(that.data.searchstr) != -1) {
+        newlist.push(item)
+      }
+    });
+    that.setData({
+      xiaoquName: newlist
+    })
   },
   // 取消搜索
   cancelsearch() {
