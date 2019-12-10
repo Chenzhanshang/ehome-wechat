@@ -28,7 +28,7 @@ page{
   background: #fff;
 }
 .title{
-  font-size: 24px;
+  font-size: 28px;
 }
 .tagname{
   font-size: 16px;

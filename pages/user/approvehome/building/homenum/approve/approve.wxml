@@ -7,8 +7,8 @@
           <view class="top-box con-column">
             <view class="title">{{community.communityName}}</view>
             <view class="con-row">
-              <view>{{house.houseName}} •</view>
-              <view style="margin-left:5px;"> {{room.roomName}}</view>
+              <view style="font-size: 20px;">{{house.houseName}} •</view>
+              <view style="margin-left: 5px;font-size: 20px;"> {{room.roomName}}</view>
             </view>
 
           </view>
@@ -58,7 +58,8 @@
     </view>
 
 
-    <button class="btn" bindtap="submitForm" type="primary">提交</button>
+    <button  class="btn" bindtap="submitForm" type="primary">提交</button>
+    
 
   </view>
 

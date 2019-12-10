@@ -14,8 +14,10 @@ Page({
     name: null, //姓名
     phone: null, //手机号码
     idcard: null, //身份证号
+    flag: false,
+    urlList:[],
     files: [{
-      url: 'http://localhost:8081/ehome/file/wx29c36a9a81bf9220.o6zAJs8xtc3oJe7y-F9hMVwmPEGk.GBvmphdnJ7E19b06b92d75a6f08eea7e678fdfd288aa.jpg'
+      url: ''
     }, {
       loading: true
     }, {
@@ -52,6 +54,7 @@ Page({
     this.setData({
       idcard: idcard,
     })
+    
   },
   /**
    * 生命周期函数--监听页面加载
@@ -87,22 +90,60 @@ Page({
    * 提交表单
    */
   submitForm() {
-    wx.request({
-      url: 'http://localhost:8081/ehome/apply/applyMessage',
-      method: "get",
-      data: {
-        "weixin":wx.getStorageSync("loginFlag"),
-        "communityId": this.data.xiaoquid,
-        "houseId": this.data.buildingid,
-        "roomId": this.data.buildNumId,
-        "phone": this.data.phone,
-        "name": this.data.name,
-        "idCard": this.data.idcard,
-      },
-      success(res) {
-        console.log(res.data)
+    if (this.data.name != null && this.data.name != '' && this.data.idcard != null && this.data.idcard != '' && this.data.phone != null && this.data.phone != '') {
+      if (this.data.urlList.length >= 4){
+        console.log(this.data.urlList.length)
+        wx.request({
+          url: 'http://localhost:8081/ehome/apply/applyMessage',
+          method: "get",
+          data: {
+            "weixin": wx.getStorageSync("loginFlag"),
+            "communityId": this.data.xiaoquid,
+            "houseId": this.data.buildingid,
+            "roomId": this.data.buildNumId,
+            "phone": this.data.phone,
+            "name": this.data.name,
+            "idCard": this.data.idcard,
+          },
+          success(res) {
+            console.log(res.data)
+            if(res.data.status == "success"){
+              wx.switchTab({
+                url: '/pages/user/user',
+              })
+              wx.showToast({
+                title: res.data.msg,
+                duration: 2000,
+                
+              })
+            }else{
+              wx.showToast({
+                title: res.data.msg,
+                icon:'none',
+                duration:2000,
+              })
+            }
+           
+          }
+        })
+      }else{
+        console.log(this.data.urlList.length)
+        wx.showToast({
+          title: '请将必要的照片上传',
+          icon: 'none',
+          duration: 2000,
+        })
       }
-    })
+      
+    }else{
+      console.log(this.data.urlList.length)
+      wx.showToast({
+        title: '请填完必填内容',
+        icon:'none',
+        duration: 2000,
+      })
+    }
+
   },
 
   /**
@@ -178,13 +219,13 @@ Page({
     console.log('files', files)
     // 返回false可以阻止某次文件上传
   },
+  
   uplaodFile(files) {
     console.log('upload files', files)
     // //将文件上传到服务器
     console.log("文件上传")
-    
-    
-
+    this.data.urlList.push(files.tempFilePaths[0])
+     
     // 文件上传的函数，返回一个promise   
     return new Promise((resolve, reject) => {
       const uploadTask = wx.uploadFile({
@@ -195,7 +236,9 @@ Page({
           const url = JSON.parse(res.data)
           // console.log(url)
           // console.log(files.tempFilePaths)
-          resolve({ urls: url.urls })
+          resolve({
+            urls: url.urls
+          })
         }
       })
       uploadTask.onProgressUpdate((res) => {
@@ -203,14 +246,14 @@ Page({
         console.log('已经上传的数据长度', res.totalBytesSent)
         console.log('预期需要上传的数据总长度', res.totalBytesExpectedToSend)
       })
-      
+
       setTimeout(() => {
         reject('some error')
-      }, 1000)
+      }, 2000)
     })
   },
   resolve() {
-    
+
   },
   uploadError(e) {
     console.log('upload error', e.detail)
