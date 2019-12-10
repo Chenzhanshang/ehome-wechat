@@ -5,17 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    community:null,
-    house:null,
-    room:null,
-    xiaoquid: null,//小区号
-    buildingid: null,//栋号
-    buildNumId: null,//房号
-    name:null,
-    phone:null,
-    idcard:null,
+    community: null, //小区
+    house: null, //楼栋
+    room: null, //房间
+    xiaoquid: null, //小区号
+    buildingid: null, //栋号
+    buildNumId: null, //房号
+    name: null, //姓名
+    phone: null, //手机号码
+    idcard: null, //身份证号
     files: [{
-      url: '',
+      url: 'http://localhost:8081/ehome/file/wx29c36a9a81bf9220.o6zAJs8xtc3oJe7y-F9hMVwmPEGk.GBvmphdnJ7E19b06b92d75a6f08eea7e678fdfd288aa.jpg'
     }, {
       loading: true
     }, {
@@ -26,56 +26,56 @@ Page({
   /**
    * 名字输入框
    */
-  inputName(res){
+  inputName(res) {
     console.log(res.detail.value)
     var name = res.detail.value;
     this.setData({
-      name:name,
+      name: name,
     })
   },
   /**
    * 电话输入框
    */
-  inputPhoneNumber(res){
+  inputPhoneNumber(res) {
     console.log(res.detail.value)
     var phone = res.detail.value;
     this.setData({
-      phone:phone,
+      phone: phone,
     })
   },
   /**
    * 身份证输入框
    */
-  inputIDNumber(res){
+  inputIDNumber(res) {
     console.log(res.detail.value)
     var idcard = res.detail.value;
     this.setData({
-      idcard:idcard,
+      idcard: idcard,
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     var that = this;
     const eventChannel = this.getOpenerEventChannel()
-    eventChannel.on('acceptDataFromOpenerPage', function (data) {
+    eventChannel.on('acceptDataFromOpenerPage', function(data) {
       console.log("小区的id是:" + data.xiaoquid)
       console.log("建筑物的id是:" + data.buildingid)
       console.log("房号的id是:" + data.buildNumId)
       that.setData({
         buildingid: data.buildingid,
         xiaoquid: data.xiaoquid,
-        buildNumId:data.buildNumId
+        buildNumId: data.buildNumId
       })
     })
     var communityList = wx.getStorageSync("communityList")
     var houseList = wx.getStorageSync("houseList")
     var roomList = wx.getStorageSync("roomList")
     this.setData({
-      community:communityList[this.data.xiaoquid-1],
-      house:houseList[this.data.buildingid-1],
-      room:roomList[this.data.buildNumId-1]
+      community: communityList[this.data.xiaoquid - 1],
+      house: houseList[this.data.buildingid - 1],
+      room: roomList[this.data.buildNumId - 1]
     })
     this.setData({
       selectFile: this.selectFile.bind(this),
@@ -83,61 +83,82 @@ Page({
     })
     console.log(this.data.community)
   },
+  /**
+   * 提交表单
+   */
+  submitForm() {
+    wx.request({
+      url: 'http://localhost:8081/ehome/apply/applyMessage',
+      method: "get",
+      data: {
+        "weixin":wx.getStorageSync("loginFlag"),
+        "communityId": this.data.xiaoquid,
+        "houseId": this.data.buildingid,
+        "roomId": this.data.buildNumId,
+        "phone": this.data.phone,
+        "name": this.data.name,
+        "idCard": this.data.idcard,
+      },
+      success(res) {
+        console.log(res.data)
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
-  chooseImage: function (e) {
+  chooseImage: function(e) {
     var that = this;
     wx.chooseImage({
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-      success: function (res) {
+      success: function(res) {
         console.log(res)
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         that.setData({
@@ -145,9 +166,9 @@ Page({
         });
       }
     })
-    
+
   },
-  previewImage: function (e) {
+  previewImage: function(e) {
     wx.previewImage({
       current: e.currentTarget.id, // 当前显示图片的http链接
       urls: this.data.files // 需要预览的图片http链接列表
@@ -159,19 +180,28 @@ Page({
   },
   uplaodFile(files) {
     console.log('upload files', files)
+    // //将文件上传到服务器
+    console.log("文件上传")
     
+    
+
     // 文件上传的函数，返回一个promise   
     return new Promise((resolve, reject) => {
-      //将文件上传到服务器
-      wx.uploadFile({
-        url: 'http://localhost/ehome/uploadfile',
-        filePath: files.tempFilePaths,
+      const uploadTask = wx.uploadFile({
+        url: 'http://localhost:8081/ehome/uploadFile',
+        filePath: files.tempFilePaths[0],
         name: 'file',
         success(res) {
-          resolve({ urls: "" })
-        }, complete() {
-          resolve({ urls: "" })
+          const url = JSON.parse(res.data)
+          // console.log(url)
+          // console.log(files.tempFilePaths)
+          resolve({ urls: url.urls })
         }
+      })
+      uploadTask.onProgressUpdate((res) => {
+        console.log('上传进度', res.progress)
+        console.log('已经上传的数据长度', res.totalBytesSent)
+        console.log('预期需要上传的数据总长度', res.totalBytesExpectedToSend)
       })
       
       setTimeout(() => {
@@ -179,8 +209,8 @@ Page({
       }, 1000)
     })
   },
-  resolve(){
-
+  resolve() {
+    
   },
   uploadError(e) {
     console.log('upload error', e.detail)
@@ -188,5 +218,5 @@ Page({
   uploadSuccess(e) {
     console.log('upload success', e.detail)
   },
-  
+
 })

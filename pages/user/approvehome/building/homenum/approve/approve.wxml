@@ -58,7 +58,7 @@
     </view>
 
 
-    <button class="btn" type="primary">提交</button>
+    <button class="btn" bindtap="submitForm" type="primary">提交</button>
 
   </view>
 
