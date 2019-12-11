@@ -19,6 +19,11 @@ Page({
   fun(e) {
     var fun = this.data.fun[e.currentTarget.dataset.id]
     console.log(fun.title)
+    if (e.currentTarget.dataset.id == 0){
+      wx.navigateTo({
+        url: '/pages/committee/create/create',
+      })
+    }
     wx.showToast({
       title: fun.title + '正在开发中',
       icon: "none",

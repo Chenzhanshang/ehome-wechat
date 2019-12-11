@@ -1,0 +1,14 @@
+/* pages/committee/group/group.wxss */
+.upload{
+  margin: 10px;
+}
+.img{
+  width: 50px;
+  height: 50px;
+}
+.btn{
+  width: 80%;
+  position: fixed;
+  bottom: 10%;
+  left: 10%;
+}

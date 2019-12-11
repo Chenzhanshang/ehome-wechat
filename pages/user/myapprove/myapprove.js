@@ -5,17 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    homeArray: [{
-        id: 0,
-        name: "小康小区",
-        isSelected: 1
-      },
-      {
-        id: 1,
-        name: "复兴小区",
-        isSelected: 0
-      },
-    ],
+    homeArray: [],
   },
   renzheng(){
     wx.navigateTo({
@@ -26,15 +16,6 @@ Page({
     })
 
   },
-  // renzheng() {
-  //   wx.navigateTo({
-  //     url: '../chooselocation/chooselocation',
-  //     success: function (res) { },
-  //     fail: function (res) { },
-  //     complete: function (res) { },
-  //   })
-
-  // },
 
   unselected(e) { //房屋未选中时
   console.log(e)
@@ -47,10 +28,11 @@ Page({
         if (res.confirm) {
           arrays.forEach(function (item, index) {
             var str = "homeArray[" + index + "].isSelected"
-            if (e.currentTarget.dataset.id == item.id) {
+            if (e.currentTarget.dataset.id == item.communityId) {
               that.setData({
                 [str]: 1,
               })
+              wx.setStorageSync("home", item)
             } else {
               that.setData({
                 [str]: 0,
@@ -69,7 +51,35 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    var that = this;
+    wx.request({
+      url: 'http://localhost:8081/ehome/community/ownerCommunityList',
+      data:{
+        "ownerId":wx.getStorageSync("loginFlag")
+      },
+      success(res){
+        var arrays = res.data;
+        var home = wx.getStorageSync("home")
+        var newArrays = [];
+        arrays.forEach(function (item, index) {
+          
+          if (home.communityId == item.communityId) {
+            item.isSelected = 1
+            newArrays.push(item)
+          }else{
+            item.isSelected = 0
+            newArrays.push(item)
+          }
+          
+        })
+        console.log(newArrays)
+        that.setData({
+          homeArray: newArrays,
+        })
+      }
+    })
+    
+    
   },
 
   /**

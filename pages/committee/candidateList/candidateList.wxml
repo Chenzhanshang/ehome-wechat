@@ -1,0 +1,13 @@
+<view class="con-column">
+  <view class="upload con-column">
+    <text>点击上传：</text>
+    <image wx:if="{{filename == ''}}" class="img" bindtap="getfile" src="../images/upload.png"></image>
+    <view  wx:else class="con-column" style="font-size:12px;color:#999;">
+    <image class="img" bindtap="getfile" src="../images/xls.png"></image>
+    {{filename}}  {{filesize/1000}}KB
+    </view>
+  </view>
+
+  <button class="btn" type="primary" bindtap="submit">提交</button>
+
+</view>

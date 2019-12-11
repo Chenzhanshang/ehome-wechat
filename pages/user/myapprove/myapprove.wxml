@@ -2,12 +2,12 @@
   <view class="main-box con-column">
     <!-- 已认证小区 -->
     <view class="home con-row" wx:for="{{homeArray}}" wx:key="index">
-      <view class="title">{{item.name}}</view>
+      <view class="title">{{item.communityName}}</view>
       <view class="img-box" wx:if="{{item.isSelected==0}}">
-        <image bindtap="unselected" data-id="{{item.id}}" class="img" src="img/wxz.png"></image>
+        <image bindtap="unselected" data-id="{{item.communityId}}" class="img" src="img/wxz.png"></image>
       </view>
       <view class="img-box" wx:else>
-        <image bindtap="selected" data-id="{{item.id}}" class="img" src="img/xz.png"></image>
+        <image bindtap="selected" data-id="{{item.communityId}}" class="img" src="img/xz.png"></image>
       </view>
     </view>
     <!--  -->

@@ -120,6 +120,7 @@ Page({
     qqmapsdk = new QQMapWX({
       key: 'L4NBZ-TJNC4-EG7UE-D3LGF-PZUXK-VRB4A'
     });
+    
   },
 
   /**
@@ -134,7 +135,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    
+    this.setData({
+      community: wx.getStorageSync("home")
+    })
   },
   getUserLocation: function () {
     let vm = this;

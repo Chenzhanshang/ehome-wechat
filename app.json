@@ -27,7 +27,11 @@
     "pages/user/initiate/details/attendee/attendee",
     "pages/main/group/group",
     "pages/main/group/create/create",
-    "pages/pay/pay"
+    "pages/pay/pay",
+    "pages/committee/create/create",
+    "pages/committee/submit/submit",
+    "pages/committee/group/group",
+    "pages/committee/candidateList/candidateList"
   ],
   "tabBar": {
     "color": "#2c2c2c",
@@ -72,9 +76,9 @@
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
-  "permission":{
+  "permission": {
     "scope.userLocation": {
-      "desc": "你的位置信息将用于当前所属城市的获取" 
+      "desc": "你的位置信息将用于当前所属城市的获取"
     }
   }
 }

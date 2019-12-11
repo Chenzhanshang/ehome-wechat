@@ -1,0 +1,10 @@
+ <!-- 功能栏 -->
+      <navigator  wx:for="{{funArr}}" wx:key="index" class="weui-cell weui-cell_example weui-cell_access" hover-class="weui-cell_active" url="{{item.navUrl}}">
+        <view class="weui-cell__hd">
+          <image src="{{item.url}}" style="width: 20px;height: 20px;margin-right: 16px;vertical-align:middle;" />
+        </view>
+        <view class="weui-cell__bd weui-cell_primary">
+          <view>{{item.title}}</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>

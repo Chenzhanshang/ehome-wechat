@@ -6,7 +6,7 @@
     </view>
     <view class="text-box-right">
       <text class="text-top"> {{city}} </text>
-      <text class="text-top">{{community}}</text>
+      <text class="text-top">• {{community.communityName}}</text>
     </view>
   </view>
   <view class="bar"></view>

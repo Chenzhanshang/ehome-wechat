@@ -1,0 +1,30 @@
+<view class="imgbox con-column">
+  <view class="box-title con-column">
+    <text>提示：</text>
+    <text>请下载文件并填写完毕后，后再点击下一步</text>
+  </view>
+
+
+  <view class="box con-row" bindtap="downloadfile1">
+    <image class="img" src="../images/doc.png" mode="widthFix"></image>
+    <text class="text-style">筹备小组成立申请表.doc</text>
+  </view>
+
+  <view class="box con-row" bindtap="downloadfile2">
+    <image class="img" src="../images/doc.png" mode="widthFix"></image>
+    <text class="text-style">业主公约.doc</text>
+  </view>
+
+  <view class="box con-row" bindtap="downloadfile3">
+    <image class="img" src="../images/doc.png" mode="widthFix"></image>
+    <text class="text-style">业主委员会章程.doc</text>
+  </view>
+
+  <view class="box con-row" bindtap="downloadfile4">
+    <image class="img" src="../images/doc.png" mode="widthFix"></image>
+    <text class="text-style">业主委员会选举办法.doc</text>
+  </view>
+
+  <button class="btn"  type="primary" bindtap="next">下一步</button>
+
+</view>

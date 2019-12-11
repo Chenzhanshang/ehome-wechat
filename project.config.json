@@ -23,7 +23,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.8.0",
+	"libVersion": "2.9.4",
 	"appid": "wxedda7b5a9e0573e5",
 	"projectname": "ehome",
 	"debugOptions": {
