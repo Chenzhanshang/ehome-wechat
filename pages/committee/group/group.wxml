@@ -1,4 +1,4 @@
-<view class="con-column">
+<view wx:if="{{flag}}" class="con-column">
   <view class="upload con-column">
     <text>点击上传：</text>
     <image wx:if="{{filename == ''}}" class="img" bindtap="getfile" src="../images/upload.png"></image>
@@ -10,4 +10,7 @@
 
   <button class="btn" type="primary" bindtap="submit">提交</button>
 
+</view>
+<view wx:else>
+  申请已提交，请耐心等待~
 </view>

@@ -75,10 +75,26 @@ Page({
     var communityList = wx.getStorageSync("communityList")
     var houseList = wx.getStorageSync("houseList")
     var roomList = wx.getStorageSync("roomList")
-    this.setData({
-      community: communityList[this.data.xiaoquid - 1],
-      house: houseList[this.data.buildingid - 1],
-      room: roomList[this.data.buildNumId - 1]
+    communityList.forEach((item,index)=>{
+      if(item.communityId == this.data.xiaoquid){
+        this.setData({
+          community:item
+        })
+      }
+    })
+    houseList.forEach((item, index) => {
+      if (item.houseId == this.data.buildingid) {
+        this.setData({
+          house: item
+        })
+      }
+    })
+    roomList.forEach((item, index) => {
+      if (item.roomId == this.data.buildNumId) {
+        this.setData({
+          room: item
+        })
+      }
     })
     this.setData({
       selectFile: this.selectFile.bind(this),
@@ -107,6 +123,7 @@ Page({
           },
           success(res) {
             console.log(res.data)
+            wx.setStorageSync("ownerApplyId", res.data.data.applyId)
             if(res.data.status == "success"){
               wx.switchTab({
                 url: '/pages/user/user',
@@ -243,8 +260,8 @@ Page({
       })
       uploadTask.onProgressUpdate((res) => {
         console.log('上传进度', res.progress)
-        console.log('已经上传的数据长度', res.totalBytesSent)
-        console.log('预期需要上传的数据总长度', res.totalBytesExpectedToSend)
+        // console.log('已经上传的数据长度', res.totalBytesSent)
+        // console.log('预期需要上传的数据总长度', res.totalBytesExpectedToSend)
       })
 
       setTimeout(() => {

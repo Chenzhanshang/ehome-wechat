@@ -6,14 +6,10 @@ Page({
    */
   data: {
     voteArray:[],
-    array: [
-      { id: 0, title: "关于成立小康小区业委会", topic: "成立业主委员会", addr: "小康小区", startTime: "2019-10-01", endTime: "2019-10-02", voteStatus: "投票中", flag: 0 },
-      { id: 1, title: "关于成立小康小区业委会", topic: "成立业主委员会", addr: "小康小区", startTime: "2019-10-01", endTime: "2019-10-02", voteStatus: "投票中", flag: 0 },
-      { id: 2, title: "关于成立小康小区业委会", topic: "成立业主委员会", addr: "小康小区", startTime: "2019-10-01", endTime: "2019-10-02", voteStatus: "投票中", flag: 0 },
-      { id: 3, title: "关于成立小康小区业委会", topic: "成立业主委员会", addr: "小康小区", startTime: "2019-10-01", endTime: "2019-10-02", voteStatus: "已结束", flag: 1 },
-      { id: 4, title: "关于成立小康小区业委会", topic: "成立业主委员会", addr: "小康小区", startTime: "2019-10-01", endTime: "2019-10-02", voteStatus: "已结束", flag: 1 }
-    ],
+    array: [],
+    oldArray:[],
     flag:0,
+    community:'',
 
   },
   stayVote(e){//待投票按钮
@@ -21,7 +17,7 @@ Page({
     var stayVoteArr = [];
     votes.forEach(function (item,index){
       // console.log(votes[index])
-      if(item.flag==0){
+      if (item.issueStatus==0){
         stayVoteArr.push(item);
       }
     })
@@ -35,7 +31,7 @@ Page({
     var votedArr = [];
     votes.forEach(function (item, index) {
       // console.log(votes[index])
-      if (item.flag == 1) {
+      if (item.issueStatus == 1) {
         votedArr.push(item);
       }
     })
@@ -46,36 +42,85 @@ Page({
     console.log(this.data.flag)
   },
   voteDetails(e){
+    console.log(e.currentTarget)
+    const issueId = e.currentTarget.dataset.issueid
+    console.log(issueId)
     console.log("跳转到查看详情页面")
     wx.navigateTo({
       url: 'votedetails/votedetalis',
+      success(res){
+        // 通过eventChannel向被打开页面传送数据
+        res.eventChannel.emit('acceptDataFromOpenerPage', { data: issueId })
+      }
     })
   },
   votefinal(e){
+    const issueId = e.currentTarget.dataset.issueid
     console.log("跳转到查看结果页面")
     wx.navigateTo({
       url: 'votefinal/votefinal',
+      success(res) {
+        // 通过eventChannel向被打开页面传送数据
+        res.eventChannel.emit('acceptDataFromOpenerPage', { data: issueId })
+      }
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.stayVote()
+    var community = wx.getStorageSync("home")
+    
+    var that = this
+    wx.request({
+      url: 'http://localhost:8081/ehome/issue/issueList',
+      data:{
+        "communityId":community.communityId
+      },
+      success(res){
+        console.log(res)
+        var now = Date.parse(new Date());
+        var list = res.data.data.issueList
+        list.forEach((item,index)=>{
+          var startTime = item.issueStartTime
+          var sdate = that.getMyDate(startTime)
+          var endTime = item.issueEndTime
+          var edate = that.getMyDate(endTime)
+          var nowDate = that.getMyDate(now)
+          item.issueStartTime = sdate
+          item.issueEndTime = edate
+          if (item.issueEndTime >= nowDate){
+            item['flag'] = 0
+          }
+        })
+        console.log(list)
+        that.setData({
+          array:list
+        })
+        wx.setStorageSync("issueList", list)
+        that.stayVote()
+      }
+    })
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var community = wx.getStorageSync("home")
+    this.setData({
+      community:community.communityName
+    })
+    
+    
   },
 
   /**
@@ -111,5 +156,26 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  getMyDate(str) {
+        var oDate = new Date(str),
+        oYear = oDate.getFullYear(),
+        oMonth = oDate.getMonth() + 1,
+        oDay = oDate.getDate(),
+        oHour = oDate.getHours(),
+        oMin = oDate.getMinutes(),
+        oSen = oDate.getSeconds(),
+          oTime = oYear + '-' + this.addZero(oMonth) + '-' + this.addZero(oDay)
+          // oTime = oYear + '-' + this.addZero(oMonth) + '-' + this.addZero(oDay) + ' ' + this.addZero(oHour) + ':' +
+          //   this.addZero(oMin) + ':' + this.addZero(oSen);
+        return oTime;
+  },
+  //补零操作
+  addZero(num){
+    if(parseInt(num) < 10){
+  num = '0' + num;
+}
+return num;
+}
+ 
 })

@@ -7,18 +7,20 @@
       </view>
       <!-- 投票框 -->
       <view class="vote-box con-column" wx:for="{{voteArray}}" wx:key="index">
-        <view class="vote-title">{{item.title}}</view>
+        <view class="vote-title">{{item.issueTitle}}</view>
         <view class="vote-hr"></view>
         <view class="vote-content con-row">
-          <view class="left">{{item.topic}}</view>
-          <view class="right">{{item.addr}}</view>
+          <view class="left">投票时间</view>
+          <view class="right">{{community}}</view>
         </view>
         <view class="vote-content con-row">
-          <view class="left" style="font-size:12px;color:#999;">{{item.startTime}} ~ {{item.endTime}}</view>
-          <view class="right {{item.flag==0?'green':'red'}}">{{item.voteStatus}}</view>
+          <view class="left" style="font-size:12px;color:#999;">{{item.issueStartTime}} ~ {{item.issueEndTime}}</view>
+          <view class="right {{item.flag==0?'green':'red'}}">
+            {{item.flag== 0 ? '投票中':'已结束'}}
+          </view>
         </view>
         <view class="con-row">
-          <view class="btn-box left" bindtap="voteDetails">查看详情</view>
+          <view class="btn-box left" bindtap="voteDetails" data-issueid="{{item.issueId}}">查看详情</view>
           <view class="btn-box right" bindtap="votefinal">查看结果</view>
         </view>
       </view>
@@ -26,9 +28,9 @@
         <view class="bar"></view>
       </view>
     </view>
-    
-    
+
+
 
   </scroll-view>
-    
+
 </view>
