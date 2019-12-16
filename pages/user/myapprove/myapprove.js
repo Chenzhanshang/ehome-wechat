@@ -33,6 +33,10 @@ Page({
                 [str]: 1,
               })
               wx.setStorageSync("home", item)
+              //清除缓存
+              wx.removeStorageSync("applyCandidateListId")
+              wx.removeStorageSync("applyGroupId")
+              wx.removeStorageSync("ownerApplyId")
             } else {
               that.setData({
                 [str]: 0,

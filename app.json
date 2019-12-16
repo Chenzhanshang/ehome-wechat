@@ -31,7 +31,8 @@
     "pages/committee/create/create",
     "pages/committee/submit/submit",
     "pages/committee/group/group",
-    "pages/committee/candidateList/candidateList"
+    "pages/committee/candidateList/candidateList",
+    "pages/committee/candidate/candidate"
   ],
   "tabBar": {
     "color": "#2c2c2c",

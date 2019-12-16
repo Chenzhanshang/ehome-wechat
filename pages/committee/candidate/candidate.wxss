@@ -1,0 +1,30 @@
+page{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  
+  
+}
+.main-box{
+  width: 95%;
+  flex-wrap: wrap;
+}
+.item-box{
+  padding: 5px;
+  flex: 1;
+  height: 200px;
+  align-items: center;
+  margin-bottom:5px; 
+  
+}
+.img{
+  width: 200rpx;
+  height: 280rpx;
+  background: #eee;
+}
+.btn{
+ width: 80%;
+ height: 30px;
+ font-size: 12px;
+}

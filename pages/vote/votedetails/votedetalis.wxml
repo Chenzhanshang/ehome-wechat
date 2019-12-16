@@ -7,7 +7,7 @@
         <view class="top-left">发起人：{{community.communityName}}业委会</view>
         <view class="top-right">时间：{{issue.issueStartTime}}</view>
       </view>
-      <view>{{issue.issueContent}}</view>
+      <view class="content">{{issue.issueContent}}</view>
       <!-- 投票框 -->
       <view class="vote-big con-row">
         <view class="vote-box con-row">

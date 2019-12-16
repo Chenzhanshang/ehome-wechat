@@ -5,10 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    filePath:null,
-    filename:'',
-    filesize:'',
-    flag:true,
+    filePath: null,
+    filename: '',
+    filesize: '',
+    flag: 0,
 
   },
   getfile() {
@@ -28,28 +28,33 @@ Page({
       }
     })
   },
-  submit(){
+  submit() {
+    var that = this;
     console.log(this.data.filePath)
-    var home =wx.getStorageSync("home")
+    var home = wx.getStorageSync("home")
     const uploadTask = wx.uploadFile({
       url: 'http://localhost:8081/ehome/uploadApplyGroup',
       filePath: this.data.filePath.path,
       name: 'file',
-      formData:{
-        "ownerId":wx.getStorageSync("loginFlag"),
-        "filename":this.data.filename,
-        "communityId":home.communityId,
+      formData: {
+        "ownerId": wx.getStorageSync("loginFlag"),
+        "filename": this.data.filename,
+        "communityId": home.communityId,
       },
-      success(res){
-        wx.switchTab({
-          url: '/pages/committee/committee',
+      success(res) {
+        // wx.switchTab({
+        //   url: '/pages/committee/committee',
+        // })
+        that.setData({
+          flag:1
         })
+
         var data = JSON.parse(res.data)
-      
+
         //将申请筹备小组的applyId存入缓存
         wx.setStorageSync("applyGroupId", data.data.applyId)
         // console.log(applyData)        
-        if (data.status == "success"){
+        if (data.status == "success") {
           wx.showToast({
             title: data.msg,
           })
@@ -65,61 +70,80 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
+    var that = this;
+    //发送请求，查看申请是否通过
+    wx.request({
+      url: 'http://localhost:8081/ehome/apply/applyIsPass',
+      data: {
+        "applyId": wx.getStorageSync("applyGroupId")
+      },
+      success(res) {
+        console.log(res)
+        if (res.data) {
+          wx.removeStorageSync("applyGroupId")
+          that.setData({
+            flag: 2
+          })
+        }
+      }
+    })
+    //如果缓存不为空
     var applyGroupId = wx.getStorageSync("applyGroupId");
-    if(applyGroupId != null && applyGroupId != ''){
-        this.setData({
-          flag:false
-        })
+    if (applyGroupId != null && applyGroupId != '') {
+      this.setData({
+        flag: 1
+      })
     }
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

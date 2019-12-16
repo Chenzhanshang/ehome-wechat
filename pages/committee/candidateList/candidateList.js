@@ -8,7 +8,7 @@ Page({
     filePath: null,
     filename: '',
     filesize: '',
-    flag:true,
+    flag:0,
 
   },
   getfile() {
@@ -29,6 +29,7 @@ Page({
     })
   },
   submit() {
+    var that = this
     console.log(this.data.filePath)
     var home = wx.getStorageSync("home")
     const uploadTask =  wx.uploadFile({
@@ -42,8 +43,11 @@ Page({
       },
       success(res) {
         console.log(res)
-        wx.switchTab({
-          url: '/pages/committee/committee',
+        // wx.switchTab({
+        //   url: '/pages/committee/committee',
+        // })
+        that.setData({
+          flag: 1
         })
         var data = JSON.parse(res.data)
         //将申请筹备小组的applyId存入缓存
@@ -66,10 +70,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+    //发送请求，查看申请是否通过
+    wx.request({
+      url: 'http://localhost:8081/ehome/apply/applyIsPass',
+      data: {
+        "applyId": wx.getStorageSync("applyCandidateListId")
+      },
+      success(res) {
+        console.log(res)
+        if (res.data) {
+          wx.removeStorageSync("applyCandidateListId")
+          that.setData({
+            flag: 2
+          })
+        } 
+      }
+    })
     var applyCandidateListId = wx.getStorageSync("applyCandidateListId");
     if (applyCandidateListId != null && applyCandidateListId != '') {
       this.setData({
-        flag: false
+        flag: 1
       })
     }
   },
