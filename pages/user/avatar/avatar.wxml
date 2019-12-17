@@ -1,0 +1,6 @@
+
+<mp-cells>
+  <mp-cell>
+    <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" max-count="1" title="上传头像" tips="上传一寸照片"></mp-uploader>
+  </mp-cell>
+</mp-cells>

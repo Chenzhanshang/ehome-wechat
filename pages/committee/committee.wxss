@@ -31,7 +31,7 @@ page{
   display: flex;
   flex-direction: row;
   width: 98%;
-  height: 60px;
+  height: 140rpx;
   background: #fff;
   align-items: center;
   border: 1px solid #eee;
@@ -73,6 +73,7 @@ page{
 .bg-img-bot{
   width: 100%;
   border-radius: 5px;
+  
   
 }
 

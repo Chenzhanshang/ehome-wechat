@@ -1,36 +1,101 @@
-<view class="main-box con-row">
-<!-- 候选人投票框 -->
-  <view  class="item-box con-column">
-    <view class="img"></view>
-    <view style="font-size:14px;">李四</view>
-    <view style="font-size:12px;color:#999;">票数:10</view>
-    <button bindtap="vote" class="btn" type="primary">投票</button>
-  
-  </view>
+<scroll-view scroll-y="true" style="height: 100%;">
+  <view class="main-box con-row">
 
-    <view  class="item-box con-column">
-    <view class="img"></view>
-    <view style="font-size:14px;">李四</view>
-    <view style="font-size:12px;color:#999;">票数:10</view>
-    <button bindtap="vote" class="btn" type="primary">投票</button>
-  
-  </view>
-    <view  class="item-box con-column">
-    <view class="img"></view>
-    <view style="font-size:14px;">李四</view>
-    <view style="font-size:12px;color:#999;">票数:10</view>
-    <button bindtap="vote" class="btn" type="primary">投票</button>
-  
-  </view>
-    <view  class="item-box con-column">
-    <view class="img"></view>
-    <view style="font-size:14px;">李四</view>
-    <view style="font-size:12px;color:#999;">票数:10</view>
-    <button bindtap="vote" class="btn" type="primary">投票</button>
-  
-  </view>
-  
-  <view wx:if="{{boxNum%2==1?false:true}}" class="item-box con-column"></view>
-  <view class="item-box con-column"></view>
+    <!-- 候选人投票框 -->
+    <view class="item-box con-column">
+      <view class="img"></view>
+      <view style="font-size:14px;">李四</view>
+      <view style="font-size:12px;color:#999;">票数:10</view>
+      <button bindtap="vote" class="btn" type="primary">投票</button>
 
-</view>
+    </view>
+
+    <view class="item-box con-column">
+      <view class="img"></view>
+      <view style="font-size:14px;">李四</view>
+      <view style="font-size:12px;color:#999;">票数:10</view>
+      <button bindtap="vote" class="btn" type="primary">投票</button>
+
+    </view>
+    <view class="item-box con-column">
+      <view class="img"></view>
+      <view style="font-size:14px;">李四</view>
+      <view style="font-size:12px;color:#999;">票数:10</view>
+      <button bindtap="vote" class="btn" type="primary">投票</button>
+
+    </view>
+    <view class="item-box con-column">
+      <view class="img"></view>
+      <view style="font-size:14px;">李四</view>
+      <view style="font-size:12px;color:#999;">票数:10</view>
+      <button bindtap="vote" class="btn" type="primary">投票</button>
+
+    </view>
+    <view class="item-box con-column">
+      <view class="img"></view>
+      <view style="font-size:14px;">李四</view>
+      <view style="font-size:12px;color:#999;">票数:10</view>
+      <button bindtap="vote" class="btn" type="primary">投票</button>
+
+    </view>
+
+    <view class="item-box con-column">
+      <view class="img"></view>
+      <view style="font-size:14px;">李四</view>
+      <view style="font-size:12px;color:#999;">票数:10</view>
+      <button bindtap="vote" class="btn" type="primary">投票</button>
+
+    </view>
+    <view class="item-box con-column">
+      <view class="img"></view>
+      <view style="font-size:14px;">李四</view>
+      <view style="font-size:12px;color:#999;">票数:10</view>
+      <button bindtap="vote" class="btn" type="primary">投票</button>
+
+    </view>
+    <view class="item-box con-column">
+      <view class="img"></view>
+      <view style="font-size:14px;">李四</view>
+      <view style="font-size:12px;color:#999;">票数:10</view>
+      <button bindtap="vote" class="btn" type="primary">投票</button>
+
+    </view>
+    <view class="item-box con-column">
+      <view class="img"></view>
+      <view style="font-size:14px;">李四</view>
+      <view style="font-size:12px;color:#999;">票数:10</view>
+      <button bindtap="vote" class="btn" type="primary">投票</button>
+
+    </view>
+
+    <view class="item-box con-column">
+      <view class="img"></view>
+      <view style="font-size:14px;">李四</view>
+      <view style="font-size:12px;color:#999;">票数:10</view>
+      <button bindtap="vote" class="btn" type="primary">投票</button>
+
+    </view>
+    <view class="item-box con-column">
+      <view class="img"></view>
+      <view style="font-size:14px;">李四</view>
+      <view style="font-size:12px;color:#999;">票数:10</view>
+      <button bindtap="vote" class="btn" type="primary">投票</button>
+
+    </view>
+    <view class="item-box con-column">
+      <view class="img"></view>
+      <view style="font-size:14px;">李四</view>
+      <view style="font-size:12px;color:#999;">票数:10</view>
+      <button bindtap="vote" class="btn" type="primary">投票</button>
+
+    </view>
+
+
+    <view wx:if="{{boxNum%3==0?false:true}}">
+      <view wx:if="{{boxNum%2==1?false:true}}" class="item-box con-column"></view>
+      <view class="item-box con-column"></view>
+    </view>
+
+
+  </view>
+</scroll-view>

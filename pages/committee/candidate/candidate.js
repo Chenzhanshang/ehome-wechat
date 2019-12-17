@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    boxNum:4,//用于记录候选人数
+    boxNum:12,//用于记录候选人数
     candidateList:[],
     
 
@@ -20,7 +20,18 @@ Page({
       content: '确定要投票吗？',
       success(res){
         if(res.confirm){
+          console.log("确定")
           // 发送请求
+          wx.request({
+            url: 'http://localhost:8081/ehome/vote/voteCandidate',
+            data:{
+              "candidateId":1,
+              "ownerId":wx.getStorageSync("loginFlag")
+            },
+            success(res){
+              console.log(res)
+            }
+          })
             
         }else{
 
@@ -33,6 +44,14 @@ Page({
    */
   onLoad: function (options) {
     //通过网络获取候选人列表
+    var community = wx.getStorageSync("home") 
+    var communityId = community.communityId;
+    wx.request({
+      url: 'http://localhost:8081/ehome/vote/candidateList/'+communityId,
+      success(res){
+        console.log(res)
+      }
+    })
 
   },
 

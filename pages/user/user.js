@@ -8,6 +8,7 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
+    owner:wx.getStorageSync("owner"),
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     funList: [{
         id: 0,
@@ -34,6 +35,14 @@ Page({
         url: "initiate/initiate"
       }
     ]
+  },
+  /**
+   * 更换头像
+   */
+  changeAvatar(){
+    wx.navigateTo({
+      url: '/pages/user/avatar/avatar',
+    })
   },
   fun(e) {
     console.log(e.currentTarget.dataset.index)
@@ -113,9 +122,11 @@ Page({
                 //数据放入缓存
                 wx.setStorageSync('userInfo', ee.detail.userInfo);
                 wx.setStorageSync('loginFlag', data.userId);
+                wx.setStorageSync("owner", data.owner);
                 that.setData({
                   userInfo: ee.detail.userInfo,
-                  hasUserInfo: true
+                  hasUserInfo: true,
+                  owner:data.owner,
                 });
               }
             }
@@ -125,6 +136,24 @@ Page({
 
     }
 
+  },
+  getUserNewInfo(){
+    var that = this;
+    wx.request({
+      url: 'http://localhost:8081/ehome/user/getUserNewInfo',
+      data:{
+        "ownerId":wx.getStorageSync("loginFlag")
+      },
+      success(res){
+        // console.log(res.data)
+        if(res.data.status==0){
+          wx.setStorageSync("owner", res.data.data.owner)
+          that.setData({
+            owner: res.data.data.owner
+          })
+        }
+      }
+    })
   },
 
   /**
@@ -138,7 +167,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    this.getUserNewInfo()
   },
 
   /**

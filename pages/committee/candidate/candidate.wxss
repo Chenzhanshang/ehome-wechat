@@ -7,7 +7,7 @@ page{
   
 }
 .main-box{
-  width: 95%;
+  width: 100%;
   flex-wrap: wrap;
 }
 .item-box{
