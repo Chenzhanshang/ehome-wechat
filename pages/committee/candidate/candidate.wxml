@@ -2,100 +2,22 @@
   <view class="main-box con-row">
 
     <!-- 候选人投票框 -->
-    <view class="item-box con-column">
-      <view class="img"></view>
-      <view style="font-size:14px;">李四</view>
-      <view style="font-size:12px;color:#999;">票数:10</view>
-      <button bindtap="vote" class="btn" type="primary">投票</button>
+    <view wx:for="{{candidateList}}"  wx:key="id" class="item-box con-column">
+      <view class="img">
+        <image class="img" src="{{item.owner.avatar}}"></image>
+      </view>
+      <view style="font-size:14px;">{{item.owner.ownerName}}</view>
+      <view style="font-size:12px;color:#999;">票数:{{item.candidatePoll}}</view>
+      <button bindtap="vote" data-id="{{item.candidateId}}" class="btn" type="primary">投票</button>
 
     </view>
 
-    <view class="item-box con-column">
-      <view class="img"></view>
-      <view style="font-size:14px;">李四</view>
-      <view style="font-size:12px;color:#999;">票数:10</view>
-      <button bindtap="vote" class="btn" type="primary">投票</button>
-
-    </view>
-    <view class="item-box con-column">
-      <view class="img"></view>
-      <view style="font-size:14px;">李四</view>
-      <view style="font-size:12px;color:#999;">票数:10</view>
-      <button bindtap="vote" class="btn" type="primary">投票</button>
-
-    </view>
-    <view class="item-box con-column">
-      <view class="img"></view>
-      <view style="font-size:14px;">李四</view>
-      <view style="font-size:12px;color:#999;">票数:10</view>
-      <button bindtap="vote" class="btn" type="primary">投票</button>
-
-    </view>
-    <view class="item-box con-column">
-      <view class="img"></view>
-      <view style="font-size:14px;">李四</view>
-      <view style="font-size:12px;color:#999;">票数:10</view>
-      <button bindtap="vote" class="btn" type="primary">投票</button>
-
-    </view>
-
-    <view class="item-box con-column">
-      <view class="img"></view>
-      <view style="font-size:14px;">李四</view>
-      <view style="font-size:12px;color:#999;">票数:10</view>
-      <button bindtap="vote" class="btn" type="primary">投票</button>
-
-    </view>
-    <view class="item-box con-column">
-      <view class="img"></view>
-      <view style="font-size:14px;">李四</view>
-      <view style="font-size:12px;color:#999;">票数:10</view>
-      <button bindtap="vote" class="btn" type="primary">投票</button>
-
-    </view>
-    <view class="item-box con-column">
-      <view class="img"></view>
-      <view style="font-size:14px;">李四</view>
-      <view style="font-size:12px;color:#999;">票数:10</view>
-      <button bindtap="vote" class="btn" type="primary">投票</button>
-
-    </view>
-    <view class="item-box con-column">
-      <view class="img"></view>
-      <view style="font-size:14px;">李四</view>
-      <view style="font-size:12px;color:#999;">票数:10</view>
-      <button bindtap="vote" class="btn" type="primary">投票</button>
-
-    </view>
-
-    <view class="item-box con-column">
-      <view class="img"></view>
-      <view style="font-size:14px;">李四</view>
-      <view style="font-size:12px;color:#999;">票数:10</view>
-      <button bindtap="vote" class="btn" type="primary">投票</button>
-
-    </view>
-    <view class="item-box con-column">
-      <view class="img"></view>
-      <view style="font-size:14px;">李四</view>
-      <view style="font-size:12px;color:#999;">票数:10</view>
-      <button bindtap="vote" class="btn" type="primary">投票</button>
-
-    </view>
-    <view class="item-box con-column">
-      <view class="img"></view>
-      <view style="font-size:14px;">李四</view>
-      <view style="font-size:12px;color:#999;">票数:10</view>
-      <button bindtap="vote" class="btn" type="primary">投票</button>
-
-    </view>
-
-
-    <view wx:if="{{boxNum%3==0?false:true}}">
-      <view wx:if="{{boxNum%2==1?false:true}}" class="item-box con-column"></view>
-      <view class="item-box con-column"></view>
-    </view>
-
+    <!-- <view wx:if="{{boxNum%3==0||boxNum%3!=1||boxNum%3!=2?false:true}}" class="l1 item-box con-column"></view> -->
+    <block wx:if="{{boxNum%3==1?true:false}}">
+      <view  class="l2 item-box con-column"></view>
+      <view  class="item-box con-column"></view>
+    </block>
+    <view wx:elif="{{boxNum%3==2?true:false}}" class="l3 item-box con-column"></view>
 
   </view>
 </scroll-view>

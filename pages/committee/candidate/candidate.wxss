@@ -13,7 +13,7 @@ page{
 .item-box{
   padding: 5px;
   flex: 1;
-  height: 200px;
+  
   align-items: center;
   margin-bottom:5px; 
   
@@ -21,10 +21,11 @@ page{
 .img{
   width: 200rpx;
   height: 280rpx;
-  background: #eee;
+  border: 1px solid #eee;
+  border-radius: 5px;
 }
 .btn{
- width: 80%;
+ width: 50%;
  height: 30px;
  font-size: 12px;
 }
