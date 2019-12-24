@@ -1,4 +1,5 @@
 // pages/user/approvehome/building/homenum/approve/approve.js
+const app = getApp()
 Page({
 
   /**
@@ -110,7 +111,7 @@ Page({
       if (this.data.urlList.length >= 4){
         console.log(this.data.urlList.length)
         wx.request({
-          url: 'http://localhost:8081/ehome/apply/applyMessage',
+          url: app.globalData.url +'/apply/applyMessage',
           method: "get",
           data: {
             "weixin": wx.getStorageSync("loginFlag"),
@@ -246,7 +247,7 @@ Page({
     // 文件上传的函数，返回一个promise   
     return new Promise((resolve, reject) => {
       const uploadTask = wx.uploadFile({
-        url: 'http://localhost:8081/ehome/uploadFile',
+        url: app.globalData.url +'/uploadFile',
         filePath: files.tempFilePaths[0],
         name: 'file',
         success(res) {

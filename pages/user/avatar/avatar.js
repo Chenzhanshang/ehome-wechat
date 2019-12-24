@@ -1,4 +1,5 @@
 // pages/user/approvehome/building/homenum/approve/approve.js
+const app =getApp()
 Page({
 
   /**
@@ -111,7 +112,7 @@ Page({
     // 文件上传的函数，返回一个promise   
     return new Promise((resolve, reject) => {
       const uploadTask = wx.uploadFile({
-        url: 'http://localhost:8081/ehome/uploadAvatar',
+        url: app.globalData.url +'/uploadAvatar',
         filePath: files.tempFilePaths[0],
         name: 'file',
         formData:{

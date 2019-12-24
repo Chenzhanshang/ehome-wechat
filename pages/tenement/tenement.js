@@ -1,4 +1,5 @@
 // pages/tenement/tenement.js
+const app = getApp()
 Page({
 
   /**

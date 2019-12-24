@@ -34,7 +34,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    url:"http://localhost:8081/ehome"
   },
   
 

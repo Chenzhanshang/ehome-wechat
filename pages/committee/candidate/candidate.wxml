@@ -1,5 +1,5 @@
 <scroll-view scroll-y="true" style="height: 100%;">
-  <view class="main-box con-row">
+  <view wx:if="{{boxNum!=0}}" class="main-box con-row">
 
     <!-- 候选人投票框 -->
     <view wx:for="{{candidateList}}"  wx:key="id" class="item-box con-column">
@@ -19,5 +19,8 @@
     </block>
     <view wx:elif="{{boxNum%3==2?true:false}}" class="l3 item-box con-column"></view>
 
+  </view>
+  <view wx:else>
+    投票未开始，或者已结束
   </view>
 </scroll-view>

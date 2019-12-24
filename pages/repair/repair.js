@@ -1,4 +1,5 @@
 // pages/repair/repair.js
+const app = getApp()
 Page({
 
   /**
@@ -17,9 +18,28 @@ Page({
   },
   //提交按键
   submitRepair(e){
-    wx.showToast({
-      title: '提交成功',
+    var community = wx.getStorageSync("home")
+    var owner = wx.getStorageSync("owner")
+    wx.request({
+      url: app.globalData.url +'/ten/fix',
+      method:"post",
+      data:{
+        "communityId": community.communityId,
+        "ownerId":owner.ownerId,
+        "type":this.data.type,
+        "date":this.data.date,
+        "time":this.data.time,
+        "text":this.data.text,
+      },
+      success(res){
+
+        console.log(res)
+        // wx.showToast({
+        //   title: '提交成功',
+        // })
+      }
     })
+    
   },
   //获取文本区的内容
   textInput(e){
@@ -29,17 +49,19 @@ Page({
     })
   },
   tap2type(e){
-    console.log(e.detail.value) 
+    console.log(this.data.typeArray[e.detail.value]) 
     this.setData({
       type: this.data.typeArray[e.detail.value],
     })
   },
   tap2date(e){
+    console.log(e.detail.value)
     this.setData({
       date:e.detail.value,
     })
   },
   tap2time(e) {
+    console.log(this.data.timeArray[e.detail.value])
     this.setData({
       time: this.data.timeArray[e.detail.value],
     })

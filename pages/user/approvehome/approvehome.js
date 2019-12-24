@@ -1,16 +1,5 @@
 // pages/user/approvehome/approvehome.js
-/**  {
-        id: 0,
-        xqname: "小康小区",
-        danyuanlou: ["1栋", "2栋", "3栋", ],
-        home: ["101", "102", "201", "202", "301", "302", "401", "402"]
-      },
-      {
-        id: 1,
-        xqname: "复兴小区",
-        danyuanlou: ["1栋", "2栋", "3栋",],
-        home: ["101", "102", "201", "202", "301", "302", "401", "402"]
-      }, */
+const app = getApp()
 Page({
 
   /**
@@ -53,7 +42,7 @@ Page({
 
     var thar = this;
     wx.request({
-      url: 'http://localhost:8081/ehome/community/communityList',
+      url: app.globalData.url +'/community/communityList',
       method:"get",
       data:{
         city:wx.getStorageSync("city")

@@ -1,4 +1,5 @@
 // pages/committee/group/group.js
+const app = getApp()
 Page({
 
   /**
@@ -33,7 +34,7 @@ Page({
     console.log(this.data.filePath)
     var home = wx.getStorageSync("home")
     const uploadTask = wx.uploadFile({
-      url: 'http://localhost:8081/ehome/uploadApplyGroup',
+      url: app.globalData.url +'/uploadApplyGroup',
       filePath: this.data.filePath.path,
       name: 'file',
       formData: {
@@ -74,7 +75,7 @@ Page({
     var that = this;
     //发送请求，查看申请是否通过
     wx.request({
-      url: 'http://localhost:8081/ehome/apply/applyIsPass',
+      url: app.globalData.url +'/apply/applyIsPass',
       data: {
         "applyId": wx.getStorageSync("applyGroupId")
       },

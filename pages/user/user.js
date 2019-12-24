@@ -108,7 +108,7 @@ Page({
 
           //发送请求
           wx.request({
-            url: 'http://localhost:8081/ehome/user/userLogin',
+            url: app.globalData.url+'/user/userLogin',
             data: {
               code: res.code, //临时登录凭证
               rawData: ee.detail.rawData, //用户非敏感信息

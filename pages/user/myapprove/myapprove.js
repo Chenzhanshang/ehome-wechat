@@ -1,4 +1,5 @@
 // pages/user/myapprove/myapprove.js
+const app = getApp()
 Page({
 
   /**
@@ -37,6 +38,7 @@ Page({
               wx.removeStorageSync("applyCandidateListId")
               wx.removeStorageSync("applyGroupId")
               wx.removeStorageSync("ownerApplyId")
+      
             } else {
               that.setData({
                 [str]: 0,
@@ -57,7 +59,7 @@ Page({
   onLoad: function(options) {
     var that = this;
     wx.request({
-      url: 'http://localhost:8081/ehome/community/ownerCommunityList',
+      url: app.globalData.url+'/community/ownerCommunityList',
       data:{
         "ownerId":wx.getStorageSync("loginFlag")
       },

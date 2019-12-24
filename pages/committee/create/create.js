@@ -1,4 +1,5 @@
 // pages/committee/create/create.js
+const app = getApp()
 Page({
 
   /**
@@ -15,7 +16,7 @@ Page({
         if (res.confirm) {
           console.log('用户点击确定')
           wx.downloadFile({
-            url: "http://localhost:8081/ehome/file/ehome数据库表.xls",
+            url: app.globalData.url +"/file/ehome数据库表.xls",
             success(res) {
               console.log(res)
 
@@ -46,7 +47,7 @@ Page({
         if (res.confirm) {
           console.log('用户点击确定')
           wx.downloadFile({
-            url: "http://localhost:8081/ehome/file/ehome数据库表.xls",
+            url: app.globalData.url +"/file/ehome数据库表.xls",
             success(res) {
               console.log(res)
 
@@ -77,7 +78,7 @@ Page({
         if (res.confirm) {
           console.log('用户点击确定')
           wx.downloadFile({
-            url: "http://localhost:8081/ehome/file/ehome数据库表.xls",
+            url: app.globalData.url +"/file/ehome数据库表.xls",
             success(res) {
               console.log(res)
 
@@ -108,7 +109,7 @@ Page({
         if (res.confirm) {
           console.log('用户点击确定')
           wx.downloadFile({
-            url: "http://localhost:8081/ehome/file/ehome数据库表.xls",
+            url: app.globalData.url +"/file/ehome数据库表.xls",
             success(res) {
               console.log(res)
 

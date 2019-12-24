@@ -1,4 +1,5 @@
 // pages/user/approvehome/building/building.js
+const app = getApp()
 Page({
 
   /**
@@ -40,7 +41,7 @@ Page({
     })
     //发送请求到后台，通过小区id获得该小区的所有建筑物
     wx.request({
-      url: 'http://localhost:8081/ehome/community/houseList',
+      url: app.globalData.url +'/community/houseList',
       data:{
         "communityId":that.data.xiaoquid
       },

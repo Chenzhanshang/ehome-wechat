@@ -1,4 +1,5 @@
 // pages/committee/candidate/candidate.js
+const app = getApp()
 Page({
 
   /**
@@ -14,6 +15,7 @@ Page({
    */
   vote(e) {
     var that = this;
+    var communityId = that.data.candidateList[0].community.communityId
     console.log(e.target.dataset.id)
     var id = e.target.dataset.id
     if (that.data.flag == 0) {
@@ -25,7 +27,7 @@ Page({
             console.log("确定")
             // 发送请求
             wx.request({
-              url: 'http://localhost:8081/ehome/vote/voteCandidate',
+              url: app.globalData.url +'/vote/voteCandidate',
               data: {
                 "candidateId": id,
                 "ownerId": wx.getStorageSync("loginFlag")
@@ -35,7 +37,7 @@ Page({
                 that.setData({
                   flag: 1,
                 })
-                wx.setStorageSync("voteFlag", 1)
+                wx.setStorageSync("voteFlag"+communityId, 1)
                 that.onLoad()
               }
             })
@@ -63,7 +65,7 @@ Page({
     var community = wx.getStorageSync("home")
     var communityId = community.communityId;
     wx.request({
-      url: 'http://localhost:8081/ehome/vote/candidateList/' + communityId,
+      url: app.globalData.url +'/vote/candidateList/' + communityId,
       success(res) {
         var list = res.data.data.candidateList
         console.log(list)
@@ -71,19 +73,25 @@ Page({
           candidateList: list,
           boxNum: list.length
         })
+        if(list.length != 0){
+          console.log(that.data.candidateList[0])
+          var id = that.data.candidateList[0].community.communityId
+          if (wx.getStorageSync("voteFlag" + id) == 0) {
+            wx.setStorageSync("voteFlag" + id, 0)
+            that.setData({
+              flag: wx.getStorageSync("voteFlag" + id)
+            })
+
+          } else {
+            that.setData({
+              flag: wx.getStorageSync("voteFlag" + id)
+            })
+          }
+        }
+        
       }
     })
-    if (wx.getStorageSync("voteFlag") == 0)  {
-      wx.setStorageSync("voteFlag", 0)
-      that.setData({
-        flag: wx.getStorageSync("voteFlag")
-      })
-
-    } else {
-      that.setData({
-        flag: wx.getStorageSync("voteFlag")
-      })
-    }
+    
 
 
   },

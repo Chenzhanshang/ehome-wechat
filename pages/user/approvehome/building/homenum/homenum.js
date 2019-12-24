@@ -1,4 +1,5 @@
 // pages/user/approvehome/building/homenum/homenum.js
+const app = getApp()
 Page({
 
   /**
@@ -47,7 +48,7 @@ Page({
     
     //发送请求到后台，通过buildingid获取到该栋所有的房号
     wx.request({
-      url: 'http://localhost:8081/ehome/community/roomList',
+      url: app.globalData.url +'/community/roomList',
       data:{
         "houseId":that.data.buildingid,
       },
