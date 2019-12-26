@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      noticeList:[],
   },
 
   /**
@@ -13,6 +13,14 @@ Page({
    */
   onLoad: function (options) {
 
+    var list = wx.getStorageSync("noticeList")
+    // 数组排序
+    list.sort((a,b)=>{
+      return b.noticeId - a.noticeId
+    })
+    this.setData({
+      noticeList: list,
+    })
   },
 
   /**
@@ -64,9 +72,14 @@ Page({
 
   },
   //通知被点击
-  click(){
+  click(e){
+    var noticeId = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: 'details/details'
+      url: 'details/details',
+      success: function (res) {
+        // 通过eventChannel向被打开页面传送数据
+        res.eventChannel.emit('acceptDataFromOpenerPage', { data: noticeId })
+      }
     })
   }
 })

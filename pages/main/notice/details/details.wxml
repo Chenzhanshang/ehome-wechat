@@ -1,19 +1,20 @@
 <!--pages/main/notice/details/details.wxml-->
-<scroll-view >
-  <view class="title">
-    <text class="title-text">关于小区停水通知</text>
-  </view>
+<scroll-view>
   
-  <view class="date">
-    <text class="text announcement-date">发布人:物业</text>
-    <text class="text announcement-date">2019-10-03</text>
-  </view>
+    <view class="title">
+      <text class="title-text">{{notice.title}}</text>
+    </view>
 
-  <view class="replenish-mid"></view>
+    <view class="date">
+      <text class="text announcement-date">发布人:{{notice.type==1?'物业':'业委会'}}</text>
+      <text class="text announcement-date">{{notice.createTime}}</text>
+    </view>
 
-  <view class="body">
-    <text class="text">
-    根据《国家税务总局关于依据实际管理机构标准实施居民企业认定有关问题的公告》（国家税务总局公告2014年第9号）规定，现将部分省级税务机关审核认定的居民企业名单公布如下，自2019年度开始执行，其中，天新国际工贸有限公司、中国航空(105)有限公司自2018年度开始执行。 
-    </text>
-  </view>
-  </scroll-view>
+    <view class="replenish-mid"></view>
+
+    <view class="body">
+      <text class="text">{{notice.content}}</text>
+    </view>
+ 
+
+</scroll-view>

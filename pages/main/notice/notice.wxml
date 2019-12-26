@@ -1,39 +1,20 @@
 <!--pages/notice/notice.wxml-->
-<view class="replenish-mid"></view>
-<view bindtap="click" class="weui-panel__bd">
-    <view class="weui-media-box weui-media-box_text">
-        <view class="weui-media-box__title weui-media-box__title_in-text">关于小区停水通知</view>
-        <view class="weui-media-box__desc">明天下午3点停水</view>
+<scroll-view scroll-y="true" class="scroll-box">
+  <view class="con-column">
+    <view class="replenish-mid"></view>
+    <view class="replenish-mid"></view>
+    <view wx:for="{{noticeList}}" wx:key="{{item.noticeId}}" data-id="{{item.noticeId}}" bindtap="click"   class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}</view>
         <view class="weui-media-box__info">
-            <view class="weui-media-box__info__meta">物业</view>
-            <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">2019-10-03</view>
+          <view class="weui-media-box__info__meta">{{item.type==1?'物业':'业委会'}}</view>
+          <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.createTime}}</view>
         </view>
+      </view>
+      <view class="replenish-mid"></view>
+      <view class="replenish-mid"></view>
     </view>
-</view>
-<view class="replenish-mid"></view>
-
-<view class="weui-panel__bd">
-    <view class="weui-media-box weui-media-box_text">
-        <view class="weui-media-box__title weui-media-box__title_in-text">关于小区党建的通知</view>
-        <view class="weui-media-box__desc">关于小区党建的通知</view>
-        <view class="weui-media-box__info">
-            <view class="weui-media-box__info__meta">政府</view>
-            <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">2019-10-04</view>
-        </view>
-    </view>
-</view>
-<view class="replenish-mid"></view>
-
-<view class="weui-panel__bd">
-    <view class="weui-media-box weui-media-box_text">
-        <view class="weui-media-box__title weui-media-box__title_in-text">小康小区业委会正式成立</view>
-        <view class="weui-media-box__desc">小康小区业委会正式成立</view>
-        <view class="weui-media-box__info">
-            <view class="weui-media-box__info__meta">业委会</view>
-            <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">2019-10-07</view>
-        </view>
-    </view>
-</view>
-
-<view class="replenish-mid"></view>
-<view class="replenish-mid"></view>
+    <view class="replenish-mid"></view>
+    <view class="replenish-mid"></view>
+  </view>
+</scroll-view>

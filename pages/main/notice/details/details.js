@@ -5,14 +5,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    notice: {},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const eventChannel = this.getOpenerEventChannel()
+    var noticeId;
+    var that = this;
+    // 监听acceptDataFromOpenerPage事件，获取上一页面通过eventChannel传送到当前页面的数据
+    eventChannel.on('acceptDataFromOpenerPage', function (e) {
+      noticeId = e.data
+    })
+    var list = wx.getStorageSync("noticeList")
+    list.forEach((item,index)=>{
+      if(noticeId == item.noticeId){
+        that.setData({
+          notice:item
+        })
+      }
+    })
+    
   },
 
   /**

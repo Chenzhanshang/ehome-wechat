@@ -3,7 +3,7 @@
 //引入SDK核心类
 var QQMapWX = require('../lib/qqmap-wx-jssdk.js');
 var qqmapsdk;
-
+const app = getApp()
 Page({
 
   /**
@@ -63,6 +63,7 @@ Page({
         title: '更多'
       },
     ],
+    notice:{},
   },
   tapfun(e) {
     var fun;
@@ -85,7 +86,9 @@ Page({
         url: '../vote/vote',
       })
     } else if (fun.id == 2) {
-
+      wx.navigateTo({
+        url: '/pages/committee/create/create',
+      })
     } else if (fun.id == 3) {
       wx.navigateTo({
         url: '../advise/advise',
@@ -116,10 +119,29 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    var that = this;
     // 实例化API核心类
     qqmapsdk = new QQMapWX({
       key: 'L4NBZ-TJNC4-EG7UE-D3LGF-PZUXK-VRB4A'
     });
+    var home = wx.getStorageSync("home")
+    //获取公告列表
+    wx.request({
+      url: app.globalData.url+'/ten/getNoticeList',
+      data:{
+        "communityId":home.communityId
+      },
+      success(res){
+        console.log(res)
+        let noticeList = res.data.data.noticeList
+        wx.setStorageSync("noticeList", noticeList)
+        that.setData({
+          notice:noticeList[noticeList.length-1]
+        })
+      
+
+      }
+    })
     
   },
 
@@ -138,6 +160,26 @@ Page({
     this.setData({
       community: wx.getStorageSync("home")
     })
+    var that = this;
+    var home = wx.getStorageSync("home")
+    //获取公告列表
+    wx.request({
+      url: app.globalData.url + '/ten/getNoticeList',
+      data: {
+        "communityId": home.communityId
+      },
+      success(res) {
+        console.log(res)
+        let noticeList = res.data.data.noticeList
+        wx.setStorageSync("noticeList", noticeList)
+        that.setData({
+          notice: noticeList[noticeList.length - 1]
+        })
+        
+
+      }
+    })
+    
   },
   getUserLocation: function () {
     let vm = this;

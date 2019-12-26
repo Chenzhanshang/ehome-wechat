@@ -136,9 +136,9 @@ page{
   align-items: center;
 }
 .announcement-content-left{
-  width: 120rpx;
-  height: 120rpx;
-  border: 1px solid #eee;
+  width: 100rpx;
+  height: 100rpx;
+  
   border-radius:5px; 
   margin-right: 5px;
 }
@@ -274,7 +274,7 @@ page{
   color: #999;
 }
 .img-g{
-  width: 18px;
-  height: 18px;
+  width: 28rpx;
+  height: 28rpx;
   
 }

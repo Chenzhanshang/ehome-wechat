@@ -32,11 +32,16 @@ Page({
         "text":this.data.text,
       },
       success(res){
-
         console.log(res)
-        // wx.showToast({
-        //   title: '提交成功',
-        // })
+        if(res.data.status == "0"){
+          wx.switchTab({
+            url: '/pages/main/main',
+          })
+          wx.showToast({
+            title: res.data.msg,
+          })
+        }
+        
       }
     })
     

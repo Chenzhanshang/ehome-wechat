@@ -1,4 +1,11 @@
 /* pages/notice/notice.wxss */
+page{
+  height: 100%;
+  width: 100%;
+}
+.scroll-box{
+  height: 100%;
+}
 .replenish-mid{
   width:100%;
   height: 2px;

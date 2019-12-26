@@ -90,13 +90,15 @@
     <view class="hr"></view>
     <!-- 公告容器 -->
     <view class="announcement-content-box" >
-      <view class="announcement-content-left"></view>
+      <view class="announcement-content-left">
+        <image class="announcement-content-left" src="/pages/images/消息提醒.png"></image>
+      </view>
       <view class="announcement-content-mid">
-        <text class="announcement-title">小康小区业委会正式成立</text>
-        <text class="announcement-date">2019-10-01</text>
+        <text class="announcement-title">{{notice.title}}</text>
+        <text class="announcement-date">{{notice.createTime}}</text>
       </view>
       <view class="announcement-content-right">
-        <view class="announcement-tag">业委会</view>
+        <view class="announcement-tag">{{notice.type == 1?"物业":"业委会"}}</view>
         <view class="announcement-details">...</view>
       </view>
     </view>
