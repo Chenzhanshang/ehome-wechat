@@ -1,4 +1,5 @@
 // pages/vote/votedetails/votedetalis.js
+const app = getApp()
 Page({
 
   /**
@@ -11,33 +12,158 @@ Page({
     issueList: [],
     issue:null,
     community:null,
+    flag:0,
   },
   approvalTap(e) {
-    var h = this.data.approvalHeight;
-    h++;
+    var that = this;
+    if(that.data.flag == 0){
+      wx.showModal({
+        title: '提示',
+        content: '您确定要投票吗？',
+        success(res) {
+          if (res.confirm) {
+            wx.request({
+              url: app.globalData.url + '/issue/vote',
+              method: "post",
+              data: {
+                'issueId': that.data.issue.issueId,
+                'ownerId': wx.getStorageSync("loginFlag"),
+                'voteFlag': 1
+              },
+              success(res) {
+                console.log(res)
+                if (res.data.status == '0') {
+                  wx.navigateTo({
+                    url: '../vote/vote',
+                  })
+                  wx.showToast({
+                    title: res.data.msg,
+                  })
+                  wx.setStorageSync("issueVoteFlag" + that.data.issue.issueId, 1)
+                  var h = that.data.approvalHeight;
+                  h++;
+                  that.setData({
+                    approvalHeight: h,
+                    flag:1
+                  })
+                }
 
-    this.setData({
-      approvalHeight: h,
-    })
+              }
+            })
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }else{
+      wx.showToast({
+        title: '您已经投过票',
+      })
+    }
+    
+    
+
+    
 
   },
 
   abstentionTap(e) {
-    var h = this.data.abstentionHeight;
-    h++;
+    var that = this;
+    if(that.data.flag == 0){
+      wx.showModal({
+        title: '提示',
+        content: '您确定要投票吗？',
+        success(res) {
+          if (res.confirm) {
+            wx.request({
+              url: app.globalData.url + '/issue/vote',
+              method: "post",
+              data: {
+                'issueId': that.data.issue.issueId,
+                'ownerId': wx.getStorageSync("loginFlag"),
+                'voteFlag': 2
+              },
+              success(res) {
+                console.log(res)
+                if (res.data.status == '0') {
+                  wx.showToast({
+                    title: res.data.msg,
+                  })
+                  wx.setStorageSync("issueVoteFlag" + that.data.issue.issueId, 1)
 
-    this.setData({
-      abstentionHeight: h,
-    })
+                  var h = that.data.abstentionHeight;
+                  h++;
+
+                  that.setData({
+                    abstentionHeight: h,
+                    flag:1
+                  })
+                }
+
+              }
+            })
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }else{
+      wx.showToast({
+        title: '您已经投过票',
+      })
+    }
+    
+    
+    
 
   },
   opposeTap(e) {
-    var h = this.data.opposeHeight;
-    h++;
+    var that = this;
+    if(that.data.flag == 0){
+      wx.showModal({
+        title: '提示',
+        content: '您确定要投票吗？',
+        success(res) {
+          if (res.confirm) {
+            wx.request({
+              url: app.globalData.url + '/issue/vote',
+              method: "post",
+              data: {
+                'issueId': that.data.issue.issueId,
+                'ownerId': wx.getStorageSync("loginFlag"),
+                'voteFlag': 3
+              },
+              success(res) {
+                console.log(res)
+                if (res.data.status == '0') {
+                  wx.showToast({
+                    title: res.data.msg,
+                  })
+                  wx.setStorageSync("issueVoteFlag" + that.data.issue.issueId, 1)
+                  var h = that.data.opposeHeight;
+                  h++;
 
-    this.setData({
-      opposeHeight: h,
-    })
+                  that.setData({
+                    opposeHeight: h,
+                    flag:1
+                  })
+                }
+
+              }
+            })
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }else{
+      wx.showToast({
+        title: '您已经投过票',
+      })
+    }
+    
+    
+    
 
   },
 
@@ -60,12 +186,28 @@ Page({
       issueList.forEach((item, index )=> {
         if(item.issueId == data.data){
           that.setData({
-            issue:item
+            issue:item,
+            approvalHeight: item.issueAgree,
+            abstentionHeight: item.issueWaiver,
+            opposeHeight: item.issueOppose,
           })
           console.log(that.data.issue)
         }
       })
     })
+    //初始化缓存
+    var id = that.data.issue.issueId
+    if (wx.getStorageSync("issueVoteFlag" + id) == 0) {
+      wx.setStorageSync("issueVoteFlag" + id, 0)
+      that.setData({
+        flag: wx.getStorageSync("issueVoteFlag" + id)
+      })
+
+    } else {
+      that.setData({
+        flag: wx.getStorageSync("issueVoteFlag" + id)
+      })
+    }
   },
 
   /**

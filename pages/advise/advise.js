@@ -7,11 +7,13 @@ Page({
   data: {
     type: [
       { id: 0, name: '实名投诉' },
-      { id: 1, name: '匿名投诉' }
+      { id: 1, name: '匿名投诉' },
+    
     ],
     department:[
       {id:0,name:'物业'},
-      {id:1,name:'业委会'}
+      {id:1,name:'业委会'},
+      {id:2,name:'其他'}
     ],
     textContent:null,
     typeId:null,

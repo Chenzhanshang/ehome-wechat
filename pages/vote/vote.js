@@ -1,4 +1,5 @@
 // pages/vote/vote.js
+const app = getApp()
 Page({
 
   /**
@@ -10,36 +11,72 @@ Page({
     oldArray:[],
     flag:0,
     community:'',
+    issueList:[],
 
   },
   stayVote(e){//待投票按钮
-    var votes = this.data.array;  
-    var stayVoteArr = [];
-    votes.forEach(function (item,index){
-      // console.log(votes[index])
-      if (item.issueStatus==0){
-        stayVoteArr.push(item);
+    var that = this;
+    wx.request({
+      url: app.globalData.url+'/issue/ownerVoteList',
+      data:{
+        'ownerId':wx.getStorageSync("loginFlag")
+      },
+      success(res){
+        that.setData({
+          issueList:res.data
+        })
+        var votes = that.data.array
+        var list = that.data.issueList
+        votes.forEach(function (aItem, indexa) {
+          console.log(aItem)
+          list.forEach((bItem, indexb) => {
+            if (aItem.issueId == bItem.issueId) {
+              votes.splice(indexa,1);
+            }
+          })
+
+        })
+        that.setData({
+          voteArray: votes,
+          flag: 1,
+        })
       }
     })
-    this.setData({
-      voteArray:stayVoteArr,
-      flag:0,
-    })
+
+
+    
   },
   voted(e){//已投票按钮
-    var votes = this.data.array;
-    var votedArr = [];
-    votes.forEach(function (item, index) {
-      // console.log(votes[index])
-      if (item.issueStatus == 1) {
-        votedArr.push(item);
+    var that = this;
+    wx.request({
+      url: app.globalData.url + '/issue/ownerVoteList',
+      data: {
+        'ownerId': wx.getStorageSync("loginFlag")
+      },
+      success(res) {
+        that.setData({
+          issueList: res.data
+        })
       }
+    })
+    var votes = wx.getStorageSync("issueList");
+    var votedArr = [];
+    var list = this.data.issueList
+    votes.forEach(function (aItem, index) {
+      // console.log(votes[index])
+      list.forEach((bItem,index)=>{
+        if (aItem.issueId == bItem.issueId) {
+          votedArr.push(aItem);
+        }
+      })
+      
     })
     this.setData({
       voteArray: votedArr,
-      flag:1,
+      flag:0,
     })
     console.log(this.data.flag)
+    console.log(votedArr)
   },
   voteDetails(e){
     console.log(e.currentTarget)
@@ -73,12 +110,11 @@ Page({
     
     var that = this
     wx.request({
-      url: 'http://localhost:8081/ehome/issue/issueList',
+      url: app.globalData.url+'/issue/issueList',
       data:{
         "communityId":community.communityId
       },
       success(res){
-        console.log(res)
         var now = Date.parse(new Date());
         var list = res.data.data.issueList
         list.forEach((item,index)=>{
@@ -93,7 +129,6 @@ Page({
             item['flag'] = 0
           }
         })
-        console.log(list)
         that.setData({
           array:list
         })
@@ -119,6 +154,7 @@ Page({
     this.setData({
       community:community.communityName
     })
+    this.onLoad()
     
     
   },
