@@ -1,4 +1,5 @@
 // pages/advise/advise.js
+const app = getApp()
 Page({
 
   /**
@@ -20,9 +21,32 @@ Page({
     departmentId:null,
   },
   submit(){
-    wx.showToast({
-      title: '提交成功',
+    var home = wx.getStorageSync("home");
+    wx.request({
+      url: app.globalData.url+'/ten/advise',
+      method:'post',
+      data:{
+        'ownerId':wx.getStorageSync("loginFlag"),
+        'communityId':home.communityId,
+        'type':this.data.typeId,
+        'department':this.data.department[this.data.departmentId].name,
+        'content':this.data.textContent
+      },
+      success(res){
+        if(res.data.status == '0'){
+          wx.switchTab({
+            url: '/pages/main/main',
+          })
+          wx.showToast({
+            title: res.data.msg,
+          })
+        }
+        
+      }
     })
+
+
+    
   },
   textInput(e){
     console.log(e.detail.value)

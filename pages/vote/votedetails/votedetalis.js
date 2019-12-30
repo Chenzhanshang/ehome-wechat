@@ -31,7 +31,7 @@ Page({
                 'voteFlag': 1
               },
               success(res) {
-                console.log(res)
+                
                 if (res.data.status == '0') {
                   wx.navigateTo({
                     url: '../vote/vote',
@@ -84,7 +84,7 @@ Page({
                 'voteFlag': 2
               },
               success(res) {
-                console.log(res)
+                
                 if (res.data.status == '0') {
                   wx.showToast({
                     title: res.data.msg,
@@ -134,7 +134,7 @@ Page({
                 'voteFlag': 3
               },
               success(res) {
-                console.log(res)
+                
                 if (res.data.status == '0') {
                   wx.showToast({
                     title: res.data.msg,
@@ -177,12 +177,10 @@ Page({
       community:wx.getStorageSync("home")
     })
     var issueList = this.data.issueList
-    console.log(issueList)
     const eventChannel = this.getOpenerEventChannel()
     var that = this;
     // 监听acceptDataFromOpenerPage事件，获取上一页面通过eventChannel传送到当前页面的数据
     eventChannel.on('acceptDataFromOpenerPage', function(data) {
-      console.log(data.data)
       issueList.forEach((item, index )=> {
         if(item.issueId == data.data){
           that.setData({
@@ -191,7 +189,7 @@ Page({
             abstentionHeight: item.issueWaiver,
             opposeHeight: item.issueOppose,
           })
-          console.log(that.data.issue)
+        
         }
       })
     })

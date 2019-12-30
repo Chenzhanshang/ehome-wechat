@@ -28,7 +28,7 @@ Page({
         var votes = that.data.array
         var list = that.data.issueList
         votes.forEach(function (aItem, indexa) {
-          console.log(aItem)
+          
           list.forEach((bItem, indexb) => {
             if (aItem.issueId == bItem.issueId) {
               votes.splice(indexa,1);
@@ -75,13 +75,11 @@ Page({
       voteArray: votedArr,
       flag:0,
     })
-    console.log(this.data.flag)
-    console.log(votedArr)
+    
   },
   voteDetails(e){
-    console.log(e.currentTarget)
+    
     const issueId = e.currentTarget.dataset.issueid
-    console.log(issueId)
     console.log("跳转到查看详情页面")
     wx.navigateTo({
       url: 'votedetails/votedetalis',

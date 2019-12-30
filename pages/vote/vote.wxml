@@ -20,8 +20,8 @@
           </view>
         </view>
         <view class="con-row">
-          <view class="btn-box left" bindtap="voteDetails" data-issueid="{{item.issueId}}">查看详情</view>
-          <view class="btn-box right" bindtap="votefinal">查看结果</view>
+          <view wx:if="{{item.flag == 0}}" class="btn-box left" bindtap="voteDetails" data-issueid="{{item.issueId}}">查看详情</view>
+          <view class="btn-box right" data-issueid="{{item.issueId}}" bindtap="votefinal">查看结果</view>
         </view>
       </view>
       <view wx:for="{{10}}" wx:key="index">
