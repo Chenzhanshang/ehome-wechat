@@ -135,7 +135,7 @@ Page({
 
       setTimeout(() => {
         reject('some error')
-      }, 2000)
+      }, 60000)
     })
   },
   resolve() {
@@ -146,7 +146,7 @@ Page({
   },
   uploadSuccess(e) {
     console.log('upload success', e.detail)
-    wx.switchTab({
+    wx.switchTab({    
       url: '/pages/user/user',
     })
     wx.showToast({

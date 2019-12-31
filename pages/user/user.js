@@ -140,7 +140,7 @@ Page({
   getUserNewInfo(){
     var that = this;
     wx.request({
-      url: 'http://localhost:8081/ehome/user/getUserNewInfo',
+      url: app.globalData.url +'/user/getUserNewInfo',
       data:{
         "ownerId":wx.getStorageSync("loginFlag")
       },

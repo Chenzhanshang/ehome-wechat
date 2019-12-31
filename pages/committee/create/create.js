@@ -16,7 +16,7 @@ Page({
         if (res.confirm) {
           console.log('用户点击确定')
           wx.downloadFile({
-            url: app.globalData.url +"/file/ehome数据库表.xls",
+            url: app.globalData.url +"/file/staticdata/1.doc",
             success(res) {
               console.log(res)
 
@@ -47,7 +47,7 @@ Page({
         if (res.confirm) {
           console.log('用户点击确定')
           wx.downloadFile({
-            url: app.globalData.url +"/file/ehome数据库表.xls",
+            url: app.globalData.url +"/file/staticdata/1.doc",
             success(res) {
               console.log(res)
 
@@ -78,7 +78,7 @@ Page({
         if (res.confirm) {
           console.log('用户点击确定')
           wx.downloadFile({
-            url: app.globalData.url +"/file/ehome数据库表.xls",
+            url: app.globalData.url +"/file/staticdata/1.doc",
             success(res) {
               console.log(res)
 
@@ -109,7 +109,7 @@ Page({
         if (res.confirm) {
           console.log('用户点击确定')
           wx.downloadFile({
-            url: app.globalData.url +"/file/ehome数据库表.xls",
+            url: app.globalData.url +"/file/staticdata/1.doc",
             success(res) {
               console.log(res)
 

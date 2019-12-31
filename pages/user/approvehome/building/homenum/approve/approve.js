@@ -267,7 +267,7 @@ Page({
 
       setTimeout(() => {
         reject('some error')
-      }, 2000)
+      }, 60000)
     })
   },
   resolve() {
