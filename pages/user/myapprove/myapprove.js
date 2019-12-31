@@ -9,13 +9,30 @@ Page({
     homeArray: [],
   },
   renzheng(){
-    wx.navigateTo({
-      url: '../approvehome/approvehome',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
-    })
+    if (wx.getStorageSync("loginFlag")) {
+      wx.navigateTo({
+        url: '../approvehome/approvehome',
+        success: function (res) { },
+        fail: function (res) { },
+        complete: function (res) { },
+      })
 
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '请先登录，再进行认证',
+        showCancel:false,
+        success(res){
+          if(res.confirm){
+            wx.switchTab({
+              url: '/pages/user/user',
+            })
+          }
+        }
+      })
+      
+    }
+   
   },
 
   unselected(e) { //房屋未选中时
@@ -34,6 +51,7 @@ Page({
                 [str]: 1,
               })
               wx.setStorageSync("home", item)
+              wx.setStorageSync("flag", "1")
               //清除缓存
               wx.removeStorageSync("applyCandidateListId")
               wx.removeStorageSync("applyGroupId")

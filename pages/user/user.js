@@ -49,10 +49,22 @@ Page({
     var index = e.currentTarget.dataset.index;
 
     var to = this.data.funList[index].url;
-    // console.log(url);
-    wx.navigateTo({
-      url: to
-    })
+    console.log(index);
+    if(index==0){
+      if(wx.getStorageSync("loginFlag")){
+        
+      }else{
+        wx.showModal({
+          title: '提示',
+          content: '请先登录，再进行认证',
+        })
+        return
+      }
+    }
+    // wx.navigateTo({
+    //   url: to
+    // })
+    
   },
 
   /**

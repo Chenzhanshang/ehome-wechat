@@ -57,7 +57,22 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    if (app.getFlag()) {
 
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '请先登录与认证',
+        showCancel: false,
+        success(res) {
+          if (res.confirm) {
+            wx.switchTab({
+              url: '/pages/user/user',
+            })
+          }
+        }
+      })
+    }
   },
 
   /**

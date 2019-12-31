@@ -143,6 +143,7 @@ Page({
       }
     })
     
+    
   },
 
   /**
@@ -179,6 +180,22 @@ Page({
 
       }
     })
+    if(app.getFlag()){
+
+    }else{
+      wx.showModal({
+        title: '提示',
+        content: '请先登录与认证',
+        showCancel:false,
+        success(res){
+          if(res.confirm){
+            wx.switchTab({
+              url: '/pages/user/user',
+            })
+          }
+        }
+      })
+    }
     
   },
   getUserLocation: function () {
