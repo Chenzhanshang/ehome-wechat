@@ -35,7 +35,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    url:"http://localhost:8081/ehome"
+    url:"https://www.tech4flag.com/ehome"
   },
   
 
